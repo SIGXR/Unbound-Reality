@@ -5,6 +5,7 @@
 [Bb]uilds/
 Assets/AssetStoreTools*
 Oculus/
+Art Assets/
 
 # Visual Studio cache directory
 .vs/
@@ -28,6 +29,7 @@ ExportedObj/
 # Unity3D generated meta files
 *.pidb.meta
 *.pdb.meta
+Art Assets.meta
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
