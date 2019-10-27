@@ -5,6 +5,7 @@
 [Bb]uilds/
 Assets/AssetStoreTools*
 Oculus/
+Art Assets/
 
 # Visual Studio cache directory
 .vs/
@@ -35,7 +36,3 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
-
-#Art Assets
-*.fbx
-*.obj
