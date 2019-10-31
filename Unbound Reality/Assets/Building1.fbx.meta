@@ -1,0 +1,949 @@
+fileFormatVersion: 2
+guid: 4be4d1f688e3ef042aa724579864c64c
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Camera
+    100004: Cube
+    100006: Cube.001
+    100008: Cube.002
+    100010: Cube.003
+    100012: Cube.004
+    100014: Cube.005
+    100016: Cube.006
+    100018: Cube.007
+    100020: Cube.008
+    100022: Cube.009
+    100024: Cube.010
+    100026: Cube.011
+    100028: Cube.012
+    100030: Cube.013
+    100032: Cube.014
+    100034: Cube.015
+    100036: Cube.016
+    100038: Cube.017
+    100040: Cube.018
+    100042: Cube.019
+    100044: Cube.020
+    100046: Cube.021
+    100048: Cube.022
+    100050: Cube.023
+    100052: House Base
+    100054: Wooden Support 1
+    100056: Wooden Support 10
+    100058: Wooden Support 10.001
+    100060: Wooden Support 10.002
+    100062: Wooden Support 10.003
+    100064: Wooden Support 10.004
+    100066: Wooden Support 10.005
+    100068: Wooden Support 10.006
+    100070: Wooden Support 10.007
+    100072: Wooden Support 10.008
+    100074: Wooden Support 10.009
+    100076: Wooden Support 10.010
+    100078: Wooden Support 10.011
+    100080: Wooden Support 10.012
+    100082: Wooden Support 10.013
+    100084: Wooden Support 10.014
+    100086: Wooden Support 10.015
+    100088: Wooden Support 10.016
+    100090: Wooden Support 10.017
+    100092: Wooden Support 10.018
+    100094: Wooden Support 10.019
+    100096: Wooden Support 10.020
+    100098: Wooden Support 10.021
+    100100: Wooden Support 10.022
+    100102: Wooden Support 10.023
+    100104: Wooden Support 10.024
+    100106: Wooden Support 10.025
+    100108: Wooden Support 10.026
+    100110: Wooden Support 10.027
+    100112: Wooden Support 10.028
+    100114: Wooden Support 10.029
+    100116: Wooden Support 10.030
+    100118: Wooden Support 10.031
+    100120: Wooden Support 10.032
+    100122: Wooden Support 10.033
+    100124: Wooden Support 10.034
+    100126: Wooden Support 10.035
+    100128: Wooden Support 10.036
+    100130: Wooden Support 10.037
+    100132: Wooden Support 10.038
+    100134: Wooden Support 10.039
+    100136: Wooden Support 10.040
+    100138: Wooden Support 10.041
+    100140: Wooden Support 10.042
+    100142: Wooden Support 10.043
+    100144: Wooden Support 10.044
+    100146: Wooden Support 10.045
+    100148: Wooden Support 10.046
+    100150: Wooden Support 10.047
+    100152: Wooden Support 10.048
+    100154: Wooden Support 10.049
+    100156: Wooden Support 10.050
+    100158: Wooden Support 10.051
+    100160: Wooden Support 10.052
+    100162: Wooden Support 10.053
+    100164: Wooden Support 10.054
+    100166: Wooden Support 10.055
+    100168: Wooden Support 10.056
+    100170: Wooden Support 10.057
+    100172: Wooden Support 10.058
+    100174: Wooden Support 10.059
+    100176: Wooden Support 10.060
+    100178: Wooden Support 10.061
+    100180: Wooden Support 10.062
+    100182: Wooden Support 10.063
+    100184: Wooden Support 10.064
+    100186: Wooden Support 10.065
+    100188: Wooden Support 10.066
+    100190: Wooden Support 10.067
+    100192: Wooden Support 10.068
+    100194: Wooden Support 10.069
+    100196: Wooden Support 10.070
+    100198: Wooden Support 10.071
+    100200: Wooden Support 10.072
+    100202: Wooden Support 10.073
+    100204: Wooden Support 10.074
+    100206: Wooden Support 10.075
+    100208: Wooden Support 10.076
+    100210: Wooden Support 10.077
+    100212: Wooden Support 10.078
+    100214: Wooden Support 10.079
+    100216: Wooden Support 10.080
+    100218: Wooden Support 10.081
+    100220: Wooden Support 10.082
+    100222: Wooden Support 10.083
+    100224: Wooden Support 10.084
+    100226: Wooden Support 10.085
+    100228: Wooden Support 10.086
+    100230: Wooden Support 10.087
+    100232: Wooden Support 10.088
+    100234: Wooden Support 10.089
+    100236: Wooden Support 10.090
+    100238: Wooden Support 10.091
+    100240: Wooden Support 10.092
+    100242: Wooden Support 10.093
+    100244: Wooden Support 10.094
+    100246: Wooden Support 10.095
+    100248: Wooden Support 10.096
+    100250: Wooden Support 10.097
+    100252: Wooden Support 10.098
+    100254: Wooden Support 10.099
+    100256: Wooden Support 11
+    100258: Wooden Support 12
+    100260: Wooden Support 13
+    100262: Wooden Support 14
+    100264: Wooden Support 15
+    100266: Wooden Support 16
+    100268: Wooden Support 17
+    100270: Wooden Support 2
+    100272: Wooden Support 2.001
+    100274: Wooden Support 3
+    100276: Wooden Support 4
+    100278: Wooden Support 5
+    100280: Wooden Support 6
+    100282: Wooden Support 6.001
+    100284: Wooden Support 6.002
+    100286: Wooden Support 6.003
+    100288: Wooden Support 7
+    100290: Wooden Support 7.001
+    100292: Wooden Support 8
+    100294: Wooden Support 9
+    400000: //RootNode
+    400002: Camera
+    400004: Cube
+    400006: Cube.001
+    400008: Cube.002
+    400010: Cube.003
+    400012: Cube.004
+    400014: Cube.005
+    400016: Cube.006
+    400018: Cube.007
+    400020: Cube.008
+    400022: Cube.009
+    400024: Cube.010
+    400026: Cube.011
+    400028: Cube.012
+    400030: Cube.013
+    400032: Cube.014
+    400034: Cube.015
+    400036: Cube.016
+    400038: Cube.017
+    400040: Cube.018
+    400042: Cube.019
+    400044: Cube.020
+    400046: Cube.021
+    400048: Cube.022
+    400050: Cube.023
+    400052: House Base
+    400054: Wooden Support 1
+    400056: Wooden Support 10
+    400058: Wooden Support 10.001
+    400060: Wooden Support 10.002
+    400062: Wooden Support 10.003
+    400064: Wooden Support 10.004
+    400066: Wooden Support 10.005
+    400068: Wooden Support 10.006
+    400070: Wooden Support 10.007
+    400072: Wooden Support 10.008
+    400074: Wooden Support 10.009
+    400076: Wooden Support 10.010
+    400078: Wooden Support 10.011
+    400080: Wooden Support 10.012
+    400082: Wooden Support 10.013
+    400084: Wooden Support 10.014
+    400086: Wooden Support 10.015
+    400088: Wooden Support 10.016
+    400090: Wooden Support 10.017
+    400092: Wooden Support 10.018
+    400094: Wooden Support 10.019
+    400096: Wooden Support 10.020
+    400098: Wooden Support 10.021
+    400100: Wooden Support 10.022
+    400102: Wooden Support 10.023
+    400104: Wooden Support 10.024
+    400106: Wooden Support 10.025
+    400108: Wooden Support 10.026
+    400110: Wooden Support 10.027
+    400112: Wooden Support 10.028
+    400114: Wooden Support 10.029
+    400116: Wooden Support 10.030
+    400118: Wooden Support 10.031
+    400120: Wooden Support 10.032
+    400122: Wooden Support 10.033
+    400124: Wooden Support 10.034
+    400126: Wooden Support 10.035
+    400128: Wooden Support 10.036
+    400130: Wooden Support 10.037
+    400132: Wooden Support 10.038
+    400134: Wooden Support 10.039
+    400136: Wooden Support 10.040
+    400138: Wooden Support 10.041
+    400140: Wooden Support 10.042
+    400142: Wooden Support 10.043
+    400144: Wooden Support 10.044
+    400146: Wooden Support 10.045
+    400148: Wooden Support 10.046
+    400150: Wooden Support 10.047
+    400152: Wooden Support 10.048
+    400154: Wooden Support 10.049
+    400156: Wooden Support 10.050
+    400158: Wooden Support 10.051
+    400160: Wooden Support 10.052
+    400162: Wooden Support 10.053
+    400164: Wooden Support 10.054
+    400166: Wooden Support 10.055
+    400168: Wooden Support 10.056
+    400170: Wooden Support 10.057
+    400172: Wooden Support 10.058
+    400174: Wooden Support 10.059
+    400176: Wooden Support 10.060
+    400178: Wooden Support 10.061
+    400180: Wooden Support 10.062
+    400182: Wooden Support 10.063
+    400184: Wooden Support 10.064
+    400186: Wooden Support 10.065
+    400188: Wooden Support 10.066
+    400190: Wooden Support 10.067
+    400192: Wooden Support 10.068
+    400194: Wooden Support 10.069
+    400196: Wooden Support 10.070
+    400198: Wooden Support 10.071
+    400200: Wooden Support 10.072
+    400202: Wooden Support 10.073
+    400204: Wooden Support 10.074
+    400206: Wooden Support 10.075
+    400208: Wooden Support 10.076
+    400210: Wooden Support 10.077
+    400212: Wooden Support 10.078
+    400214: Wooden Support 10.079
+    400216: Wooden Support 10.080
+    400218: Wooden Support 10.081
+    400220: Wooden Support 10.082
+    400222: Wooden Support 10.083
+    400224: Wooden Support 10.084
+    400226: Wooden Support 10.085
+    400228: Wooden Support 10.086
+    400230: Wooden Support 10.087
+    400232: Wooden Support 10.088
+    400234: Wooden Support 10.089
+    400236: Wooden Support 10.090
+    400238: Wooden Support 10.091
+    400240: Wooden Support 10.092
+    400242: Wooden Support 10.093
+    400244: Wooden Support 10.094
+    400246: Wooden Support 10.095
+    400248: Wooden Support 10.096
+    400250: Wooden Support 10.097
+    400252: Wooden Support 10.098
+    400254: Wooden Support 10.099
+    400256: Wooden Support 11
+    400258: Wooden Support 12
+    400260: Wooden Support 13
+    400262: Wooden Support 14
+    400264: Wooden Support 15
+    400266: Wooden Support 16
+    400268: Wooden Support 17
+    400270: Wooden Support 2
+    400272: Wooden Support 2.001
+    400274: Wooden Support 3
+    400276: Wooden Support 4
+    400278: Wooden Support 5
+    400280: Wooden Support 6
+    400282: Wooden Support 6.001
+    400284: Wooden Support 6.002
+    400286: Wooden Support 6.003
+    400288: Wooden Support 7
+    400290: Wooden Support 7.001
+    400292: Wooden Support 8
+    400294: Wooden Support 9
+    2000000: Camera
+    2100000: Wood
+    2100002: Stone.001
+    2100004: Wood.001
+    2100006: Stone
+    2100008: Wood.003
+    2100010: Wood.002
+    2100012: Wood.005
+    2100014: Wood.004
+    2100016: Wood.006
+    2100018: Wood.008
+    2100020: Wood.010
+    2100022: Wood.009
+    2100024: Wood.012
+    2100026: Wood.011
+    2100028: Wood.013
+    2100030: Wood.014
+    2100032: Wood.016
+    2100034: Wood.015
+    2100036: Wood.018
+    2100038: Wood.017
+    2100040: Wood.019
+    2100042: Wood.020
+    2100044: Wood.021
+    2100046: Wood.022
+    2100048: Wood.023
+    2100050: Wood.025
+    2100052: Wood.024
+    2100054: Wood.029
+    2100056: Wood.030
+    2100058: Wood.031
+    2100060: Wood.032
+    2100062: Wood.026
+    2100064: Wood.027
+    2100066: Wood.028
+    2100068: Wood.033
+    2100070: Wood.034
+    2100072: Wood.035
+    2100074: Wood.036
+    2100076: Wood.037
+    2100078: Wood.038
+    2100080: Wood.041
+    2100082: Wood.042
+    2100084: Wood.043
+    2100086: Wood.046
+    2100088: Wood.045
+    2100090: Wood.044
+    2100092: Wood.052
+    2100094: Wood.051
+    2100096: Wood.050
+    2100098: Wood.049
+    2100100: Wood.048
+    2100102: Wood.047
+    2100104: Wood.056
+    2100106: Wood.055
+    2100108: Wood.054
+    2100110: Wood.053
+    2100112: Wood.057
+    2100114: Wood.062
+    2100116: Wood.061
+    2100118: Wood.060
+    2100120: Wood.059
+    2100122: Wood.058
+    2100124: Wood.067
+    2100126: Wood.065
+    2100128: Wood.068
+    2100130: Wood.069
+    2100132: Wood.070
+    2100134: Wood.071
+    2100136: Wood.076
+    2100138: Wood.075
+    2100140: Wood.074
+    2100142: Wood.073
+    2100144: Wood.072
+    2100146: Wood.077
+    2100148: Wood.078
+    2100150: Wood.079
+    2100152: Wood.080
+    2100154: Wood.081
+    2100156: Wood.083
+    2100158: Wood.082
+    2100160: Wood.084
+    2100162: Wood.085
+    2100164: Wood.087
+    2100166: Wood.086
+    2100168: Wood.095
+    2100170: Wood.094
+    2100172: Wood.093
+    2100174: Wood.092
+    2100176: Wood.091
+    2100178: Wood.090
+    2100180: Wood.089
+    2100182: Wood.088
+    2100184: Wood.096
+    2100186: Wood.098
+    2100188: Wood.097
+    2100190: Wood.102
+    2100192: Wood.101
+    2100194: Wood.100
+    2100196: Wood.099
+    2100198: Wood.104
+    2100200: Wood.103
+    2100202: No Name
+    2100204: Wood.108
+    2100206: Wood.107
+    2100208: Wood.106
+    2100210: Wood.105
+    2100212: Wood.112
+    2100214: Wood.111
+    2100216: Wood.110
+    2100218: Wood.109
+    2100220: Wood.120
+    2100222: Wood.119
+    2100224: Wood.118
+    2100226: Wood.117
+    2100228: Wood.116
+    2100230: Wood.115
+    2100232: Wood.114
+    2100234: Wood.113
+    2100236: Wood.121
+    2100238: Wood.122
+    2100240: Wood.124
+    2100242: Wood.123
+    2100244: Wood.125
+    2100246: Wood.126
+    2100248: Material
+    2100250: Roof
+    2300000: Cube
+    2300002: Cube.001
+    2300004: Cube.002
+    2300006: Cube.003
+    2300008: Cube.004
+    2300010: Cube.005
+    2300012: Cube.006
+    2300014: Cube.007
+    2300016: Cube.008
+    2300018: Cube.009
+    2300020: Cube.010
+    2300022: Cube.011
+    2300024: Cube.012
+    2300026: Cube.013
+    2300028: Cube.014
+    2300030: Cube.015
+    2300032: Cube.016
+    2300034: Cube.017
+    2300036: Cube.018
+    2300038: Cube.019
+    2300040: Cube.020
+    2300042: Cube.021
+    2300044: Cube.022
+    2300046: Cube.023
+    2300048: House Base
+    2300050: Wooden Support 1
+    2300052: Wooden Support 10
+    2300054: Wooden Support 10.001
+    2300056: Wooden Support 10.002
+    2300058: Wooden Support 10.003
+    2300060: Wooden Support 10.004
+    2300062: Wooden Support 10.005
+    2300064: Wooden Support 10.006
+    2300066: Wooden Support 10.007
+    2300068: Wooden Support 10.008
+    2300070: Wooden Support 10.009
+    2300072: Wooden Support 10.010
+    2300074: Wooden Support 10.011
+    2300076: Wooden Support 10.012
+    2300078: Wooden Support 10.013
+    2300080: Wooden Support 10.014
+    2300082: Wooden Support 10.015
+    2300084: Wooden Support 10.016
+    2300086: Wooden Support 10.017
+    2300088: Wooden Support 10.018
+    2300090: Wooden Support 10.019
+    2300092: Wooden Support 10.020
+    2300094: Wooden Support 10.021
+    2300096: Wooden Support 10.022
+    2300098: Wooden Support 10.023
+    2300100: Wooden Support 10.024
+    2300102: Wooden Support 10.025
+    2300104: Wooden Support 10.026
+    2300106: Wooden Support 10.027
+    2300108: Wooden Support 10.028
+    2300110: Wooden Support 10.029
+    2300112: Wooden Support 10.030
+    2300114: Wooden Support 10.031
+    2300116: Wooden Support 10.032
+    2300118: Wooden Support 10.033
+    2300120: Wooden Support 10.034
+    2300122: Wooden Support 10.035
+    2300124: Wooden Support 10.036
+    2300126: Wooden Support 10.037
+    2300128: Wooden Support 10.038
+    2300130: Wooden Support 10.039
+    2300132: Wooden Support 10.040
+    2300134: Wooden Support 10.041
+    2300136: Wooden Support 10.042
+    2300138: Wooden Support 10.043
+    2300140: Wooden Support 10.044
+    2300142: Wooden Support 10.045
+    2300144: Wooden Support 10.046
+    2300146: Wooden Support 10.047
+    2300148: Wooden Support 10.048
+    2300150: Wooden Support 10.049
+    2300152: Wooden Support 10.050
+    2300154: Wooden Support 10.051
+    2300156: Wooden Support 10.052
+    2300158: Wooden Support 10.053
+    2300160: Wooden Support 10.054
+    2300162: Wooden Support 10.055
+    2300164: Wooden Support 10.056
+    2300166: Wooden Support 10.057
+    2300168: Wooden Support 10.058
+    2300170: Wooden Support 10.059
+    2300172: Wooden Support 10.060
+    2300174: Wooden Support 10.061
+    2300176: Wooden Support 10.062
+    2300178: Wooden Support 10.063
+    2300180: Wooden Support 10.064
+    2300182: Wooden Support 10.065
+    2300184: Wooden Support 10.066
+    2300186: Wooden Support 10.067
+    2300188: Wooden Support 10.068
+    2300190: Wooden Support 10.069
+    2300192: Wooden Support 10.070
+    2300194: Wooden Support 10.071
+    2300196: Wooden Support 10.072
+    2300198: Wooden Support 10.073
+    2300200: Wooden Support 10.074
+    2300202: Wooden Support 10.075
+    2300204: Wooden Support 10.076
+    2300206: Wooden Support 10.077
+    2300208: Wooden Support 10.078
+    2300210: Wooden Support 10.079
+    2300212: Wooden Support 10.080
+    2300214: Wooden Support 10.081
+    2300216: Wooden Support 10.082
+    2300218: Wooden Support 10.083
+    2300220: Wooden Support 10.084
+    2300222: Wooden Support 10.085
+    2300224: Wooden Support 10.086
+    2300226: Wooden Support 10.087
+    2300228: Wooden Support 10.088
+    2300230: Wooden Support 10.089
+    2300232: Wooden Support 10.090
+    2300234: Wooden Support 10.091
+    2300236: Wooden Support 10.092
+    2300238: Wooden Support 10.093
+    2300240: Wooden Support 10.094
+    2300242: Wooden Support 10.095
+    2300244: Wooden Support 10.096
+    2300246: Wooden Support 10.097
+    2300248: Wooden Support 10.098
+    2300250: Wooden Support 10.099
+    2300252: Wooden Support 11
+    2300254: Wooden Support 12
+    2300256: Wooden Support 13
+    2300258: Wooden Support 14
+    2300260: Wooden Support 15
+    2300262: Wooden Support 16
+    2300264: Wooden Support 17
+    2300266: Wooden Support 2
+    2300268: Wooden Support 2.001
+    2300270: Wooden Support 3
+    2300272: Wooden Support 4
+    2300274: Wooden Support 5
+    2300276: Wooden Support 6
+    2300278: Wooden Support 6.001
+    2300280: Wooden Support 6.002
+    2300282: Wooden Support 6.003
+    2300284: Wooden Support 7
+    2300286: Wooden Support 7.001
+    2300288: Wooden Support 8
+    2300290: Wooden Support 9
+    3300000: Cube
+    3300002: Cube.001
+    3300004: Cube.002
+    3300006: Cube.003
+    3300008: Cube.004
+    3300010: Cube.005
+    3300012: Cube.006
+    3300014: Cube.007
+    3300016: Cube.008
+    3300018: Cube.009
+    3300020: Cube.010
+    3300022: Cube.011
+    3300024: Cube.012
+    3300026: Cube.013
+    3300028: Cube.014
+    3300030: Cube.015
+    3300032: Cube.016
+    3300034: Cube.017
+    3300036: Cube.018
+    3300038: Cube.019
+    3300040: Cube.020
+    3300042: Cube.021
+    3300044: Cube.022
+    3300046: Cube.023
+    3300048: House Base
+    3300050: Wooden Support 1
+    3300052: Wooden Support 10
+    3300054: Wooden Support 10.001
+    3300056: Wooden Support 10.002
+    3300058: Wooden Support 10.003
+    3300060: Wooden Support 10.004
+    3300062: Wooden Support 10.005
+    3300064: Wooden Support 10.006
+    3300066: Wooden Support 10.007
+    3300068: Wooden Support 10.008
+    3300070: Wooden Support 10.009
+    3300072: Wooden Support 10.010
+    3300074: Wooden Support 10.011
+    3300076: Wooden Support 10.012
+    3300078: Wooden Support 10.013
+    3300080: Wooden Support 10.014
+    3300082: Wooden Support 10.015
+    3300084: Wooden Support 10.016
+    3300086: Wooden Support 10.017
+    3300088: Wooden Support 10.018
+    3300090: Wooden Support 10.019
+    3300092: Wooden Support 10.020
+    3300094: Wooden Support 10.021
+    3300096: Wooden Support 10.022
+    3300098: Wooden Support 10.023
+    3300100: Wooden Support 10.024
+    3300102: Wooden Support 10.025
+    3300104: Wooden Support 10.026
+    3300106: Wooden Support 10.027
+    3300108: Wooden Support 10.028
+    3300110: Wooden Support 10.029
+    3300112: Wooden Support 10.030
+    3300114: Wooden Support 10.031
+    3300116: Wooden Support 10.032
+    3300118: Wooden Support 10.033
+    3300120: Wooden Support 10.034
+    3300122: Wooden Support 10.035
+    3300124: Wooden Support 10.036
+    3300126: Wooden Support 10.037
+    3300128: Wooden Support 10.038
+    3300130: Wooden Support 10.039
+    3300132: Wooden Support 10.040
+    3300134: Wooden Support 10.041
+    3300136: Wooden Support 10.042
+    3300138: Wooden Support 10.043
+    3300140: Wooden Support 10.044
+    3300142: Wooden Support 10.045
+    3300144: Wooden Support 10.046
+    3300146: Wooden Support 10.047
+    3300148: Wooden Support 10.048
+    3300150: Wooden Support 10.049
+    3300152: Wooden Support 10.050
+    3300154: Wooden Support 10.051
+    3300156: Wooden Support 10.052
+    3300158: Wooden Support 10.053
+    3300160: Wooden Support 10.054
+    3300162: Wooden Support 10.055
+    3300164: Wooden Support 10.056
+    3300166: Wooden Support 10.057
+    3300168: Wooden Support 10.058
+    3300170: Wooden Support 10.059
+    3300172: Wooden Support 10.060
+    3300174: Wooden Support 10.061
+    3300176: Wooden Support 10.062
+    3300178: Wooden Support 10.063
+    3300180: Wooden Support 10.064
+    3300182: Wooden Support 10.065
+    3300184: Wooden Support 10.066
+    3300186: Wooden Support 10.067
+    3300188: Wooden Support 10.068
+    3300190: Wooden Support 10.069
+    3300192: Wooden Support 10.070
+    3300194: Wooden Support 10.071
+    3300196: Wooden Support 10.072
+    3300198: Wooden Support 10.073
+    3300200: Wooden Support 10.074
+    3300202: Wooden Support 10.075
+    3300204: Wooden Support 10.076
+    3300206: Wooden Support 10.077
+    3300208: Wooden Support 10.078
+    3300210: Wooden Support 10.079
+    3300212: Wooden Support 10.080
+    3300214: Wooden Support 10.081
+    3300216: Wooden Support 10.082
+    3300218: Wooden Support 10.083
+    3300220: Wooden Support 10.084
+    3300222: Wooden Support 10.085
+    3300224: Wooden Support 10.086
+    3300226: Wooden Support 10.087
+    3300228: Wooden Support 10.088
+    3300230: Wooden Support 10.089
+    3300232: Wooden Support 10.090
+    3300234: Wooden Support 10.091
+    3300236: Wooden Support 10.092
+    3300238: Wooden Support 10.093
+    3300240: Wooden Support 10.094
+    3300242: Wooden Support 10.095
+    3300244: Wooden Support 10.096
+    3300246: Wooden Support 10.097
+    3300248: Wooden Support 10.098
+    3300250: Wooden Support 10.099
+    3300252: Wooden Support 11
+    3300254: Wooden Support 12
+    3300256: Wooden Support 13
+    3300258: Wooden Support 14
+    3300260: Wooden Support 15
+    3300262: Wooden Support 16
+    3300264: Wooden Support 17
+    3300266: Wooden Support 2
+    3300268: Wooden Support 2.001
+    3300270: Wooden Support 3
+    3300272: Wooden Support 4
+    3300274: Wooden Support 5
+    3300276: Wooden Support 6
+    3300278: Wooden Support 6.001
+    3300280: Wooden Support 6.002
+    3300282: Wooden Support 6.003
+    3300284: Wooden Support 7
+    3300286: Wooden Support 7.001
+    3300288: Wooden Support 8
+    3300290: Wooden Support 9
+    4300000: Wooden Support 1
+    4300002: Wooden Support 2
+    4300004: Wooden Support 3
+    4300006: Wooden Support 2.001
+    4300008: Wooden Support 5
+    4300010: Wooden Support 4
+    4300012: Wooden Support 6
+    4300014: Wooden Support 7
+    4300016: Wooden Support 9
+    4300018: Wooden Support 8
+    4300020: Wooden Support 11
+    4300022: Wooden Support 10
+    4300024: Wooden Support 12
+    4300026: Wooden Support 13
+    4300028: Wooden Support 15
+    4300030: Wooden Support 14
+    4300032: Wooden Support 17
+    4300034: Wooden Support 16
+    4300036: Wooden Support 10.001
+    4300038: Wooden Support 10.002
+    4300040: Wooden Support 10.003
+    4300042: Wooden Support 10.004
+    4300044: Wooden Support 10.005
+    4300046: Wooden Support 7.001
+    4300048: Wooden Support 10.006
+    4300050: Wooden Support 10.007
+    4300052: Wooden Support 10.008
+    4300054: Wooden Support 10.009
+    4300056: Wooden Support 10.010
+    4300058: Wooden Support 6.001
+    4300060: Wooden Support 6.002
+    4300062: Wooden Support 6.003
+    4300064: Wooden Support 10.011
+    4300066: Wooden Support 10.012
+    4300068: Wooden Support 10.013
+    4300070: Wooden Support 10.014
+    4300072: Wooden Support 10.015
+    4300074: Wooden Support 10.016
+    4300076: Wooden Support 10.019
+    4300078: Wooden Support 10.017
+    4300080: Wooden Support 10.018
+    4300082: Wooden Support 10.022
+    4300084: Wooden Support 10.021
+    4300086: Wooden Support 10.020
+    4300088: Wooden Support 10.028
+    4300090: Wooden Support 10.027
+    4300092: Wooden Support 10.026
+    4300094: Wooden Support 10.025
+    4300096: Wooden Support 10.024
+    4300098: Wooden Support 10.023
+    4300100: Wooden Support 10.032
+    4300102: Wooden Support 10.031
+    4300104: Wooden Support 10.030
+    4300106: Wooden Support 10.029
+    4300108: Wooden Support 10.033
+    4300110: Wooden Support 10.038
+    4300112: Wooden Support 10.037
+    4300114: Wooden Support 10.036
+    4300116: Wooden Support 10.035
+    4300118: Wooden Support 10.034
+    4300120: Wooden Support 10.043
+    4300122: Wooden Support 10.041
+    4300124: Wooden Support 10.039
+    4300126: Wooden Support 10.040
+    4300128: Wooden Support 10.042
+    4300130: Wooden Support 10.044
+    4300132: Wooden Support 10.049
+    4300134: Wooden Support 10.048
+    4300136: Wooden Support 10.047
+    4300138: Wooden Support 10.046
+    4300140: Wooden Support 10.045
+    4300142: Wooden Support 10.050
+    4300144: Wooden Support 10.051
+    4300146: Wooden Support 10.052
+    4300148: Wooden Support 10.053
+    4300150: Wooden Support 10.054
+    4300152: Wooden Support 10.056
+    4300154: Wooden Support 10.055
+    4300156: Wooden Support 10.057
+    4300158: Wooden Support 10.058
+    4300160: Wooden Support 10.060
+    4300162: Wooden Support 10.059
+    4300164: Wooden Support 10.068
+    4300166: Wooden Support 10.067
+    4300168: Wooden Support 10.066
+    4300170: Wooden Support 10.065
+    4300172: Wooden Support 10.064
+    4300174: Wooden Support 10.063
+    4300176: Wooden Support 10.062
+    4300178: Wooden Support 10.061
+    4300180: Wooden Support 10.069
+    4300182: Wooden Support 10.071
+    4300184: Wooden Support 10.070
+    4300186: Wooden Support 10.075
+    4300188: Wooden Support 10.074
+    4300190: Wooden Support 10.073
+    4300192: Wooden Support 10.072
+    4300194: Wooden Support 10.077
+    4300196: Wooden Support 10.076
+    4300198: Cube
+    4300200: Cube.001
+    4300202: Cube.002
+    4300204: Cube.003
+    4300206: Cube.004
+    4300208: Cube.005
+    4300210: Cube.011
+    4300212: Cube.010
+    4300214: Cube.009
+    4300216: Cube.008
+    4300218: Cube.007
+    4300220: Cube.006
+    4300222: Cube.023
+    4300224: Cube.022
+    4300226: Cube.021
+    4300228: Cube.020
+    4300230: Cube.019
+    4300232: Cube.018
+    4300234: Cube.017
+    4300236: Cube.016
+    4300238: Cube.015
+    4300240: Cube.014
+    4300242: Cube.013
+    4300244: Cube.012
+    4300246: Wooden Support 10.081
+    4300248: Wooden Support 10.080
+    4300250: Wooden Support 10.079
+    4300252: Wooden Support 10.078
+    4300254: Wooden Support 10.085
+    4300256: Wooden Support 10.084
+    4300258: Wooden Support 10.083
+    4300260: Wooden Support 10.082
+    4300262: Wooden Support 10.093
+    4300264: Wooden Support 10.092
+    4300266: Wooden Support 10.091
+    4300268: Wooden Support 10.090
+    4300270: Wooden Support 10.089
+    4300272: Wooden Support 10.088
+    4300274: Wooden Support 10.087
+    4300276: Wooden Support 10.086
+    4300278: Wooden Support 10.094
+    4300280: Wooden Support 10.095
+    4300282: Wooden Support 10.097
+    4300284: Wooden Support 10.096
+    4300286: Wooden Support 10.098
+    4300288: Wooden Support 10.099
+    4300290: House Base
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
