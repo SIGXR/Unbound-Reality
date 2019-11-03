@@ -1,0 +1,153 @@
+fileFormatVersion: 2
+guid: 16ce6d8d1aa028a4381a620fcdcdbb3e
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: BackWindow2
+    100002: //RootNode
+    100004: DoorHandle
+    100006: FrontWindow
+    100008: Grill
+    100010: Grill.001
+    100012: Headlight1
+    100014: Headlight2
+    100016: MainBody
+    100018: Rims
+    100020: SideWindow
+    100022: SplashBehindGrill
+    100024: Tire
+    400000: BackWindow2
+    400002: //RootNode
+    400004: DoorHandle
+    400006: FrontWindow
+    400008: Grill
+    400010: Grill.001
+    400012: Headlight1
+    400014: Headlight2
+    400016: MainBody
+    400018: Rims
+    400020: SideWindow
+    400022: SplashBehindGrill
+    400024: Tire
+    2100000: Material.001
+    2100002: No Name
+    2300000: BackWindow2
+    2300002: DoorHandle
+    2300004: FrontWindow
+    2300006: Grill
+    2300008: Grill.001
+    2300010: Headlight1
+    2300012: Headlight2
+    2300014: MainBody
+    2300016: Rims
+    2300018: SideWindow
+    2300020: SplashBehindGrill
+    2300022: Tire
+    3300000: BackWindow2
+    3300002: DoorHandle
+    3300004: FrontWindow
+    3300006: Grill
+    3300008: Grill.001
+    3300010: Headlight1
+    3300012: Headlight2
+    3300014: MainBody
+    3300016: Rims
+    3300018: SideWindow
+    3300020: SplashBehindGrill
+    3300022: Tire
+    4300000: MainBody
+    4300002: SplashBehindGrill
+    4300004: BackWindow2
+    4300006: FrontWindow
+    4300008: SideWindow
+    4300010: Grill
+    4300012: Headlight1
+    4300014: Headlight2
+    4300016: Tire
+    4300018: Rims
+    4300020: DoorHandle
+    4300022: Grill.001
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
