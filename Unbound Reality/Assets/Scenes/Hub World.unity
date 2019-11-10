@@ -2426,7 +2426,7 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 262381592}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -3796,7 +3796,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &454587326
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12346,6 +12346,7 @@ GameObject:
   - component: {fileID: 1406464266}
   - component: {fileID: 1406464264}
   - component: {fileID: 1406464265}
+  - component: {fileID: 1406464267}
   m_Layer: 0
   m_Name: DodgeModel
   m_TagString: Untagged
@@ -12386,7 +12387,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1406464262}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42f5202c12843424b9c2f3d496064542, type: 3}
   m_Name: 
@@ -12395,9 +12396,9 @@ MonoBehaviour:
   m_verticalInput: 0
   m_steeringAngle: 0
   maxSteerAngle: 30
-  motorForce: 1500
-  steerForce: 1500
-  brakeForce: 1500
+  motorForce: 50
+  steerForce: 30
+  brakeForce: 30
   FR_L_Wheel: {fileID: 628263927}
   FR_R_Wheel: {fileID: 1401902414}
   RE_L_Wheel: {fileID: 1375356297}
@@ -12409,7 +12410,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1406464262}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 0.78148156, z: 3.2055967}
@@ -12421,7 +12422,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1406464262}
   serializedVersion: 2
-  m_Mass: 1000
+  m_Mass: 40
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -12429,6 +12430,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &1406464267
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1406464262}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.78328705, z: 3.1789153}
+  m_Center: {x: 3.2382668e-16, y: 0.5417818, z: 0.038446628}
 --- !u!1 &1408769889
 GameObject:
   m_ObjectHideFlags: 0
