@@ -46,15 +46,15 @@ public class New_Car_Con : MonoBehaviour
             RE_L_Wheel.brakeTorque = 0;
             RE_R_Wheel.brakeTorque = 0;
         }
-        //if (m_horizontalInput == 0)
-        //{
-        //    RE_L_Wheel.brakeTorque = BrakeForce;
-        //    RE_R_Wheel.brakeTorque = BrakeForce;
-        //}
-        //else
-        //{
-        //RE_L_Wheel.brakeTorque = 0;
-        //RE_R_Wheel.brakeTorque = 0;
-        //}
+        if (m_verticalInput == 0)
+        {
+            RE_L_Wheel.brakeTorque = brakeForce;
+            RE_R_Wheel.brakeTorque = brakeForce;
+        }
+        else
+        {
+            RE_L_Wheel.brakeTorque = 0;
+            RE_R_Wheel.brakeTorque = 0;
+        }
     }
 }

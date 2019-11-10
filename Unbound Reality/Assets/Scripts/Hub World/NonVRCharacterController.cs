@@ -22,4 +22,14 @@ public class NonVRCharacterController : MonoBehaviour
             transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime);
         Gizmos.DrawRay(transform.position, Vector3.forward);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.name.Equals("DodgeModel"))
+        {
+            this.gameObject.SetActive(false);
+            other.GetComponentInChildren<Camera>().enabled = true;
+            other.GetComponent<New_Car_Con>().enabled = true;
+        }
+    }
 }
