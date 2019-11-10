@@ -20,7 +20,6 @@ public class NonVRCharacterController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.RightArrow))
             transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime);
-        Gizmos.DrawRay(transform.position, Vector3.forward);
     }
 
     private void OnTriggerEnter(Collider other)
