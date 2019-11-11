@@ -15,35 +15,32 @@ public class GunUI : MonoBehaviour
     public GunUI(Gun curGun)
     {
         gunElements = curGun;
-       // MaxAmm = curGun.maxAmmo;
-      //  curAmm = curGun.getCurrAmmo();
-    }
-    void start(Gun gunElements)
-    {
 
-        MaxAmm = gunElements.maxAmmo;
-        curAmm = gunElements.getCurrAmmo();
-        //if(curGun.Reload())
-        // StartCoroutine(gunElements.update());
-      //  AmmoDisp.text = curAmm.ToString() + "/\n" + MaxAmm.ToString();
-
-    }
-    public void DecCurrAmmo() //intent is to decrement the ammo count whenever we use it
-    {
-        curAmm -= 1;
-    }
-    void Update(Gun gunElements)
-    {
-        if(Input.GetButtonDown("Fire1")){
-            gunElements.Shoot();
-            DecCurrAmmo();
-        }
-        AmmoDisp.text = curAmm.ToString() + "/\n" + MaxAmm.ToString();
-
-        if (currAmm == 0)
+        void start(Gun gunElements)
         {
-            StartCoroutine(gunElements.Reload());
-        }
 
+            MaxAmm = gunElements.maxAmmo;
+            curAmm = gunElements.getCurAmmo();
+
+
+        }
+        void DecCurrAmmo() //intent is to decrement the ammo count whenever we use it
+        {
+            curAmm -= 1;
+        }
+        void Update(Gun gunElements)
+        {
+            if (Input.GetButtonDown("Fire1")) {
+                gunElements.Shoot();
+                DecCurrAmmo();
+            }
+            AmmoDisp.text = curAmm.ToString() + "/\n" + MaxAmm.ToString();
+
+            if (currAmm == 0)
+            {
+                StartCoroutine(gunElements.Reload());
+            }
+
+        }
     }
 }
