@@ -9,38 +9,38 @@ public class GunUI : MonoBehaviour
     public int curAmm = 0; //will hold the current ammo for us
     public int MaxAmm = 0; //Will hold max ammo
     public Text AmmoDisp; //we will use this to check whether our ammo in the format <CUrrent>/<Max>
-    Gun gunElements;
     private int currAmm;
+    private Gun gunElements;
 
     public GunUI(Gun curGun)
     {
         gunElements = curGun;
+    }
 
-        void start(Gun gunElements)
+    void Start()
+    {
+        MaxAmm = gunElements.maxAmmo;
+        curAmm = gunElements.getCurAmmo();
+    }
+
+    void DecCurrAmmo() //intent is to decrement the ammo count whenever we use it
+    {
+        curAmm -= 1;
+    }
+
+    void Update()
+    {
+        if (Input.GetButtonDown("Fire1"))
         {
-
-            MaxAmm = gunElements.maxAmmo;
-            curAmm = gunElements.getCurAmmo();
-
-
+            gunElements.Shoot();
+            DecCurrAmmo();
         }
-        void DecCurrAmmo() //intent is to decrement the ammo count whenever we use it
-        {
-            curAmm -= 1;
-        }
-        void Update(Gun gunElements)
-        {
-            if (Input.GetButtonDown("Fire1")) {
-                gunElements.Shoot();
-                DecCurrAmmo();
-            }
-            AmmoDisp.text = curAmm.ToString() + "/\n" + MaxAmm.ToString();
 
-            if (currAmm == 0)
-            {
-                StartCoroutine(gunElements.Reload());
-            }
+        AmmoDisp.text = curAmm.ToString() + "/\n" + MaxAmm.ToString();
 
+        if (currAmm == 0)
+        {
+            StartCoroutine(gunElements.Reload());
         }
     }
 }
