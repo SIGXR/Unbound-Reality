@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +12,10 @@ public class Gun : MonoBehaviour
     private int currentAmmo;
     public float reloadTime= 1.5f;
     private bool isReloading = false;
+    public int getCurAmmo()
+    {
+        return currentAmmo;
+    }
     void Start()
     {
         if(currentAmmo == -1)
@@ -34,7 +38,7 @@ public class Gun : MonoBehaviour
         
     }
 
-    IEnumerator Reload()
+   public IEnumerator Reload()
     {
         isReloading = true;
         Debug.Log("Reloading...");
@@ -44,7 +48,7 @@ public class Gun : MonoBehaviour
         currentAmmo = maxAmmo;
         isReloading = false;
     }
-    void Shoot()
+    public void Shoot()
     {
         Debug.Log("I shot you...");
         currentAmmo--;
