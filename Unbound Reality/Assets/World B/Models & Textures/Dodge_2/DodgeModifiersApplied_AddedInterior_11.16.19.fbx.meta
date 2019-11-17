@@ -1,0 +1,276 @@
+fileFormatVersion: 2
+guid: ce698252208d34b728ae2769b1914de1
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: BackLightGlassLeft
+    100002: BackLightGlassRight
+    100004: BackLightLeft
+    100006: BackLightRight
+    100008: BackWindow
+    100010: //RootNode
+    100012: DriverDoor
+    100014: DriverDoorHandle
+    100016: DriverWindow
+    100018: DriverWindowSecondary
+    100020: Floor
+    100022: FloorInterior
+    100024: FrontWindow
+    100026: GrillLower
+    100028: GrillUpper
+    100030: Headlight1
+    100032: Headlight2
+    100034: MainBody
+    100036: MainBodyInterior
+    100038: PassengerDoor
+    100040: PassengerDoorHandle
+    100042: PassengerWindow
+    100044: PassengerWindowSecondary
+    100046: Rims_BL
+    100048: Rims_BR
+    100050: Rims_FL
+    100052: Rims_FR
+    100054: SplashBehindGrill
+    100056: Wheel_BL
+    100058: Wheel_BR
+    100060: Wheel_FL
+    100062: Wheel_FR
+    400000: BackLightGlassLeft
+    400002: BackLightGlassRight
+    400004: BackLightLeft
+    400006: BackLightRight
+    400008: BackWindow
+    400010: //RootNode
+    400012: DriverDoor
+    400014: DriverDoorHandle
+    400016: DriverWindow
+    400018: DriverWindowSecondary
+    400020: Floor
+    400022: FloorInterior
+    400024: FrontWindow
+    400026: GrillLower
+    400028: GrillUpper
+    400030: Headlight1
+    400032: Headlight2
+    400034: MainBody
+    400036: MainBodyInterior
+    400038: PassengerDoor
+    400040: PassengerDoorHandle
+    400042: PassengerWindow
+    400044: PassengerWindowSecondary
+    400046: Rims_BL
+    400048: Rims_BR
+    400050: Rims_FL
+    400052: Rims_FR
+    400054: SplashBehindGrill
+    400056: Wheel_BL
+    400058: Wheel_BR
+    400060: Wheel_FL
+    400062: Wheel_FR
+    2300000: BackLightGlassLeft
+    2300002: BackLightGlassRight
+    2300004: BackLightLeft
+    2300006: BackLightRight
+    2300008: BackWindow
+    2300010: DriverDoor
+    2300012: DriverDoorHandle
+    2300014: DriverWindow
+    2300016: DriverWindowSecondary
+    2300018: Floor
+    2300020: FloorInterior
+    2300022: FrontWindow
+    2300024: GrillLower
+    2300026: GrillUpper
+    2300028: Headlight1
+    2300030: Headlight2
+    2300032: MainBody
+    2300034: MainBodyInterior
+    2300036: PassengerDoor
+    2300038: PassengerDoorHandle
+    2300040: PassengerWindow
+    2300042: PassengerWindowSecondary
+    2300044: Rims_BL
+    2300046: Rims_BR
+    2300048: Rims_FL
+    2300050: Rims_FR
+    2300052: SplashBehindGrill
+    2300054: Wheel_BL
+    2300056: Wheel_BR
+    2300058: Wheel_FL
+    2300060: Wheel_FR
+    3300000: BackLightGlassLeft
+    3300002: BackLightGlassRight
+    3300004: BackLightLeft
+    3300006: BackLightRight
+    3300008: BackWindow
+    3300010: DriverDoor
+    3300012: DriverDoorHandle
+    3300014: DriverWindow
+    3300016: DriverWindowSecondary
+    3300018: Floor
+    3300020: FloorInterior
+    3300022: FrontWindow
+    3300024: GrillLower
+    3300026: GrillUpper
+    3300028: Headlight1
+    3300030: Headlight2
+    3300032: MainBody
+    3300034: MainBodyInterior
+    3300036: PassengerDoor
+    3300038: PassengerDoorHandle
+    3300040: PassengerWindow
+    3300042: PassengerWindowSecondary
+    3300044: Rims_BL
+    3300046: Rims_BR
+    3300048: Rims_FL
+    3300050: Rims_FR
+    3300052: SplashBehindGrill
+    3300054: Wheel_BL
+    3300056: Wheel_BR
+    3300058: Wheel_FL
+    3300060: Wheel_FR
+    4300000: MainBody
+    4300002: SplashBehindGrill
+    4300004: GrillLower
+    4300006: Headlight1
+    4300008: Headlight2
+    4300010: GrillUpper
+    4300012: DriverDoor
+    4300014: DriverWindow
+    4300016: DriverDoorHandle
+    4300018: DriverWindowSecondary
+    4300020: PassengerDoor
+    4300022: PassengerWindowSecondary
+    4300024: PassengerWindow
+    4300026: PassengerDoorHandle
+    4300028: BackWindow
+    4300030: FrontWindow
+    4300032: MainBodyInterior
+    4300034: BackLightLeft
+    4300036: BackLightRight
+    4300038: BackLightGlassRight
+    4300040: BackLightGlassLeft
+    4300042: Floor
+    4300044: FloorInterior
+    4300046: Wheel_FR
+    4300048: Rims_FR
+    4300050: Wheel_BR
+    4300052: Rims_BR
+    4300054: Wheel_BL
+    4300056: Rims_BL
+    4300058: Wheel_FL
+    4300060: Rims_FL
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BlackOutline
+    second: {fileID: 2100000, guid: 9641585c59b4843829caeb8c74e38660, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: b88431fa039564fc3b4a70cc6ea82aeb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BreakLight
+    second: {fileID: 2100000, guid: dbdd3a007a0a14a26971b844177e478d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: bb6ffe0b9b59d4b5fa7a5e65a8267d0c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rims
+    second: {fileID: 2100000, guid: cb2af8752511f4c2e9b19a223ecbdcc6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tires
+    second: {fileID: 2100000, guid: 183188c7796a24bbabe514939260de8c, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
