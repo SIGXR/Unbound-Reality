@@ -442,6 +442,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114973784777836054, guid: 4a7b9313c4097be48899d3f1bfb482cc,
+        type: 2}
+      propertyPath: fpsCam
+      value: 
+      objectReference: {fileID: 759274776}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a7b9313c4097be48899d3f1bfb482cc, type: 2}
   m_IsPrefabAsset: 0
@@ -549,6 +554,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c380281d73ea854a8b7627c5da34d6d, type: 2}
   m_IsPrefabAsset: 0
+--- !u!20 &759274776 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 20125104308171330, guid: 392b2f704bcfab44896323fc8631a982,
+    type: 2}
+  m_PrefabInternal: {fileID: 404669067}
 --- !u!1 &816679968 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1470025990783160, guid: b8a7d527546b9fd4590ad33465d3aeae,
@@ -846,12 +856,12 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1607646207}
-  m_LocalRotation: {x: -0, y: -0.73044217, z: -0, w: 0.6829747}
-  m_LocalPosition: {x: 10.040672, y: 2.393456, z: 29.37}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0.033566084, z: -0, w: 0.99943656}
+  m_LocalPosition: {x: 0.015391388, y: 1.3717515, z: -2.20746}
+  m_LocalScale: {x: 0.76923126, y: 0.7692308, z: 0.76923126}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_Father: {fileID: 2010178673}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: -3.8470001, z: 0}
 --- !u!1001 &1608960043
 Prefab:
@@ -1020,7 +1030,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4386301985310674, guid: ef1f0a6e22e4b5540b1d7a7f1a2272d3, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 26.328003
+      value: 23.42
       objectReference: {fileID: 0}
     - target: {fileID: 4386301985310674, guid: ef1f0a6e22e4b5540b1d7a7f1a2272d3, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1062,7 +1072,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4648655247406702, guid: b8a7d527546b9fd4590ad33465d3aeae, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 29.35
+      value: 26.441998
       objectReference: {fileID: 0}
     - target: {fileID: 4648655247406702, guid: b8a7d527546b9fd4590ad33465d3aeae, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1088,9 +1098,19 @@ Prefab:
       propertyPath: m_Name
       value: DodgeModifiersApplied_AddedInterior_11.16.19
       objectReference: {fileID: 0}
+    - target: {fileID: 54828363081088808, guid: b8a7d527546b9fd4590ad33465d3aeae,
+        type: 2}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8a7d527546b9fd4590ad33465d3aeae, type: 2}
   m_IsPrefabAsset: 0
+--- !u!4 &2010178673 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4648655247406702, guid: b8a7d527546b9fd4590ad33465d3aeae,
+    type: 2}
+  m_PrefabInternal: {fileID: 2010178672}
 --- !u!146 &2055990536 stripped
 WheelCollider:
   m_CorrespondingSourceObject: {fileID: 146208227184768970, guid: b8a7d527546b9fd4590ad33465d3aeae,
