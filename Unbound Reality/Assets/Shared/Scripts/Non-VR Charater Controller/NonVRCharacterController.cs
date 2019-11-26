@@ -1,16 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class NonVRCharacterController : MonoBehaviour
+public class NonVRCharacterController : NetworkBehaviour
 {
     public float moveSpeed = 10f;
     public float turnSpeed = 50f;
 
     private float verticalAxis, horizontalAxis;
-	
-	// Update is called once per frame
-	void Update () {
+
+    private void Start()
+    {
+        if (!isLocalPlayer)
+        {
+            transform.GetChild(0).gameObject.SetActive(false);
+        }
+    }
+
+    // Update is called once per frame
+    void Update () {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
         verticalAxis = Input.GetAxis("Vertical");
         horizontalAxis = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime * verticalAxis);
