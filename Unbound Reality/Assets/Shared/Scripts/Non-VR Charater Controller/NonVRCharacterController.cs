@@ -38,5 +38,11 @@ public class NonVRCharacterController : NetworkBehaviour
             other.GetComponentInChildren<Camera>().enabled = true;
             other.GetComponent<New_Car_Con>().enabled = true;
         }
+        if (other.name.Equals("Pig")) 
+        {
+            this.gameObject.SetActive(false);
+            other.GetComponentInChildren<Camera>().enabled = true;
+            other.GetComponent<Pig_Controls>().enabled = true;
+        }
     }
 }
