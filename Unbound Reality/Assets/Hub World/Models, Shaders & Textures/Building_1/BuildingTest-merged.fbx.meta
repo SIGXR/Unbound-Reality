@@ -1,0 +1,217 @@
+fileFormatVersion: 2
+guid: 991c94b766e42754b9eea3e235a02b7c
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    400000: //RootNode
+    2100000: Wood
+    2100002: Stone.001
+    2100004: Wood.001
+    2100006: Stone
+    2100008: Wood.003
+    2100010: Wood.002
+    2100012: Wood.005
+    2100014: Wood.004
+    2100016: Wood.006
+    2100018: Wood.008
+    2100020: Wood.010
+    2100022: Wood.009
+    2100024: Wood.012
+    2100026: Wood.011
+    2100028: Wood.013
+    2100030: Wood.014
+    2100032: Wood.016
+    2100034: Wood.015
+    2100036: Wood.018
+    2100038: Wood.017
+    2100040: Wood.019
+    2100042: Wood.020
+    2100044: Wood.021
+    2100046: Wood.022
+    2100048: Wood.023
+    2100050: Wood.025
+    2100052: Wood.024
+    2100054: Wood.029
+    2100056: Wood.030
+    2100058: Wood.031
+    2100060: Wood.032
+    2100062: Wood.026
+    2100064: Wood.027
+    2100066: Wood.028
+    2100068: Wood.033
+    2100070: Wood.034
+    2100072: Wood.035
+    2100074: Wood.036
+    2100076: Wood.037
+    2100078: Wood.038
+    2100080: Wood.041
+    2100082: Wood.042
+    2100084: Wood.043
+    2100086: Wood.046
+    2100088: Wood.045
+    2100090: Wood.044
+    2100092: Wood.052
+    2100094: Wood.051
+    2100096: Wood.050
+    2100098: Wood.049
+    2100100: Wood.048
+    2100102: Wood.047
+    2100104: Wood.056
+    2100106: Wood.055
+    2100108: Wood.054
+    2100110: Wood.053
+    2100112: Wood.057
+    2100114: Wood.062
+    2100116: Wood.061
+    2100118: Wood.060
+    2100120: Wood.059
+    2100122: Wood.058
+    2100124: Wood.067
+    2100126: Wood.065
+    2100128: Wood.068
+    2100130: Wood.069
+    2100132: Wood.070
+    2100134: Wood.071
+    2100136: Wood.076
+    2100138: Wood.075
+    2100140: Wood.074
+    2100142: Wood.073
+    2100144: Wood.072
+    2100146: Wood.077
+    2100148: Wood.078
+    2100150: Wood.080
+    2100152: Wood.081
+    2100154: Wood.083
+    2100156: Wood.082
+    2100158: Wood.084
+    2100160: Wood.085
+    2100162: Wood.087
+    2100164: Wood.086
+    2100166: Wood.095
+    2100168: Wood.094
+    2100170: Wood.093
+    2100172: Wood.092
+    2100174: Wood.091
+    2100176: Wood.090
+    2100178: Wood.089
+    2100180: Wood.088
+    2100182: Wood.096
+    2100184: Wood.098
+    2100186: Wood.097
+    2100188: Wood.102
+    2100190: Wood.101
+    2100192: Wood.100
+    2100194: Wood.099
+    2100196: Wood.104
+    2100198: Wood.103
+    2100200: Wood.108
+    2100202: Wood.107
+    2100204: Wood.106
+    2100206: Wood.105
+    2100208: Wood.112
+    2100210: Wood.111
+    2100212: Wood.110
+    2100214: Wood.109
+    2100216: Wood.120
+    2100218: Wood.119
+    2100220: Wood.118
+    2100222: Wood.117
+    2100224: Wood.116
+    2100226: Wood.115
+    2100228: Wood.114
+    2100230: Wood.113
+    2100232: Wood.121
+    2100234: Wood.122
+    2100236: Wood.124
+    2100238: Wood.123
+    2100240: Wood.125
+    2100242: Wood.126
+    2100244: Material
+    2100246: Roof
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: House
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
