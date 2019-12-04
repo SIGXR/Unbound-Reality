@@ -4,27 +4,27 @@ using UnityEngine;
 
 public class WeaponSystem : MonoBehaviour {
 
-    //Initialize variables
+    // Private data
     private Weapon weapon;
-
-	// Use this for initialization
-	void Start () {
-
-	}
 	
 	// Update is called once per frame
 	void Update () {
         
         // If we have a weapon and the player left clicks, put down the weapon
-        if (weapon!=null && Input.GetMouseButtonDown(1))
+        if (weapon!=null && Input.GetMouseButtonDown(1) && !weapon.LetGoHold)
         {
-            weapon.BeingUsed = false;
-            weapon.gameObject.GetComponent<BoxCollider>().enabled = true;
-            weapon = null;
-
+            LetGoOfWeapon();
         }
 
 	}
+
+    public void LetGoOfWeapon()
+    {
+        weapon.LetGoHold = false;
+        weapon.BeingUsed = false;
+        weapon.gameObject.GetComponent<BoxCollider>().enabled = true;
+        weapon = null;
+    }
 
     // Check for collisions
     void OnCollisionEnter(Collision col)
@@ -36,7 +36,12 @@ public class WeaponSystem : MonoBehaviour {
             weapon = col.gameObject.GetComponent<Weapon>();
             weapon.GetPlayerTransform(gameObject);
             weapon.BeingUsed = true;
-            
         }
+    }
+
+    // Get the Weapon variable
+    public Weapon GetWeapon()
+    {
+        return weapon;
     }
 }

@@ -56,11 +56,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4912914182861402}
   - component: {fileID: 54517681937528294}
-  - component: {fileID: 114273421300038142}
   - component: {fileID: 65970082590013074}
+  - component: {fileID: 114456737580740142}
   m_Layer: 9
   m_Name: Shotgun
-  m_TagString: Untagged
+  m_TagString: Shotgun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,7 +129,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1807940220892086}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 0.6524, z: 17.62}
+  m_LocalPosition: {x: -58.507156, y: 2, z: 8.449387}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4804715850020806}
@@ -274,7 +274,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -313,8 +313,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.74, y: 0.1, z: 0.21}
-  m_Center: {x: 0.07, y: 0.03, z: 0}
+  m_Size: {x: 0.74, y: 0.15, z: 0.21}
+  m_Center: {x: 0.07, y: 0.009, z: 0}
 --- !u!65 &65989073644595766
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -327,7 +327,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114273421300038142
+--- !u!114 &114456737580740142
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -335,10 +335,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1807940220892086}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3acb505964ed8141b5674d1ec425365, type: 3}
+  m_Script: {fileID: 11500000, guid: 25a67ca261a72684598f47f7f3c810e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  beingUsed: 0
+  playerTransform: {fileID: 0}
+  propersceneName: 
+  letGoHold: 0
   bullet: {fileID: 1680450405267398, guid: d00af94c8232fe74e96a4db3a59169eb, type: 2}
-  range: 5
-  speed: 10
-  ammo: 20
+  speed: 20
+  range: 20
+  ammo: 40
