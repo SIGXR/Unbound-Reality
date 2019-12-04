@@ -1,53 +1,43 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Weapon : MonoBehaviour {
 
-    // Declare variables:
-    private Rigidbody rb;
-    private bool beingUsed = false; //Represents weather the weapon is being used or not
-    private Transform playerTransform;
+    // Private data (private with respect to the inspector)
+    [HideInInspector]
+    public Rigidbody rb;
+    [HideInInspector]
+    public bool beingUsed; //Represents weather the weapon is being used or not
+    [HideInInspector]
+    public Transform playerTransform;
+    [HideInInspector]
+    public string propersceneName;
+    [HideInInspector]
+    public bool letGoHold; // If set to true, a hold will be placed on allowing the player to let go of their weapon
 
-    // Public settings
-    public GameObject bullet;
-    public float range;
-    public float speed;
-    public int ammo = 0;
+    // Use this for initialization
+    void Start () {
 
-	// Use this for initialization
-	void Start () {
-        rb = gameObject.GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>(); // Get the rigidbody
 
-        // Rotate the shotgun at a rate of -90 degrees per second around the y axis
-        rb.angularVelocity = new Vector2(0f, -Mathf.PI/2);
+        // Get the int of the scene that this object is supposed to be in
+       propersceneName = SceneManager.GetActiveScene().name;
+
+        // Set up the required data so we can call the OnSceneLoaded function
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
+        beingUsed = false;
 	}
-	
-	// Update is called once per frame
-	void Update () {
 
-        // If the object is being used...
-        if (beingUsed)
-        {
-            // keep the shotgun to the players left
-            transform.position = playerTransform.position + playerTransform.right * .9f;
-
-            /* if this weapon is a shot shotgun, point it in a direction such that a bullet when fired will reach a point range units
-            in front of the player*/
-            float offset = 0;
-            offset = 90 - Mathf.Atan(range / .9f) * Mathf.Rad2Deg;
-            transform.eulerAngles = new Vector2(playerTransform.eulerAngles.x, playerTransform.eulerAngles.y + 90 - offset);
-
-            //If the player right clicks on mouse and there is ammo, fire a bullet
-            if (Input.GetMouseButtonDown(0) && ammo>0)
-            {
-                GameObject bulletInstance = Instantiate(bullet, transform.position, Quaternion.identity);
-                bulletInstance.GetComponent<Bullet>().Speed = speed;
-                bulletInstance.transform.eulerAngles = transform.eulerAngles;
-                ammo--;
-            }
-        }
-	}
+    // Called everytime a scene has loaded
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Destroy this object if it loads in a scene whose build index does not match the sceneIndex
+        if (propersceneName != null && propersceneName != SceneManager.GetActiveScene().name)
+            Destroy(gameObject);
+    }
 
     // Get or set the beingUsed variable
     public bool BeingUsed
@@ -56,21 +46,33 @@ public class Weapon : MonoBehaviour {
         set { beingUsed = value;
             if (value)
             {
-                // If the shotgun is being used, force stop any linear or angular velocity
-                rb.angularVelocity = new Vector2();
-                rb.velocity = new Vector3();
+                // Force stop any linear or angular velocity when the weapon is picked up
+                rb.angularVelocity = Vector3.zero;
+                rb.velocity = Vector3.zero;
+
+                // Turn gravity off for this weapon so gravity has no effect while the player is holding the weapon
+                rb.useGravity = false; 
+
+                // Set the parent of this weapon's transform to the player's transform
+                gameObject.transform.SetParent(playerTransform);
             }
             else
-                // If the shotgun is putdown, rotate the shotgun at a rate of -90 degrees per second around the y axis
-                rb.angularVelocity = new Vector2(0f, -Mathf.PI/2);
+            {
+                // Unparent the weapon's transform with the player's transform
+                gameObject.transform.SetParent(null);
+
+                // Turn gravity back on
+                rb.useGravity = true;
+            }
+                
         }
     }
 
-    // Get or set the ammo variable
-    public int Ammo
+    // Get or set the LetGoHold variable
+    public bool LetGoHold
     {
-        get { return ammo; }
-        set { ammo = value; }
+        get { return letGoHold; }
+        set { letGoHold = value; }
     }
 
     // Gets the player transform
