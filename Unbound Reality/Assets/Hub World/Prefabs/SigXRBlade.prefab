@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4621843855171098}
   - component: {fileID: 33462227429444620}
   - component: {fileID: 23298948749545562}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4315216221729636}
   - component: {fileID: 33572272927253400}
   - component: {fileID: 23552489407157560}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,9 +53,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4961416959179680}
-  m_Layer: 0
+  - component: {fileID: 65652616430654340}
+  - component: {fileID: 114871140798393906}
+  - component: {fileID: 54514314343147376}
+  m_Layer: 9
   m_Name: SigXRBlade
-  m_TagString: Untagged
+  m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,7 +73,7 @@ GameObject:
   - component: {fileID: 4166377383907440}
   - component: {fileID: 33011812938392470}
   - component: {fileID: 23240318916839406}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +126,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1595641483926816}
   m_LocalRotation: {x: 0, y: -0.70710695, z: 0, w: 0.70710665}
-  m_LocalPosition: {x: 0.6539468, y: 1.85, z: 4.6944656}
+  m_LocalPosition: {x: -44.11, y: 1.53, z: 6.79}
   m_LocalScale: {x: 0.22563, y: 0.22563, z: 0.22563}
   m_Children:
   - {fileID: 4166377383907440}
@@ -258,3 +261,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1428563446922580}
   m_Mesh: {fileID: 4300000, guid: 73a401ba4925e0d49849c9c672143091, type: 3}
+--- !u!54 &54514314343147376
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1595641483926816}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &65652616430654340
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1595641483926816}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.47, y: -7.34, z: 1}
+  m_Center: {x: 0, y: 3.63, z: 0}
+--- !u!114 &114871140798393906
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1595641483926816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a926397ec45a924c9f74611803dbcfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  beingUsed: 0
+  playerTransform: {fileID: 0}
+  propersceneName: 
+  letGoHold: 0
+  swingSpeed: 720
+  range: 45
