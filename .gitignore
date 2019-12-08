@@ -5,6 +5,7 @@
 [Bb]uilds/
 Assets/AssetStoreTools*
 Art Assets/
+Photon/
 Tomestone.fbx
 
 # Visual Studio cache directory
