@@ -19,4 +19,5 @@ public class Pig_Controls : MonoBehaviour {
         transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime * fob);
         transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime * rol);
     }
+
 }
