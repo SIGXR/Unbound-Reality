@@ -5,6 +5,7 @@
 [Bb]uilds/
 Assets/AssetStoreTools*
 Photon/
+\!/Photon/*.meta
 
 # Visual Studio cache directory
 .vs/
