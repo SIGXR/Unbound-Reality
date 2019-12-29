@@ -5,11 +5,12 @@ using UnityEngine.Networking;
 
 public class NonVRCharacterController : NetworkBehaviour
 {
-    public float moveSpeed = 10f;
+    public static float moveSpeed;
     public float turnSpeed = 50f;
     private bool isKeysEnabled = false;
     private float verticalAxis, horizontalAxis;
     public Vector3 pig_pos;
+
     private void Start()
     {
         if (!isLocalPlayer)
