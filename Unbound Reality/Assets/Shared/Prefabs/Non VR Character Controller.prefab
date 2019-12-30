@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 4105195642440404}
   - component: {fileID: 20125104308171330}
   - component: {fileID: 81409897444144284}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,8 +229,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c51e694d1c28624a9e78930e4b39e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
   turnSpeed: 50
+  pig_pos: {x: 0, y: 0, z: 0}
 --- !u!114 &114569835406446976
 MonoBehaviour:
   m_ObjectHideFlags: 1
