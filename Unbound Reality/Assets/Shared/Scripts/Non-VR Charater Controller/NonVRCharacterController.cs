@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 
 public class NonVRCharacterController : NetworkBehaviour
 {
-    public static float moveSpeed;
+    public static float moveSpeed = 5;
     public float turnSpeed = 50f;
     private bool isKeysEnabled = false;
     private float verticalAxis, horizontalAxis;
