@@ -18,7 +18,7 @@ public class Weapon : MonoBehaviour {
     public bool letGoHold; // If set to true, a hold will be placed on allowing the player to let go of their weapon
 
     // Use this for initialization
-    void Start () {
+    protected virtual void Awake () {
 
         rb = GetComponent<Rigidbody>(); // Get the rigidbody
 
