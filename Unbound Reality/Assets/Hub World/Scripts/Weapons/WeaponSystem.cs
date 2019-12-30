@@ -20,22 +20,39 @@ public class WeaponSystem : MonoBehaviour {
 
     public void LetGoOfWeapon()
     {
-        weapon.LetGoHold = false;
-        weapon.BeingUsed = false;
-        weapon.gameObject.GetComponent<BoxCollider>().enabled = true;
-        weapon = null;
+        if(weapon.GetType() == typeof(Party))
+        {
+            Destroy(weapon);
+            weapon = null;
+        } else {
+            weapon.LetGoHold = false;
+            weapon.BeingUsed = false;
+            weapon.gameObject.GetComponent<BoxCollider>().enabled = true;
+            weapon = null;
+        }
+        
     }
 
     // Check for collisions
     void OnCollisionEnter(Collision col)
     {
         /* If we collided with a weapon, and the player is not holding a weapon, pickup 
-          the weapon. */
-        if (weapon == null && col.gameObject.layer == LayerMask.NameToLayer("Weapon")){
-            col.gameObject.GetComponent<BoxCollider>().enabled = false;
-            weapon = col.gameObject.GetComponent<Weapon>();
-            weapon.GetPlayerTransform(gameObject);
-            weapon.BeingUsed = true;
+          the weapon. And the weapon doesn't have an owner */
+        if (weapon == null && col.gameObject.layer == LayerMask.NameToLayer("Weapon") && col.gameObject.transform.parent == null){
+            if(col.gameObject.tag == "Party")
+            {
+                GameObject go = Instantiate(col.gameObject, col.gameObject.transform.position, Quaternion.identity);
+                // go.GetComponent<BoxCollider>().enabled = false;
+                weapon = go.GetComponent<Weapon>();
+                weapon.GetPlayerTransform(gameObject);
+                weapon.BeingUsed = true;
+            } else {
+                col.gameObject.GetComponent<BoxCollider>().enabled = false;
+                weapon = col.gameObject.GetComponent<Weapon>();
+                weapon.GetPlayerTransform(gameObject);
+                weapon.BeingUsed = true;
+            }
+            
         }
     }
 
