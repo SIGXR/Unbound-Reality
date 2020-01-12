@@ -17,6 +17,10 @@ public class EnemyController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (PlayerManager.instance.players.Length == 0)
+        {
+            return;
+        }
         target = PlayerManager.instance.players[0].transform;
 
         float distance = Vector3.Distance(target.position, transform.position);
