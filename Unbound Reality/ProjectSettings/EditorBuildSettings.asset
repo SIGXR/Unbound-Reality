@@ -5,16 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 1
+    path: Assets/Hub World/Scenes/QuickStartMenu.unity
+    guid: abea08fb678decdd487f068cccf97dc6
+  - enabled: 1
+    path: Assets/Hub World/Scenes/Hub World (PUN).unity
+    guid: 97396c2e4fe096d0987cd58e3296f16b
   - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Hub World/Scenes/Class Select.unity
-    guid: 153c5d0127fd2ce4eafa734cc4136fc0
-  - enabled: 1
     path: Assets/Hub World/Scenes/Hub World.unity
     guid: 3b097f54549843f4abcdd437649a90d2
-  - enabled: 1
+  - enabled: 0
+    path: Assets/Hub World/Scenes/Class Select.unity
+    guid: 153c5d0127fd2ce4eafa734cc4136fc0
+  - enabled: 0
     path: Assets/World B/Scenes/World B.unity
     guid: 1476e2198cc8f5e41a486abe984e592d
   m_configObjects: {}
