@@ -44,3 +44,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 0}
+  scoreContent: {fileID: 0}
+  nonVRPrefab: {fileID: 1556916713883724, guid: 392b2f704bcfab44896323fc8631a982,
+    type: 3}
+  VRPrefab: {fileID: 1680325258649112, guid: 43eb519706b4e61488733ac6eaaf580a, type: 3}
+  textPrefab: {fileID: 8376385113879907101, guid: 0a48d6dd473125c509193949b284fcd1,
+    type: 3}
+  maxNameLength: 12
