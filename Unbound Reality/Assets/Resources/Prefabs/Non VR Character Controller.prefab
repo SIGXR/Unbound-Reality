@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c51e694d1c28624a9e78930e4b39e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: {fileID: 0}
   pig_pos: {x: 0, y: 0, z: 0}
   turnSpeed: 50
 --- !u!114 &114358590194756336

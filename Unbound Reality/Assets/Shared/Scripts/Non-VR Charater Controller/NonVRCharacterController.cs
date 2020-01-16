@@ -6,6 +6,7 @@ using UnityEngine.Networking;
 
 public class NonVRCharacterController : MonoBehaviourPun
 {
+    public Score score;
     public Vector3 pig_pos;
     public static float moveSpeed = 5;
     public float turnSpeed = 50f;
@@ -77,10 +78,15 @@ public class NonVRCharacterController : MonoBehaviourPun
         }
     }
 
+    public void AddScorePoints(int points)
+    {
+        score.ScoreValue += points;
+    }
+
     public string PlayerName
     {
         get { return playerName; }
         set { playerName = value; }
     }
-   
+
 }
