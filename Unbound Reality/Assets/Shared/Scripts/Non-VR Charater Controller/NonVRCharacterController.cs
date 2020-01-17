@@ -1,30 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class NonVRCharacterController : NetworkBehaviour
+public class NonVRCharacterController : MonoBehaviourPun
 {
+    public Score score;
+    public Vector3 pig_pos;
     public static float moveSpeed = 5;
     public float turnSpeed = 50f;
+    private string playerName;
     private bool isKeysEnabled = false;
     private float verticalAxis, horizontalAxis;
-    public Vector3 pig_pos;
 
     private void Start()
     {
-        if (!isLocalPlayer)
-        {
-            transform.GetChild(0).gameObject.SetActive(false);
-        }
+        //transform.GetChild(0).gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update () {
-        if (!isLocalPlayer)
+        if(photonView.IsMine == false && PhotonNetwork.IsConnected == true)
         {
             return;
         }
+
         if (this.GetComponent<Collider>().enabled == false)
         {
             isKeysEnabled = false;
@@ -34,6 +35,7 @@ public class NonVRCharacterController : NetworkBehaviour
         {
             isKeysEnabled = true;
         }
+
         if (isKeysEnabled == true)
         {
             verticalAxis = Input.GetAxis("Vertical");
@@ -76,5 +78,15 @@ public class NonVRCharacterController : NetworkBehaviour
         }
     }
 
-   
+    public void AddScorePoints(int points)
+    {
+        score.ScoreValue += points;
+    }
+
+    public string PlayerName
+    {
+        get { return playerName; }
+        set { playerName = value; }
+    }
+
 }

@@ -22,7 +22,7 @@ public class WeaponSystem : MonoBehaviour {
     {
         if(weapon.GetType() == typeof(Party))
         {
-            Destroy(weapon);
+            Destroy(weapon.gameObject);
             weapon = null;
         } else {
             weapon.LetGoHold = false;
