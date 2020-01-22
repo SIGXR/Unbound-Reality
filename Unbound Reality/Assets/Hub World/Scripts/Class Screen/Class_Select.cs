@@ -48,13 +48,32 @@ public class Class_Select : MonoBehaviour
 
         if (btn.name == "WarriorButton")
         {
-            float move = Warrior.Speed();
-            NonVRCharacterController.moveSpeed = move;
+            NonVRCharacterController.moveSpeed = Warrior.Speed();
+            NonVRCharacterController.strength = Warrior.Strength();
+            NonVRCharacterController.magic = Warrior.MagicStrength();
+            NonVRCharacterController.critical = Warrior.Critical();
         }
         else if (btn.name == "MageButton")
         {
-            float move = Mage.Speed();
-            NonVRCharacterController.moveSpeed = move;
+            NonVRCharacterController.moveSpeed = Mage.Speed();
+            NonVRCharacterController.strength = Mage.Strength();
+            NonVRCharacterController.magic = Mage.MagicStrength();
+            NonVRCharacterController.critical = Mage.Critical();
+        }
+        else if (btn.name == "ArcherButton")
+        {
+            NonVRCharacterController.moveSpeed = Archer.Speed();
+            NonVRCharacterController.strength = Archer.Strength();
+            NonVRCharacterController.magic = Archer.MagicStrength();
+            NonVRCharacterController.critical = Archer.Critical();
+        }
+        else if (btn.name == "Rouge")
+        {
+            NonVRCharacterController.moveSpeed = Rouge.Speed();
+            NonVRCharacterController.strength = Rouge.Strength();
+            NonVRCharacterController.magic = Rouge.MagicStrength();
+            NonVRCharacterController.critical = Rouge.Critical();
+            
         }
         Debug.Log(btn.name);
     }
