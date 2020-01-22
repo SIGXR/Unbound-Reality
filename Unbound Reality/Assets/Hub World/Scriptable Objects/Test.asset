@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Test
   m_EditorClassIdentifier: 
   SkillName: Test Skill
-  CoolDownTime: 1
+  CoolDownTime: 2
