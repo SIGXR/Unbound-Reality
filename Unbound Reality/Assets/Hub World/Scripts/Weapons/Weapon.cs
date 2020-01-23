@@ -16,11 +16,14 @@ public class Weapon : MonoBehaviour {
     public string propersceneName;
     [HideInInspector]
     public bool letGoHold; // If set to true, a hold will be placed on allowing the player to let go of their weapon
+    [HideInInspector]
+    public Vector3 spawn;
 
     // Use this for initialization
     protected virtual void Awake () {
 
         rb = GetComponent<Rigidbody>(); // Get the rigidbody
+        spawn = transform.position;
 
         // Get the int of the scene that this object is supposed to be in
        propersceneName = SceneManager.GetActiveScene().name;
@@ -54,15 +57,15 @@ public class Weapon : MonoBehaviour {
                 rb.useGravity = false; 
 
                 // Set the parent of this weapon's transform to the player's transform
-                gameObject.transform.SetParent(playerTransform);
+                playerTransform = gameObject.transform.parent;
             }
             else
             {
-                // Unparent the weapon's transform with the player's transform
-                gameObject.transform.SetParent(null);
 
                 // Turn gravity back on
                 rb.useGravity = true;
+
+                playerTransform = null;
             }
                 
         }
@@ -75,9 +78,5 @@ public class Weapon : MonoBehaviour {
         set { letGoHold = value; }
     }
 
-    // Gets the player transform
-    public void GetPlayerTransform(GameObject obj)
-    {
-        playerTransform = obj.transform;
-    }
+    
 }

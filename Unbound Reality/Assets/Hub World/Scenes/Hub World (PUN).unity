@@ -2005,6 +2005,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 114580972213079974, guid: 6c83bb031ae8f2f4da292745c5651948,
+        type: 3}
+      propertyPath: viewIdField
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c83bb031ae8f2f4da292745c5651948, type: 3}
 --- !u!1001 &1313870020
@@ -3423,6 +3428,11 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1291869380925244536, guid: 6d1699afae256154babdd85667681b5a,
+        type: 3}
+      propertyPath: viewIdField
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d1699afae256154babdd85667681b5a, type: 3}
 --- !u!1001 &589987499502632239
@@ -3450,7 +3460,7 @@ PrefabInstance:
     - target: {fileID: 589987499680900583, guid: d98452a5b3882daedbd2660794ce0c64,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 535.5687
+      value: 519.27014
       objectReference: {fileID: 0}
     - target: {fileID: 589987499680900583, guid: d98452a5b3882daedbd2660794ce0c64,
         type: 3}
