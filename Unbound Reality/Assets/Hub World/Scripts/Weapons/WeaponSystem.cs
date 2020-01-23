@@ -108,20 +108,11 @@ public class WeaponSystem : MonoBehaviourPun {
         }
     }
 
-
-    public void LetGoOfWeapon()
+    //Anthony's Unity is f'd up
+    [PunRPC]
+    public void DestroyWeapon(int var1, int var2)
     {
-        if(weapon.GetType() == typeof(Party))
-        {
-            Destroy(weapon.gameObject);
-            weapon = null;
-        } else {
-            weapon.LetGoHold = false;
-            weapon.BeingUsed = false;
-            weapon.gameObject.GetComponent<BoxCollider>().enabled = true;
-            weapon = null;
-        }
-        
+        Debug.Log("Destroy Weapon Called! var1: " + var1  + " var2: " + var2);
     }
 
     // Get the Weapon variable
