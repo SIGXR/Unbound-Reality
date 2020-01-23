@@ -24,7 +24,7 @@ public class WeaponSystem : MonoBehaviourPun {
         }
 
         // If we have a weapon and the player right clicks, drop the weapon
-        if (weapon!=null && Input.GetMouseButtonDown(1) && !weapon.LetGoHold)
+        if (weapon!=null && Input.GetMouseButtonDown(1))
         {
             if(weapon.GetType() ==  typeof(Party))
             {
