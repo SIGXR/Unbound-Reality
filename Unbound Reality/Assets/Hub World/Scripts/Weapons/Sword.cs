@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Photon.Pun;
 
 public class Sword : Weapon {
 
@@ -25,7 +26,7 @@ public class Sword : Weapon {
 	void Update () {
 
         // If the sword is being used...
-        if (beingUsed)
+        if (beingUsed && gameObject.GetPhotonView().IsMine == true)
         {
 
             // Keep the sword to the players left with respect to where they are facing
