@@ -62,23 +62,27 @@ public class Party : Weapon, IPunObservable {
     }
     
     private void OnCollisionEnter(Collision other) {
-        if(other.gameObject.tag == "Party" && other.gameObject.name != "Spawner")
+        if(gameObject.GetPhotonView().IsMine == true)
         {
-            partyType otherStatus = other.gameObject.GetComponent<Party>().Status;
-            if(Status == otherStatus)
+            if(other.gameObject.tag == "Party" && other.gameObject.name != "Spawner")
             {
-                //Do Nothing
-            } else if(Status == partyType.Paper && otherStatus == partyType.Rock)
-            {
-                PhotonNetwork.Destroy(other.gameObject.GetPhotonView());
-            } else if(Status == partyType.Rock && otherStatus == partyType.Scissor)
-            {
-                PhotonNetwork.Destroy(other.gameObject.GetPhotonView());
-            } else if(Status == partyType.Scissor && otherStatus == partyType.Paper)
-            {
-                PhotonNetwork.Destroy(other.gameObject.GetPhotonView());
+                partyType otherStatus = other.gameObject.GetComponent<Party>().Status;
+                if(Status == otherStatus)
+                {
+                    //Do Nothing
+                } else if(Status == partyType.Paper && otherStatus == partyType.Rock)
+                {
+                    PhotonNetwork.Destroy(other.gameObject.GetPhotonView());
+                } else if(Status == partyType.Rock && otherStatus == partyType.Scissor)
+                {
+                    PhotonNetwork.Destroy(other.gameObject.GetPhotonView());
+                } else if(Status == partyType.Scissor && otherStatus == partyType.Paper)
+                {
+                    PhotonNetwork.Destroy(other.gameObject.GetPhotonView());
+                }
             }
         }
+        
     }
 
     public partyType Status
