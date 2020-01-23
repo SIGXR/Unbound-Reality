@@ -72,17 +72,28 @@ public class Party : Weapon, IPunObservable {
                     //Do Nothing
                 } else if(Status == partyType.Paper && otherStatus == partyType.Rock)
                 {
-                    PhotonNetwork.Destroy(other.gameObject.GetPhotonView());
+                    gameObject.GetPhotonView().RPC("DestroyParty", RpcTarget.All, other.gameObject.GetPhotonView().ViewID);
                 } else if(Status == partyType.Rock && otherStatus == partyType.Scissor)
                 {
-                    PhotonNetwork.Destroy(other.gameObject.GetPhotonView());
+                    gameObject.GetPhotonView().RPC("DestroyParty", RpcTarget.All, other.gameObject.GetPhotonView().ViewID);
                 } else if(Status == partyType.Scissor && otherStatus == partyType.Paper)
                 {
-                    PhotonNetwork.Destroy(other.gameObject.GetPhotonView());
+                    gameObject.GetPhotonView().RPC("DestroyParty", RpcTarget.All, other.gameObject.GetPhotonView().ViewID);
                 }
             }
         }
         
+    }
+
+    [PunRPC]
+    public void DestroyParty(int viewID)
+    {
+        PhotonView pv = PhotonView.Find(viewID);
+
+        if(pv.IsMine == true)
+        {
+            PhotonNetwork.Destroy(pv);
+        }
     }
 
     public partyType Status
