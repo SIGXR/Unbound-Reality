@@ -71,12 +71,5 @@ public class Weapon : MonoBehaviour {
         }
     }
 
-    // Get or set the LetGoHold variable
-    public bool LetGoHold
-    {
-        get { return letGoHold; }
-        set { letGoHold = value; }
-    }
-
     
 }
