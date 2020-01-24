@@ -9,6 +9,9 @@ public class NonVRCharacterController : MonoBehaviourPun
     public Score score;
     public Vector3 pig_pos;
     public static float moveSpeed = 5;
+    public static float strength;
+    public static float magic;
+    public static float critical;
     public float turnSpeed = 50f;
     private string playerName;
     private bool isKeysEnabled = false;
