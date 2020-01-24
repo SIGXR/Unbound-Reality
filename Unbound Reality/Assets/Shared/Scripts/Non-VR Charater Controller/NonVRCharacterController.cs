@@ -62,7 +62,7 @@ public class NonVRCharacterController : MonoBehaviourPun
         
         if (other.name.Equals("DodgeModel") || other.name.Equals("DodgeModifiersApplied_AddedInterior_11.16.19"))
         {
-            GetComponent<WeaponSystem>().LetGoOfWeapon();
+            // GetComponent<WeaponSystem>().LetGoOfWeapon();
             this.gameObject.SetActive(false);
             other.GetComponentInChildren<Camera>().enabled = true;
             other.GetComponent<New_Car_Con>().enabled = true;

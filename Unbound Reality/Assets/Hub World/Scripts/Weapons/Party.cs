@@ -1,7 +1,8 @@
 using UnityEngine;
+using Photon.Pun;
 
 [RequireComponent(typeof(MeshFilter))]
-public class Party : Weapon {
+public class Party : Weapon, IPunObservable {
 
     public enum partyType {
         Rock,   //Cube
@@ -12,7 +13,7 @@ public class Party : Weapon {
     private partyType status = partyType.Rock;
 
     [SerializeField]
-    private Mesh cubeMesh, cylinderMesh, sphereMesh;
+    private Mesh rockMesh, paperMesh, scissorMesh;
 
     private MeshFilter meshFilter;
     
@@ -22,8 +23,19 @@ public class Party : Weapon {
         base.Awake(); 
     }
 
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if(stream.IsWriting)
+        {
+            stream.SendNext(status);
+        } else 
+        {
+            this.status = (partyType) stream.ReceiveNext();
+        }
+    }
+
     void Update() {
-        if(beingUsed)
+        if(beingUsed && gameObject.GetPhotonView().IsMine == true)
         {
             if(Input.GetMouseButtonDown(0))
             {
@@ -43,29 +55,44 @@ public class Party : Weapon {
     }
 
     void FixedUpdate() {
-        if(beingUsed)
+        if(beingUsed && gameObject.GetPhotonView().IsMine == true)
         {
             transform.position = playerTransform.position + playerTransform.right * .95f;
         }
     }
     
     private void OnCollisionEnter(Collision other) {
-        if(other.gameObject.tag == "Party" && other.gameObject.name != "Spawner")
+        if(gameObject.GetPhotonView().IsMine == true)
         {
-            partyType otherStatus = other.gameObject.GetComponent<Party>().Status;
-            if(Status == otherStatus)
+            if(other.gameObject.tag == "Party" && other.gameObject.name != "Spawner")
             {
-                //Do Nothing
-            } else if(Status == partyType.Paper && otherStatus == partyType.Rock)
-            {
-                Destroy(other.gameObject);
-            } else if(Status == partyType.Rock && otherStatus == partyType.Scissor)
-            {
-                Destroy(other.gameObject);
-            } else if(Status == partyType.Scissor && otherStatus == partyType.Paper)
-            {
-                Destroy(other.gameObject);
+                partyType otherStatus = other.gameObject.GetComponent<Party>().Status;
+                if(Status == otherStatus)
+                {
+                    //Do Nothing
+                } else if(Status == partyType.Paper && otherStatus == partyType.Rock)
+                {
+                    gameObject.GetPhotonView().RPC("DestroyParty", RpcTarget.All, other.gameObject.GetPhotonView().ViewID);
+                } else if(Status == partyType.Rock && otherStatus == partyType.Scissor)
+                {
+                    gameObject.GetPhotonView().RPC("DestroyParty", RpcTarget.All, other.gameObject.GetPhotonView().ViewID);
+                } else if(Status == partyType.Scissor && otherStatus == partyType.Paper)
+                {
+                    gameObject.GetPhotonView().RPC("DestroyParty", RpcTarget.All, other.gameObject.GetPhotonView().ViewID);
+                }
             }
+        }
+        
+    }
+
+    [PunRPC]
+    public void DestroyParty(int viewID)
+    {
+        PhotonView pv = PhotonView.Find(viewID);
+
+        if(pv.IsMine == true)
+        {
+            PhotonNetwork.Destroy(pv);
         }
     }
 
@@ -76,13 +103,13 @@ public class Party : Weapon {
             switch(status) 
             {
                 case partyType.Rock:
-                    meshFilter.mesh = cubeMesh;
+                    meshFilter.mesh = rockMesh;
                     break;
                 case partyType.Paper:
-                    meshFilter.mesh = cylinderMesh;
+                    meshFilter.mesh = paperMesh;
                     break;
                 case partyType.Scissor:
-                    meshFilter.mesh = sphereMesh;
+                    meshFilter.mesh = scissorMesh;
                     break;
             }
         }
