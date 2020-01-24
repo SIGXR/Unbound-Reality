@@ -76,12 +76,15 @@ public class WeaponSystem : MonoBehaviourPun {
                 GameObject weaponObj = PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Party Object"), Vector3.zero, Quaternion.identity);
                 weaponObj.transform.SetParent(transform);
                 photonView.RPC("PickUpWeapon", RpcTarget.AllBuffered, this.photonView.ViewID, weaponObj.GetPhotonView().ViewID);
+                Debug.Log("PickUpWeapon called on " + this.photonView.ViewID + " with " + weaponObj.GetPhotonView().ViewID);
             } else
             {
                 //Setting transform here sets it globally
                 col.transform.SetParent(transform);
 
                 photonView.RPC("PickUpWeapon", RpcTarget.AllBuffered, this.photonView.ViewID, col.gameObject.GetPhotonView().ViewID);
+                Debug.Log("PickUpWeapon called on " + this.photonView.ViewID + " with " + col.gameObject.GetPhotonView().ViewID);
+
             }
             
         }
