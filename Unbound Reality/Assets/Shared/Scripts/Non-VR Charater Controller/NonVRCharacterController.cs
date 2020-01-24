@@ -8,6 +8,8 @@ public class NonVRCharacterController : MonoBehaviourPun
 {
     public Score score;
     public Vector3 pig_pos;
+    public Rigidbody rbody;
+    public int jumpheightMultiplier = 8;
     public static float moveSpeed = 5;
     public static float strength;
     public static float magic;
@@ -16,10 +18,12 @@ public class NonVRCharacterController : MonoBehaviourPun
     private string playerName;
     private bool isKeysEnabled = false;
     private float verticalAxis, horizontalAxis;
+    private bool isGrounded = false;
 
     private void Start()
     {
         //transform.GetChild(0).gameObject.SetActive(false);
+        rbody = gameObject.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -32,7 +36,6 @@ public class NonVRCharacterController : MonoBehaviourPun
         if (this.GetComponent<Collider>().enabled == false)
         {
             isKeysEnabled = false;
-            
         }
         else
         {
@@ -55,11 +58,27 @@ public class NonVRCharacterController : MonoBehaviourPun
             this.GetComponent<Collider>().enabled = true;
             this.GetComponentInChildren<Camera>().enabled = true;
         }
+        if (Input.GetKey(KeyCode.Space) && isGrounded)
+        {
+            rbody.velocity = new Vector3(0,1,0) * jumpheightMultiplier;
+            isGrounded = false;
+        } 
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
+        {
+            return;
+        }
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        
         if (other.name.Equals("DodgeModel") || other.name.Equals("DodgeModifiersApplied_AddedInterior_11.16.19"))
         {
             // GetComponent<WeaponSystem>().LetGoOfWeapon();
