@@ -3,40 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BaseClass {
-    private string characterClassName;
-    private string characterClassDescription;
-
+    private string className;
     private float speed;
     private float strength;
-    private bool status;
+    private float magicStrength;
+    private float critical;
 
-    public string CharacterClassName
+    public BaseClass(string Name, float sped, float physStrength, float magStrength, float Crit)
     {
-        get { return characterClassName; }
-        set { characterClassName = value; }
+        className = Name;
+        speed = sped;
+        strength = physStrength;
+        magicStrength = magStrength;
+        critical = Crit;
     }
 
-    public string CharacterClassDescription
+    public string ClassName()
     {
-        get { return characterClassDescription; }
-        set { characterClassDescription = value; }
+        return className;
+    }
+    public float Speed()
+    {
+        return speed;
     }
 
-    public float Speed
+    public float Strength()
     {
-        get { return speed; }
-        set { speed = value; }
+        return strength;
     }
-
-    public float Strength
+    public float MagicStrength()
     {
-        get { return strength; }
-        set { strength = value; }
+        return magicStrength;
     }
-
-    public bool Status
+    public float Critical()
     {
-        get { return status; }
-        set { status = value; }
+        return critical;
     }
 }
