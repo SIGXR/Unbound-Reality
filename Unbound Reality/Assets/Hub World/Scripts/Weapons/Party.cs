@@ -50,6 +50,9 @@ public class Party : Weapon, IPunObservable {
 
                 
             }
+        } else 
+        {
+            Status = status;
         }
         
     }
@@ -73,12 +76,15 @@ public class Party : Weapon, IPunObservable {
                 } else if(Status == partyType.Paper && otherStatus == partyType.Rock)
                 {
                     gameObject.GetPhotonView().RPC("DestroyParty", RpcTarget.All, other.gameObject.GetPhotonView().ViewID);
+                    Debug.Log("DestroyParty Called on " + other.gameObject.GetPhotonView().ViewID);
                 } else if(Status == partyType.Rock && otherStatus == partyType.Scissor)
                 {
                     gameObject.GetPhotonView().RPC("DestroyParty", RpcTarget.All, other.gameObject.GetPhotonView().ViewID);
+                    Debug.Log("DestroyParty Called on " + other.gameObject.GetPhotonView().ViewID);
                 } else if(Status == partyType.Scissor && otherStatus == partyType.Paper)
                 {
                     gameObject.GetPhotonView().RPC("DestroyParty", RpcTarget.All, other.gameObject.GetPhotonView().ViewID);
+                    Debug.Log("DestroyParty Called on " + other.gameObject.GetPhotonView().ViewID);
                 }
             }
         }
