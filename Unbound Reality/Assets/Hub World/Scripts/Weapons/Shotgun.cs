@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class Shotgun : Weapon {
 
@@ -18,7 +19,7 @@ public class Shotgun : Weapon {
 	void Update () {
 
         // If the shotgun is being used...
-        if (beingUsed)
+        if (beingUsed && gameObject.GetPhotonView().IsMine == true)
         {
             // Keep the shotgun to the players left with respect to where they are facing
             transform.position = playerTransform.position + playerTransform.right * .95f;

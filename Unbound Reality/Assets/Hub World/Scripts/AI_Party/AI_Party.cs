@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+using Photon.Pun;
 
 public class AI_Party : MonoBehaviour
 {
@@ -26,17 +28,22 @@ public class AI_Party : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(partyObject == null)
+        if(PhotonNetwork.IsMasterClient == true)
         {
-            timeLeft -= Time.deltaTime;
-            if(timeLeft < 0)
+            if(partyObject == null)
             {
-                partyObject = Instantiate(partyPrefab, spawnPoint.transform.position, Quaternion.identity, transform);
-                Party party = partyObject.GetComponent<Party>();
-                party.Status = (Party.partyType) Random.Range(0, System.Enum.GetNames(typeof(Party.partyType)).Length);
-                timeLeft = spawnInterval;
+                timeLeft -= Time.deltaTime;
+                if(timeLeft < 0)
+                {
+                    partyObject = PhotonNetwork.Instantiate(Path.Combine("Prefabs", partyPrefab.name), spawnPoint.transform.position, Quaternion.identity);
+                    partyObject.transform.SetParent(transform);
+                    Party party = partyObject.GetComponent<Party>();
+                    party.Status = (Party.partyType) Random.Range(0, System.Enum.GetNames(typeof(Party.partyType)).Length);
+                    timeLeft = spawnInterval;
+                }
             }
         }
+        
         
     }
 
