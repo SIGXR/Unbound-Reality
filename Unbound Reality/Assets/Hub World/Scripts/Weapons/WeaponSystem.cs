@@ -111,20 +111,6 @@ public class WeaponSystem : MonoBehaviourPun {
         }
     }
 
-    //Unknown Function Call
-    [PunRPC]
-    public void DestroyWeapon(int var1, int var2)
-    {
-        Debug.Log("Destroy Weapon Called! var1: " + var1  + " var2: " + var2);
-    }
-
-    //Unknown Function Call
-    [PunRPC]
-    public void SubtractHealth(int var1, int var2)
-    {
-        Debug.Log("Subtract Health Called! var1: " + var1  + " var2: " + var2);        
-    }
-
     // Get the Weapon variable
     public Weapon GetWeapon()
     {

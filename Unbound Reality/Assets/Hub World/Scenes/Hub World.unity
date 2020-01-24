@@ -742,7 +742,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -8.899994, y: -7.600006}
+  m_AnchoredPosition: {x: -8.900024, y: -7.600006}
   m_SizeDelta: {x: 50, y: 10}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &732473884
@@ -830,7 +830,7 @@ GameObject:
   - component: {fileID: 894523922}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1368,6 +1368,11 @@ PrefabInstance:
     - target: {fileID: 4961416959179680, guid: 6c83bb031ae8f2f4da292745c5651948, type: 3}
       propertyPath: m_RootOrder
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 114580972213079974, guid: 6c83bb031ae8f2f4da292745c5651948,
+        type: 3}
+      propertyPath: viewIdField
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c83bb031ae8f2f4da292745c5651948, type: 3}
@@ -2513,6 +2518,11 @@ PrefabInstance:
     - target: {fileID: 4813716289100102, guid: 6d1699afae256154babdd85667681b5a, type: 3}
       propertyPath: m_RootOrder
       value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291869380925244536, guid: 6d1699afae256154babdd85667681b5a,
+        type: 3}
+      propertyPath: viewIdField
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d1699afae256154babdd85667681b5a, type: 3}
