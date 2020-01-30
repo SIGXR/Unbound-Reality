@@ -6,7 +6,8 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Slider))]
 public class HealthUI : MonoBehaviour
 {
-    public NonVRCharacterController player = null;
+    public NonVRCharacterController nonvrplayer = null;
+    public Player player = null;
     private Slider slider;
 
     //Called When Script Activated
