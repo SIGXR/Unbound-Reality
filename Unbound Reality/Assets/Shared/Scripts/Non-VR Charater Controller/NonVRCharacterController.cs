@@ -4,10 +4,25 @@ using Photon.Pun;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class NonVRCharacterController : MonoBehaviourPun
+public class NonVRCharacterController : MonoBehaviourPun, IPunObservable
 {
+
+    public enum statusLayer
+    {
+        POISONED    =   0x1,
+        IMMUNE      =   0x2,
+        GOD         =   0x4
+    };
+
+    private uint status = 0;
+
+    [Tooltip("The Health UI GO containing the scrollbar for health")]
+    [SerializeField]
+    private GameObject healthUIObject;
+
     public Score score;
     public Vector3 pig_pos;
+    public float health = 100f;
     public Rigidbody rbody;
     public int jumpheightMultiplier = 8;
     public static float moveSpeed = 5;
@@ -20,8 +35,29 @@ public class NonVRCharacterController : MonoBehaviourPun
     private float verticalAxis, horizontalAxis;
     private bool isGrounded = false;
 
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if(stream.IsWriting)
+        {
+            stream.SendNext(health);
+            stream.SendNext(status);
+        } else 
+        {
+            this.health = (int) stream.ReceiveNext();
+            this.status = (uint) stream.ReceiveNext();
+        }
+    }
+
     private void Start()
     {
+        if(photonView.IsMine == false && PhotonNetwork.IsConnected == true)
+        {
+            return;
+        }
+        healthUIObject = GameObject.Find("Health Slider");
+        HealthUI healthUI = healthUIObject.GetComponent<HealthUI>();
+        healthUI.player = this;
+
         //transform.GetChild(0).gameObject.SetActive(false);
         rbody = gameObject.GetComponent<Rigidbody>();
     }
@@ -98,6 +134,25 @@ public class NonVRCharacterController : MonoBehaviourPun
             other.GetComponentInChildren<Camera>().enabled = true;
             other.GetComponent<Pig_Controls>().enabled = true;
         }
+    }
+
+    public void DamagePlayer(int amount)
+    {
+        photonView.RPC("InternalDamagePlayer", RpcTarget.All, photonView.ViewID, amount);
+    }
+
+    [PunRPC]
+    void InternalDamagePlayer(int playerID, int amount)
+    {
+        if(this.photonView.ViewID != playerID)
+        {
+            return;
+        }
+        if( (status & (uint) statusLayer.GOD) > 0)
+        {
+            return;
+        }
+        this.health -= amount;
     }
 
     public void AddScorePoints(int points)
