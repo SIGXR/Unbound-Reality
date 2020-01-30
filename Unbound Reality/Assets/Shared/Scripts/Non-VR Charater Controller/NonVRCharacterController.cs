@@ -56,7 +56,7 @@ public class NonVRCharacterController : MonoBehaviourPun, IPunObservable
         }
         healthUIObject = GameObject.Find("Health Slider");
         HealthUI healthUI = healthUIObject.GetComponent<HealthUI>();
-        healthUI.player = this;
+        healthUI.nonvrplayer = this;
 
         //transform.GetChild(0).gameObject.SetActive(false);
         rbody = gameObject.GetComponent<Rigidbody>();

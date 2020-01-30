@@ -101,16 +101,6 @@ public class Player : MonoBehaviourPun, IPunObservable
             return;
         }
 
-
-        if (Input.GetKey(KeyCode.E) && this.GetComponent<Collider>().enabled == false)
-        {
-            GetComponentInParent<Pig_Controls>().enabled = false;
-            isKeysEnabled = true;
-            this.transform.position = new Vector3(-57.7f, 2.03f, -3.23f);
-            transform.parent = null;
-            this.GetComponent<Collider>().enabled = true;
-            this.GetComponentInChildren<Camera>().enabled = true;
-        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -143,12 +133,6 @@ public class Player : MonoBehaviourPun, IPunObservable
             return;
         }
         this.health -= amount;
-    }
-
-    public string PlayerName
-    {
-        get { return playerName; }
-        set { playerName = value; }
     }
 
 }
