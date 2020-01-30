@@ -53,7 +53,9 @@ public class EnemyController : MonoBehaviourPun {
             {
                 if(!hasStopped)
                 {
+                    agent.enabled = false;
                     StartCoroutine(Stahp());
+                    agent.enabled = true;
                     agent.stoppingDistance = closeStopDistance;
                     hasStopped = true;
                 }
