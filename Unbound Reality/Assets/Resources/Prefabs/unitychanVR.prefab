@@ -6924,9 +6924,9 @@ GameObject:
   - component: {fileID: 4223383339059972175}
   - component: {fileID: 2612138479762372402}
   - component: {fileID: 2886584572410956935}
-  - component: {fileID: 114999258932876446}
+  - component: {fileID: 114779969249950594}
   m_Layer: 0
-  m_Name: unitychan
+  m_Name: unitychanVR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7094,7 +7094,7 @@ MonoBehaviour:
     LayerIndex: 0
   - SynchronizeType: 1
     LayerIndex: 1
---- !u!114 &114999258932876446
+--- !u!114 &114779969249950594
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7103,7 +7103,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100338}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40a594469affcb89482ecfdb600f128e, type: 3}
+  m_Script: {fileID: 11500000, guid: 11c0b86ea55bc0a86b1c2b1bf34c912e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   healthUI: {fileID: 0}
