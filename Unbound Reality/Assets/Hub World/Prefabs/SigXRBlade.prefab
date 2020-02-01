@@ -294,6 +294,8 @@ MonoBehaviour:
   propersceneName: 
   letGoHold: 0
   spawn: {x: 0, y: 0, z: 0}
+  player: {fileID: 0}
+  damage: 5
   swingSpeed: 720
   range: 45
 --- !u!1 &1925917717397316

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class NonVRPlayer : Player
 {
@@ -22,5 +23,20 @@ public class NonVRPlayer : Player
     {
         base.FixedUpdate();
 
+    }
+
+    [PunRPC]
+    void InternalDamagePlayer(int playerID, float amount)
+    {
+        if(this.photonView.ViewID != playerID)
+        {
+            return;
+        }
+        if( (status & (uint) StatusLayer.GOD) > 0)
+        {
+            return;
+        }
+        this.health -= amount;
+        OnPlayerHealthChange(this);
     }
 }
