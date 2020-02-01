@@ -135,25 +135,6 @@ public class NonVRCharacterController : MonoBehaviourPun, IPunObservable
         }
     }
 
-    public void DamagePlayer(int amount)
-    {
-        photonView.RPC("InternalDamagePlayer", RpcTarget.All, photonView.ViewID, amount);
-    }
-
-    [PunRPC]
-    void InternalDamagePlayer(int playerID, int amount)
-    {
-        if(this.photonView.ViewID != playerID)
-        {
-            return;
-        }
-        if( (status & (uint) statusLayer.GOD) > 0)
-        {
-            return;
-        }
-        this.health -= amount;
-    }
-
     public void AddScorePoints(int points)
     {
         score.ScoreValue += points;

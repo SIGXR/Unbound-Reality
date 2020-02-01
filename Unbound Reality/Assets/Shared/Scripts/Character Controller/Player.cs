@@ -18,7 +18,7 @@ public class Player : MonoBehaviourPun, IPunObservable
         GOD         =   0x4
     };
 
-    private uint status = 0;
+    protected uint status = 0;
 
     public enum Attributes
     {
@@ -28,7 +28,7 @@ public class Player : MonoBehaviourPun, IPunObservable
     }
 
     //The values of attribute list. Access via attributeList[(int) Attributes.VALUE]
-    private int[] attributeList  = new int[Enum.GetNames(typeof(Attributes)).Length];
+    protected int[] attributeList  = new int[Enum.GetNames(typeof(Attributes)).Length];
 
     //Player Specific UI
     [Tooltip("The Health UI Script")]
@@ -56,9 +56,9 @@ public class Player : MonoBehaviourPun, IPunObservable
     public string playerName;
 
     //Unity Components
-    private Rigidbody rb;
-    private CapsuleCollider col;
-    private Animator anim;
+    protected Rigidbody rb;
+    protected CapsuleCollider col;
+    protected Animator anim;
 
     //Movement Values
     public float forwardSpeed = 7.0f;
@@ -89,7 +89,7 @@ public class Player : MonoBehaviourPun, IPunObservable
             stream.SendNext(status);
         } else 
         {
-            this.health = (int) stream.ReceiveNext();
+            this.health = (float) stream.ReceiveNext();
             this.status = (uint) stream.ReceiveNext();
         }
     }
@@ -228,6 +228,7 @@ public class Player : MonoBehaviourPun, IPunObservable
         {
             OnPlayerDeath(this);
             health = healthReset;
+            OnPlayerHealthChange(this);
             transform.position = spawnPoint.transform.position;
 
         }
@@ -247,24 +248,10 @@ public class Player : MonoBehaviourPun, IPunObservable
 
     }
 
-    public void DamagePlayer(int amount)
+    //Internal Damage Player has to be defined in the child classes because PUN doesn't do inheritance.
+    public void DamagePlayer(float amount)
     {
         photonView.RPC("InternalDamagePlayer", RpcTarget.All, photonView.ViewID, amount);
-    }
-
-    [PunRPC]
-    void InternalDamagePlayer(int playerID, int amount)
-    {
-        if(this.photonView.ViewID != playerID)
-        {
-            return;
-        }
-        if( (status & (uint) StatusLayer.GOD) > 0)
-        {
-            return;
-        }
-        this.health -= amount;
-        OnPlayerHealthChange(this);
     }
 
 }

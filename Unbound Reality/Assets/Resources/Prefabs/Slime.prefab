@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 1092799281105228275}
   m_Layer: 0
   m_Name: Slime
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookRadius: 20
+  health: 20
   damage: 5
   waitSeconds: 1
   farStopDistance: 5
