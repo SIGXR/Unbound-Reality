@@ -7,7 +7,6 @@ public class EnemyHealth : MonoBehaviour
     [Tooltip("How often to update the UI of the enemy. Default: 0.137")]
     [SerializeField]
     private float UI_TICK = 0.137f;
-    public Transform localPlayerTransform;
     public float health;
     private float healthMax;
     private Vector3 scaleInit;
@@ -18,26 +17,22 @@ public class EnemyHealth : MonoBehaviour
     {
         healthMax = health;
         scaleInit = transform.localScale;
-        localPlayerTransform = PlayerManager.localPlayer.transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(localPlayerTransform)
+        timeLeft -= Time.deltaTime;
+        if(timeLeft < UI_TICK)
         {
-            timeLeft -= Time.deltaTime;
-            if(timeLeft < UI_TICK)
-            {
-                FacePlayer();
-                timeLeft = UI_TICK;
-            }
+            FacePlayer();
+            timeLeft = UI_TICK;
         }
     }
 
     void FacePlayer()
     {
-        Vector3 direction = (localPlayerTransform.position - transform.position).normalized;
+        Vector3 direction = (Camera.main.transform.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = lookRotation;
     }
