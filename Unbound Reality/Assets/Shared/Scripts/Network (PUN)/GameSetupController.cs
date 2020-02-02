@@ -57,6 +57,8 @@ public class GameSetupController : MonoBehaviour {
             localPlayer = PhotonNetwork.Instantiate(Path.Combine("Prefabs", nonVRPrefab.name), spawnPosition, Quaternion.identity);
         }
 
+        PlayerManager.SetLocalPlayer(localPlayer);
+
         Camera.main.transform.position = localPlayer.transform.position - localPlayer.transform.forward*5 + localPlayer.transform.up*2;
         Camera.main.transform.SetParent(localPlayer.transform);
         
