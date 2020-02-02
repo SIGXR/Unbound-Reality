@@ -27,10 +27,21 @@ public class EnemyController : MonoBehaviourPun {
     private bool hasStopped = false;
     Transform target;
     NavMeshAgent agent;
+    EnemyHealth enemyUI;
+    public delegate void EnemyHealthDelegate(float newHealth);
+    public EnemyHealthDelegate OnEnemyHealthChange;
+
+    void Awake()
+    {
+        healthMax = health;
+        enemyUI = transform.Find("SlimeHealthUI").gameObject.GetComponent<EnemyHealth>();
+        enemyUI.health = health;
+        OnEnemyHealthChange += enemyUI.OnEnemyHealthChange;
+
+    }
 
 	// Use this for initialization
 	void Start () {
-        healthMax = health;
         agent = GetComponent<NavMeshAgent>();
         closeStopDistance = agent.stoppingDistance;
         agent.stoppingDistance = farStopDistance;
@@ -113,6 +124,7 @@ public class EnemyController : MonoBehaviourPun {
         }
 
         this.health -= amount;
+        this.OnEnemyHealthChange(health);
         if(health <= 0)
         {
             //?
