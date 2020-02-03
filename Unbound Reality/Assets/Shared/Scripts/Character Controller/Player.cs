@@ -128,14 +128,13 @@ public class Player : MonoBehaviourPun, IPunObservable
     }
 
     public virtual void FixedUpdate() {
-        horizontalAxis = Input.GetAxis("Horizontal");
-        verticalAxis = Input.GetAxis("Vertical");
-        if(!anim)
+        if(photonView.IsMine == false && PhotonNetwork.IsConnected == true)
         {
-            anim = GetComponent<Animator>();
-            Debug.Log("No Animator?");
             return;
         }
+        horizontalAxis = Input.GetAxis("Horizontal");
+        verticalAxis = Input.GetAxis("Vertical");
+
         anim.SetFloat("Speed", verticalAxis);
         anim.SetFloat("Direction", horizontalAxis);
         anim.speed = animSpeed;
@@ -226,9 +225,17 @@ public class Player : MonoBehaviourPun, IPunObservable
 
         if(health <= 0)
         {
-            OnPlayerDeath(this);
+            if(OnPlayerDeath != null)
+            {
+                OnPlayerDeath(this);
+            }
+            
             health = healthReset;
-            OnPlayerHealthChange(this);
+            if(OnPlayerHealthChange != null)
+            {
+                OnPlayerHealthChange(this);
+            }
+            
             transform.position = spawnPoint.transform.position;
 
         }
