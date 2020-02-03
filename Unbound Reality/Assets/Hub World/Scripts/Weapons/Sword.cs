@@ -59,6 +59,19 @@ public class Sword : Weapon {
         }
     }
 
+    void OnCollisionEnter(Collision other) {
+        if(gameObject.GetPhotonView().IsMine == true)
+        {
+            if(other.gameObject.tag == "Player" && other.gameObject != player.gameObject)
+            {
+                other.gameObject.GetComponent<Player>().DamagePlayer(damage);
+            } else if(other.gameObject.tag == "Enemy")
+            {
+                other.gameObject.GetComponent<EnemyController>().DamageEnemy(damage);
+            }
+        }
+    }
+
     // Start the sequence of events for a sword swing
     IEnumerator Swing()
     {

@@ -144,6 +144,8 @@ MonoBehaviour:
   score: {fileID: 0}
   pig_pos: {x: 0, y: 0, z: 0}
   health: 100
+  rbody: {fileID: 0}
+  jumpheightMultiplier: 8
   turnSpeed: 50
 --- !u!114 &114358590194756336
 MonoBehaviour:
