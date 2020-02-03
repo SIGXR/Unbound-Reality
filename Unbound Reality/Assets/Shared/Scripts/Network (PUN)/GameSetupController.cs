@@ -49,16 +49,33 @@ public class GameSetupController : MonoBehaviour {
             spawnPosition = spawnPoint.transform.position;
         }
 
-        localPlayer = PhotonNetwork.Instantiate(Path.Combine("Prefabs", nonVRPrefab.name), spawnPosition, Quaternion.identity);
-        localScore = PhotonNetwork.Instantiate(Path.Combine("Prefabs", textPrefab.name), Vector3.zero, Quaternion.identity);
+        if(XRDevice.isPresent == true)
+        {
+            localPlayer = PhotonNetwork.Instantiate(Path.Combine("Prefabs", VRPrefab.name), spawnPosition, Quaternion.identity);
+        } else 
+        {
+            localPlayer = PhotonNetwork.Instantiate(Path.Combine("Prefabs", nonVRPrefab.name), spawnPosition, Quaternion.identity);
+        }
 
-        NonVRCharacterController nvcc = localPlayer.GetComponent<NonVRCharacterController>();
-        nvcc.PlayerName = PlayerPrefs.GetString("Name", "Dummy");
+        PlayerManager.SetLocalPlayer(localPlayer);
 
-        Score score = localScore.GetComponent<Score>();
-        score.InitText(scoreContent, nvcc.PlayerName.PadRight(maxNameLength));
+        Camera.main.transform.position = localPlayer.transform.position - localPlayer.transform.forward*5 + localPlayer.transform.up*2;
+        Camera.main.transform.SetParent(localPlayer.transform);
         
-        nvcc.score = score;
+        Player player = localPlayer.GetComponent<Player>();
+        if(player == null)
+        {
+            Debug.LogError("Could not find player script on prefab spawned");
+            Application.Quit(-1);
+        }
+        player.playerName = PlayerPrefs.GetString("Name", "Dummy");
+        player.spawnPoint = spawnPoint;
+
+        //TODO: Implement scoreboard?
+        localScore = PhotonNetwork.Instantiate(Path.Combine("Prefabs", textPrefab.name), Vector3.zero, Quaternion.identity);
+        Score score = localScore.GetComponent<Score>();
+        score.InitText(scoreContent, player.playerName.PadRight(maxNameLength));
+
 
     }
 }

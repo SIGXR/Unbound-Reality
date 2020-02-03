@@ -56,7 +56,6 @@ public class NonVRCharacterController : MonoBehaviourPun, IPunObservable
         }
         healthUIObject = GameObject.Find("Health Slider");
         HealthUI healthUI = healthUIObject.GetComponent<HealthUI>();
-        healthUI.player = this;
 
         //transform.GetChild(0).gameObject.SetActive(false);
         rbody = gameObject.GetComponent<Rigidbody>();
@@ -134,25 +133,6 @@ public class NonVRCharacterController : MonoBehaviourPun, IPunObservable
             other.GetComponentInChildren<Camera>().enabled = true;
             other.GetComponent<Pig_Controls>().enabled = true;
         }
-    }
-
-    public void DamagePlayer(int amount)
-    {
-        photonView.RPC("InternalDamagePlayer", RpcTarget.All, photonView.ViewID, amount);
-    }
-
-    [PunRPC]
-    void InternalDamagePlayer(int playerID, int amount)
-    {
-        if(this.photonView.ViewID != playerID)
-        {
-            return;
-        }
-        if( (status & (uint) statusLayer.GOD) > 0)
-        {
-            return;
-        }
-        this.health -= amount;
     }
 
     public void AddScorePoints(int points)

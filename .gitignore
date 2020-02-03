@@ -5,6 +5,10 @@ Unbound\ Reality/Assets/Photon/**
 Unbound\ Reality/Assets/Oculus/**
 !Unbound\ Reality/Assets/Oculus/**/
 !Unbound\ Reality/Assets/Oculus/**/*.meta
+Unbound\ Reality/Assets/unity-chan\!/**
+!Unbound\ Reality/Assets/unity-chan\!/**/
+!Unbound\ Reality/Assets/unity-chan\!/**/*.meta
+
 
 [Ll]ibrary/
 [Tt]emp/
