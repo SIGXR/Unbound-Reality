@@ -7122,6 +7122,7 @@ MonoBehaviour:
   lookSmoother: 3
   useCurvesHeight: 0.5
   useCurves: 1
+  inventoryUI: {fileID: 0}
 --- !u!114 &3197875859903633831
 MonoBehaviour:
   m_ObjectHideFlags: 0
