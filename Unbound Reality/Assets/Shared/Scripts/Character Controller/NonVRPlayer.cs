@@ -37,6 +37,10 @@ public class NonVRPlayer : Player
             return;
         }
         this.health -= amount;
+        if(OnPlayerHealthChange == null)
+        {
+            return;
+        }
         OnPlayerHealthChange(this);
     }
 }
