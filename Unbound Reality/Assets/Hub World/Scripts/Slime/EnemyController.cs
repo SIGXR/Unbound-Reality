@@ -8,9 +8,15 @@ public class EnemyController : MonoBehaviourPun {
 
     public float lookRadius = 5f;
 
-    [Tooltip("The amount of damge this slime does on collision")]
+    public float health = 20f;
+    [Tooltip("The amount of health regenerated per second")]
+    private float healthRegen = 0.5f;
+    private float healthMax;
+
+
+    [Tooltip("The amount of damge this enemy does on collision")]
     [SerializeField]
-    private int damage;
+    private float damage;
     [Tooltip("How long to wait when its in farStopDistance")]
     [SerializeField]
     private float waitSeconds;
@@ -21,10 +27,21 @@ public class EnemyController : MonoBehaviourPun {
     private bool hasStopped = false;
     Transform target;
     NavMeshAgent agent;
+    EnemyHealth enemyUI;
+    public delegate void EnemyHealthDelegate(float newHealth);
+    public EnemyHealthDelegate OnEnemyHealthChange;
+
+    void Awake()
+    {
+        healthMax = health;
+        enemyUI = transform.Find("SlimeHealthUI").gameObject.GetComponent<EnemyHealth>();
+        enemyUI.health = health;
+        OnEnemyHealthChange += enemyUI.OnEnemyHealthChange;
+
+    }
 
 	// Use this for initialization
 	void Start () {
-        
         agent = GetComponent<NavMeshAgent>();
         closeStopDistance = agent.stoppingDistance;
         agent.stoppingDistance = farStopDistance;
@@ -88,10 +105,33 @@ public class EnemyController : MonoBehaviourPun {
         {
             hasStopped = false;
             agent.stoppingDistance = farStopDistance;
-            other.gameObject.GetComponent<NonVRCharacterController>().DamagePlayer(damage);
+            other.gameObject.GetComponent<Player>().DamagePlayer(damage);
             Debug.Log("Damaged player");
         }
     }
+
+    public void DamageEnemy(float amount)
+    {
+       this.photonView.RPC("InternalDamageEnemy", RpcTarget.All, this.photonView.ViewID, amount);
+    }
+
+    [PunRPC]
+    public void InternalDamageEnemy(int enemyID, float amount)
+    {
+        if(this.photonView.ViewID != enemyID)
+        {
+            return;
+        }
+
+        this.health -= amount;
+        this.OnEnemyHealthChange(health);
+        if(health <= 0)
+        {
+            //?
+            Destroy(this.gameObject);
+        }
+    }
+
 
     private void OnDrawGizmosSelected()
     {

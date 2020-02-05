@@ -6,7 +6,6 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Slider))]
 public class HealthUI : MonoBehaviour
 {
-    public NonVRCharacterController player = null;
     private Slider slider;
 
     //Called When Script Activated
@@ -18,9 +17,11 @@ public class HealthUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player)
-        {
-            slider.value = player.health;
-        }
+        
+    }
+
+    public void OnPlayerHealthChange(Player player)
+    {
+        slider.value = player.health;
     }
 }

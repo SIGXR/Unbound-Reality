@@ -8,6 +8,7 @@ TagManager:
   - Shotgun
   - Party
   - Ground
+  - Enemy
   layers:
   - Default
   - TransparentFX

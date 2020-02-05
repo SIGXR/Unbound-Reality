@@ -185,6 +185,8 @@ MonoBehaviour:
   propersceneName: Hub World
   letGoHold: 0
   spawn: {x: 0, y: 0, z: 0}
+  player: {fileID: 0}
+  damage: 0
   rockMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   paperMesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
   scissorMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
