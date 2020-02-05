@@ -18,6 +18,10 @@ public class Weapon : MonoBehaviour {
     public bool letGoHold; // If set to true, a hold will be placed on allowing the player to let go of their weapon
     [HideInInspector]
     public Vector3 spawn;
+    [HideInInspector]
+    public Player player;
+    [Tooltip("The amount of damage the weapon deals")]
+    public float damage;
 
     // Use this for initialization
     protected virtual void Awake () {
@@ -58,6 +62,9 @@ public class Weapon : MonoBehaviour {
 
                 // Set the parent of this weapon's transform to the player's transform
                 playerTransform = gameObject.transform.parent;
+
+                player = playerTransform.gameObject.GetComponent<Player>();
+
             }
             else
             {
