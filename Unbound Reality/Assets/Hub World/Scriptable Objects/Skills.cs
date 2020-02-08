@@ -4,8 +4,9 @@ using UnityEngine;
 
 public abstract class Skills : ScriptableObject
 {
-    public string SkillName = "Test Skill";
-    public float CoolDownTime = 1f;
+    public string SkillName;
+    public float CoolDownTime;
+    public string Description;
 
     public abstract void Initialize(GameObject obj);
     public abstract void ActivateSkill();
