@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 015f13fab1647024892b84ee67545e4f, type: 3}
-  m_Name: Test
-  m_EditorClassIdentifier: 
-  SkillName: Test Skill
-  CoolDownTime: 2
-  Description: Does absolutely nothing
+  m_Script: {fileID: 0}
+  m_Name: 2x Speed
+  m_EditorClassIdentifier: Assembly-CSharp::SpeedModifier
+  SkillName: Double Speed
+  CoolDownTime: 5
+  Description: Doubles Current Speed
+  speedModifier: 2
