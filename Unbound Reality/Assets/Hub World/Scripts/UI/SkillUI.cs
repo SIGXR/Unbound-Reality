@@ -9,11 +9,13 @@ public class SkillUI : MonoBehaviour
     private float coolRate;
     private float NextSkill;
     private bool pressStat;
-
+    public Text skillInfo;
+    public GameObject infoBox;
     // Start is called before the first frame update
     void Start()
     {
         coolRate = skill.CoolDownTime;
+        infoBox.SetActive(false);
     }
 
     // Update is called once per frame
@@ -42,5 +44,14 @@ public class SkillUI : MonoBehaviour
         {
             Debug.Log("Cannot Activate");
         }
+    }
+    public void DisplayInfo()
+    {
+        infoBox.SetActive(true);
+        skillInfo.text = "Name: " + skill.name + "\nCooldown Time: " + skill.CoolDownTime + "\nDescription: " + skill.Description;
+    }
+    public void DisableBox()
+    {
+        infoBox.SetActive(false);
     }
 }
