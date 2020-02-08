@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-[CreateAssetMenu (menuName = "Skills/Speed")]
+
+[CreateAssetMenu(menuName = "Skills/Speed")]
+
 public class SpeedModifier : Skills
 {
     public float speedModifier = 2;
@@ -13,28 +14,28 @@ public class SpeedModifier : Skills
     // Start is called before the first frame update
     void Start()
     {
-        activeRate = ActivationTime;
-    }
+            
+     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Time.time > time && status == true)
+        // Update is called once per frame
+        void Update()
         {
-            NonVRCharacterController.moveSpeed /= speedModifier;
-            status = false;
+            if (Time.time > time && status == true)
+            {
+                NonVRCharacterController.moveSpeed /= speedModifier;
+                status = false;
+            }
         }
-    }
-    public override void Initialize(GameObject obj)
-    {
+        public override void Initialize(GameObject obj)
+        {
 
-    }
+        }
 
-    public override void ActivateSkill()
-    {
-        time = Time.time + activeRate;
-        Debug.Log(time);
-        NonVRCharacterController.moveSpeed *= speedModifier;
-        status = true;
-    }
+        public override void ActivateSkill()
+        {
+            time = Time.time + activeRate;
+            Debug.Log(time);
+            NonVRCharacterController.moveSpeed *= speedModifier;
+            status = true;
+        }
 }
