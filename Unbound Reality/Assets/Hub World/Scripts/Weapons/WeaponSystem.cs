@@ -26,17 +26,7 @@ public class WeaponSystem : MonoBehaviourPun {
         // If we have a weapon and the player right clicks, drop the weapon
         if (weapon!=null && Input.GetMouseButtonDown(1))
         {
-            if(weapon.GetType() ==  typeof(Party))
-            {
-                PhotonNetwork.Destroy(weapon.gameObject.GetPhotonView());
-            } else 
-            {
-                //Setting transform here sets it globally
-                weapon.gameObject.transform.SetParent(null);
-                weapon.gameObject.transform.position = weapon.spawn;
-
-                photonView.RPC("DropWeapon", RpcTarget.AllBuffered, this.photonView.ViewID, weapon.gameObject.GetPhotonView().ViewID);
-            }
+            PhotonNetwork.Destroy(weapon.gameObject.GetPhotonView());
         }
 
 	}
@@ -61,6 +51,7 @@ public class WeaponSystem : MonoBehaviourPun {
         }
     }
 
+    //Defaulting the behaviour to spawning a copy of the weapon on the ground
     void OnCollisionEnter(Collision col)
     {
         if(this.photonView.IsMine == false && PhotonNetwork.IsConnected == true)
@@ -71,22 +62,10 @@ public class WeaponSystem : MonoBehaviourPun {
         if(weapon == null && col.gameObject.layer == weaponLayer && col.gameObject.transform.parent == null)
         {
             weapon = col.gameObject.GetComponent<Weapon>();
-            if(weapon.GetType() ==  typeof(Party))
-            {
-                GameObject weaponObj = PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Party Object"), Vector3.zero, Quaternion.identity);
-                weaponObj.transform.SetParent(transform);
-                photonView.RPC("PickUpWeapon", RpcTarget.AllBuffered, this.photonView.ViewID, weaponObj.GetPhotonView().ViewID);
-                Debug.Log("PickUpWeapon called on " + this.photonView.ViewID + " with " + weaponObj.GetPhotonView().ViewID);
-            } else
-            {
-                //Setting transform here sets it globally
-                col.transform.SetParent(transform);
-
-                photonView.RPC("PickUpWeapon", RpcTarget.AllBuffered, this.photonView.ViewID, col.gameObject.GetPhotonView().ViewID);
-                Debug.Log("PickUpWeapon called on " + this.photonView.ViewID + " with " + col.gameObject.GetPhotonView().ViewID);
-
-            }
-            
+            GameObject weaponObj = PhotonNetwork.Instantiate(Path.Combine("Prefabs", weapon.prefabName), Vector3.zero, Quaternion.identity);
+            weaponObj.transform.SetParent(transform);
+            photonView.RPC("PickUpWeapon", RpcTarget.AllBuffered, this.photonView.ViewID, weaponObj.GetPhotonView().ViewID);
+            Debug.Log("PickUpWeapon called on " + this.photonView.ViewID + " with " + weaponObj.GetPhotonView().ViewID);
         }
 
     }

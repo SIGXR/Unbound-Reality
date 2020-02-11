@@ -22,6 +22,10 @@ public class Weapon : MonoBehaviour {
     public Player player;
     [Tooltip("The amount of damage the weapon deals")]
     public float damage;
+    [Tooltip("The animations the character has when dealing with this specific weapon")]
+    public Animator animator;
+    [Tooltip("The prefab name of this weapon")]
+    public string prefabName;
 
     // Use this for initialization
     protected virtual void Awake () {
@@ -36,6 +40,11 @@ public class Weapon : MonoBehaviour {
         SceneManager.sceneLoaded += OnSceneLoaded;
 
         beingUsed = false;
+
+        if(prefabName == "")
+        {
+            prefabName = gameObject.name;
+        }
 	}
 
     // Called everytime a scene has loaded

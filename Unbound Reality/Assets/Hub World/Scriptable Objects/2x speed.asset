@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: 2x Speed
+  m_Name: 2x speed
   m_EditorClassIdentifier: Assembly-CSharp::SpeedModifier
   SkillName: Double Speed
   CoolDownTime: 5

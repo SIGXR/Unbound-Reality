@@ -22,9 +22,7 @@ public class Sword : Weapon {
         swinging = 0;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-
+    private void FixedUpdate() {
         // If the sword is being used...
         if (beingUsed && gameObject.GetPhotonView().IsMine == true)
         {
@@ -57,6 +55,11 @@ public class Sword : Weapon {
                 transform.RotateAround(transform.position, transform.forward, Time.deltaTime * -swingSpeed); // Swing backward
             }
         }
+    }
+
+	// Update is called once per frame
+	void Update () {
+        
     }
 
     void OnCollisionEnter(Collision other) {
