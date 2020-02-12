@@ -57,12 +57,16 @@ public class Archer : MonoBehaviour {
 		currentBaseState = anim.GetCurrentAnimatorStateInfo(0);
 
 		//Check fire status before movement
-		fireButtonHeld = Input.GetButton("Fire");
+		fireButtonHeld = Input.GetKey(KeyCode.Alpha1);
 		anim.SetBool("FireButton", fireButtonHeld);
-		if(currentBaseState.fullPathHash != fireState || currentBaseState.fullPathHash != fireLocoState)
+		if(fireButtonHeld && (currentBaseState.fullPathHash != fireState || currentBaseState.fullPathHash != fireLocoState) )
 		{
+			Debug.Log("You have fired");
 			anim.SetTrigger("Fire");
 			return;
+		} else 
+		{
+			anim.ResetTrigger("Fire");
 		}
 
 		horizontalAxis = Input.GetAxis("Horizontal");

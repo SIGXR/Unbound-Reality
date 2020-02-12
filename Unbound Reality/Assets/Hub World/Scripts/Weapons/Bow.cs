@@ -26,7 +26,7 @@ public class Bow : Weapon
         if(beingUsed && gameObject.GetPhotonView().IsMine)
         {
             firedTimeLeft -= Time.deltaTime;
-            if(Input.GetButtonUp("Fire") && firedTimeLeft < 0)
+            if(Input.GetKey(KeyCode.Alpha1) && firedTimeLeft < 0)
             {
                 //TODO: Network maybe?
                 Instantiate(projectile);

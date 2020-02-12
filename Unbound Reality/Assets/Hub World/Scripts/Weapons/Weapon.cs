@@ -38,8 +38,6 @@ public class Weapon : MonoBehaviour {
 
     [Tooltip("The amount of damage the weapon deals")]
     public float damage;
-    [Tooltip("The animations the character has when dealing with this specific weapon")]
-    public Animator animator;
     [Tooltip("The prefab name of this weapon")]
     public string prefabName;
 
