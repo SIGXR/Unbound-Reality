@@ -6926,6 +6926,7 @@ GameObject:
   - component: {fileID: 2886584572410956935}
   - component: {fileID: 114999258932876446}
   - component: {fileID: 3197875859903633831}
+  - component: {fileID: 114184065573996314}
   m_Layer: 0
   m_Name: unitychan
   m_TagString: Player
@@ -7118,10 +7119,12 @@ MonoBehaviour:
   backwardSpeed: 2
   rotateSpeed: 2
   jumpPower: 3
+  defaultAnimatorController: {fileID: 0}
   animSpeed: 1.5
   lookSmoother: 3
   useCurvesHeight: 0.5
   useCurves: 1
+  doFixedUpdate: 1
   inventoryUI: {fileID: 0}
 --- !u!114 &3197875859903633831
 MonoBehaviour:
@@ -7135,3 +7138,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d76468429f6037140a96f8907a610709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114184065573996314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100338}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22eaf109633a12b4ea14ccf4722fdd4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animatorController: {fileID: 9100000, guid: 3e854a028c0f2034a81c4c15f101f14b, type: 2}

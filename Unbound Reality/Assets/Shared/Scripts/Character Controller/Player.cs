@@ -76,10 +76,14 @@ public class Player : MonoBehaviourPun, IPunObservable
     static int jumpState = Animator.StringToHash ("Base Layer.Jump");
     static int restState = Animator.StringToHash ("Base Layer.Rest");
     private AnimatorStateInfo currentBaseState;
+    public RuntimeAnimatorController defaultAnimatorController;
     public float animSpeed = 1.5f;
     public float lookSmoother = 3.0f;
     public float useCurvesHeight = 0.5f;
     public bool useCurves = true;
+
+    //Extra
+    public bool doFixedUpdate = true;
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
@@ -114,6 +118,8 @@ public class Player : MonoBehaviourPun, IPunObservable
         orgColHeight = col.height;
         orgVectColCenter = col.center;
 
+        defaultAnimatorController = anim.runtimeAnimatorController;
+
         DontDestroyOnLoad(this.gameObject);
         
     }
@@ -129,6 +135,27 @@ public class Player : MonoBehaviourPun, IPunObservable
 
     public virtual void FixedUpdate() {
         if(photonView.IsMine == false && PhotonNetwork.IsConnected == true)
+        {
+            return;
+        }
+
+        if(health <= 0)
+        {
+            if(OnPlayerDeath != null)
+            {
+                OnPlayerDeath(this);
+            }
+            
+            health = healthReset;
+            if(OnPlayerHealthChange != null)
+            {
+                OnPlayerHealthChange(this);
+            }
+            
+            transform.position = spawnPoint.transform.position;
+        }
+
+        if(doFixedUpdate == false)
         {
             return;
         }
@@ -223,22 +250,6 @@ public class Player : MonoBehaviourPun, IPunObservable
             }
         }
 
-        if(health <= 0)
-        {
-            if(OnPlayerDeath != null)
-            {
-                OnPlayerDeath(this);
-            }
-            
-            health = healthReset;
-            if(OnPlayerHealthChange != null)
-            {
-                OnPlayerHealthChange(this);
-            }
-            
-            transform.position = spawnPoint.transform.position;
-
-        }
     }
 
     public virtual void OnCollisionEnter(Collision collision)
