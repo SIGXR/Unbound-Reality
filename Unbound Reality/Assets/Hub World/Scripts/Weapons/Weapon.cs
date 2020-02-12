@@ -5,6 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class Weapon : MonoBehaviour {
 
+    public enum WeaponType
+    {
+        NONE,
+        BOW,
+        SWORD_1H,
+        SWORD_2H,
+        STAFF,
+        PARTY
+    };
+
+    [Tooltip("How the player should handle the weapon. Used during pickup of weapon.")]
+    public WeaponType weaponType;
+    [Tooltip("Which hand the weapon should be placed on (Right/Left).")]
+    public string hand = "Right";
+
     // Private data (private with respect to the inspector)
     [HideInInspector]
     public Rigidbody rb;
@@ -20,6 +35,7 @@ public class Weapon : MonoBehaviour {
     public Vector3 spawn;
     [HideInInspector]
     public Player player;
+
     [Tooltip("The amount of damage the weapon deals")]
     public float damage;
     [Tooltip("The animations the character has when dealing with this specific weapon")]

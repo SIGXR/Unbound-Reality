@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1347,56 +1347,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380419005}
   m_CullTransparentMesh: 0
---- !u!1001 &381875224
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1595641483926816, guid: 6c83bb031ae8f2f4da292745c5651948, type: 3}
-      propertyPath: m_Name
-      value: SigXRBlade (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4961416959179680, guid: 6c83bb031ae8f2f4da292745c5651948, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -51.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 4961416959179680, guid: 6c83bb031ae8f2f4da292745c5651948, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.85
-      objectReference: {fileID: 0}
-    - target: {fileID: 4961416959179680, guid: 6c83bb031ae8f2f4da292745c5651948, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.63
-      objectReference: {fileID: 0}
-    - target: {fileID: 4961416959179680, guid: 6c83bb031ae8f2f4da292745c5651948, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4961416959179680, guid: 6c83bb031ae8f2f4da292745c5651948, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.70710695
-      objectReference: {fileID: 0}
-    - target: {fileID: 4961416959179680, guid: 6c83bb031ae8f2f4da292745c5651948, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4961416959179680, guid: 6c83bb031ae8f2f4da292745c5651948, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.70710665
-      objectReference: {fileID: 0}
-    - target: {fileID: 4961416959179680, guid: 6c83bb031ae8f2f4da292745c5651948, type: 3}
-      propertyPath: m_RootOrder
-      value: 33
-      objectReference: {fileID: 0}
-    - target: {fileID: 114580972213079974, guid: 6c83bb031ae8f2f4da292745c5651948,
-        type: 3}
-      propertyPath: viewIdField
-      value: 4
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6c83bb031ae8f2f4da292745c5651948, type: 3}
 --- !u!1001 &406586930
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4580,7 +4530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownTime: {fileID: 1521209250}
-  skill: {fileID: 11400000, guid: 281e353b0915d5e47b6a5429f5b66068, type: 2}
+  skill: {fileID: 0}
   skillInfo: {fileID: 419391892}
   infoBox: {fileID: 2043183615}
 --- !u!114 &1732512058
@@ -5951,7 +5901,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1113260965833200, guid: 6d1699afae256154babdd85667681b5a, type: 3}
       propertyPath: m_Name
-      value: Spawner
+      value: Party Spawner
       objectReference: {fileID: 0}
     - target: {fileID: 4813716289100102, guid: 6d1699afae256154babdd85667681b5a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5989,6 +5939,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114286072038881726, guid: 6d1699afae256154babdd85667681b5a,
+        type: 3}
+      propertyPath: prefabName
+      value: Party Object
       objectReference: {fileID: 0}
     - target: {fileID: 1291869380925244536, guid: 6d1699afae256154babdd85667681b5a,
         type: 3}
@@ -6094,7 +6049,7 @@ PrefabInstance:
     - target: {fileID: 589987499680900583, guid: d98452a5b3882daedbd2660794ce0c64,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.2293701
+      value: 0.00006099846
       objectReference: {fileID: 0}
     - target: {fileID: 589987499680900583, guid: d98452a5b3882daedbd2660794ce0c64,
         type: 3}

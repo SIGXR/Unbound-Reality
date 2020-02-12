@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f0f5e45e69eb1adcca8cb0496c5f7c6e
+guid: ae73b22fcd2a4d292a4e02ece97029c0
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -325,7 +325,7 @@ ModelImporter:
     4300010: mixamo:EYE_DEF
     4300012: mixamo:EL_DEF
     4300014: mixamo:BLW_DEF
-    7400000: uc_archer_standing_aim_walk_forward
+    7400000: uc_archer_standing_draw_arrow
     9500000: //RootNode
     2186277476908879412: ImportLogs
   externalObjects: {}
@@ -357,10 +357,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: uc_archer_standing_aim_walk_forward
+      name: uc_archer_standing_draw_arrow
       takeName: mixamo.com
       firstFrame: 0
-      lastFrame: 36
+      lastFrame: 31
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
