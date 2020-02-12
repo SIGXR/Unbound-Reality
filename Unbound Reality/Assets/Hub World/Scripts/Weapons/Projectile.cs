@@ -40,7 +40,7 @@ public class Projectile : MonoBehaviourPun
             other.gameObject.GetComponent<Player>().DamagePlayer(damage);
         }
 
-        PhotonNetwork.Destroy(gameObject.GetPhotonView());       
+        Destroy(gameObject);       
 
     }
 }
