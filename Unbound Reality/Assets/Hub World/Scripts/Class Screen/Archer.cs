@@ -59,7 +59,7 @@ public class Archer : MonoBehaviour {
 		//Check fire status before movement
 		fireButtonHeld = Input.GetKey(KeyCode.Alpha1);
 		anim.SetBool("FireButton", fireButtonHeld);
-		if(fireButtonHeld && (currentBaseState.fullPathHash != fireState || currentBaseState.fullPathHash != fireLocoState) )
+		if(fireButtonHeld && (currentBaseState.fullPathHash != fireState || anim.GetBool("FireLoco")) )
 		{
 			Debug.Log("You have fired");
 			anim.SetTrigger("Fire");
@@ -73,10 +73,11 @@ public class Archer : MonoBehaviour {
 		verticalAxis = Input.GetAxis("Vertical");
 		anim.SetFloat("Speed", verticalAxis);
 		anim.SetFloat("Direction", horizontalAxis);
+		velocity = Vector3.zero;
 
 		if(Mathf.Abs(verticalAxis) > Mathf.Abs(horizontalAxis))
 		{
-			velocity = new Vector3(0, 0, verticalAxis);
+			velocity = player.gameObject.transform.forward;
 			if(verticalAxis > 0.1)
 			{
 				velocity *= player.forwardSpeed;
@@ -84,10 +85,10 @@ public class Archer : MonoBehaviour {
 			{
 				velocity *= player.backwardSpeed;
 			}
-			transform.Rotate(0, horizontalAxis*player.rotateSpeed, 0);
+			player.gameObject.transform.Rotate(0, horizontalAxis*player.rotateSpeed, 0);
 		} else 
 		{
-			velocity = new Vector3(horizontalAxis, 0, 0);
+			velocity = player.gameObject.transform.right;
 			if(horizontalAxis > 0.1)
 			{
 				velocity *= player.forwardSpeed;
@@ -97,7 +98,7 @@ public class Archer : MonoBehaviour {
 			}
 		}
 
-		transform.position += velocity*Time.fixedDeltaTime;
+		player.gameObject.transform.position += velocity*Time.fixedDeltaTime;
 
 
 

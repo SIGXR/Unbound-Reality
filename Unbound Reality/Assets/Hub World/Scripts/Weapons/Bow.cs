@@ -32,6 +32,7 @@ public class Bow : Weapon
                 Instantiate(projectile);
                 firedTimeLeft = firedFrequency;
             }
+            transform.localPosition = new Vector3(0, 0, col.bounds.size.y/2);
         }        
     }
 

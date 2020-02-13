@@ -181,6 +181,7 @@ MonoBehaviour:
   weaponType: 1
   hand: Left
   rb: {fileID: 0}
+  col: {fileID: 0}
   beingUsed: 0
   playerTransform: {fileID: 0}
   propersceneName: 
