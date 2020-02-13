@@ -10,6 +10,9 @@ public class WeaponSystem : MonoBehaviourPun {
     private Player player;
     private Weapon weapon;
     private int weaponLayer;
+    const string SPINE = "Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2";
+    const string LEFT_HAND = SPINE + "/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/Character1_LeftHand";
+    const string RIGHT_HAND = SPINE + "/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/Character1_RightHand";
 
     void Awake()
     {
@@ -82,16 +85,18 @@ public class WeaponSystem : MonoBehaviourPun {
             Transform hand = null;
             if(weapon.hand == "Right")
             {
-                hand = transform.Find("Character1_RightHand");
+                hand = transform.Find(RIGHT_HAND);
             } else if(weapon.hand == "Left")
             {
-                hand = transform.Find("Character1_LeftHand");
+                hand = transform.Find(LEFT_HAND);
             }
             if(hand != null)
             {
-                weaponObj.transform.position = new Vector3(hand.position.x,hand.position.y, hand.position.z + weaponObj.GetComponent<Collider>().bounds.size.y/2);
-                weaponObj.transform.localRotation = Quaternion.Euler(-90,0,0);
                 weaponObj.transform.SetParent(hand);
+                weaponObj.transform.localPosition = new Vector3(0, 0, weaponObj.GetComponent<Collider>().bounds.size.y/2);
+                weaponObj.transform.localRotation = Quaternion.Euler(hand.transform.up);
+                //TODO: Fix this for sword
+                weaponObj.GetComponent<Collider>().enabled = false;
             } else 
             {
                 weaponObj.transform.SetParent(transform);

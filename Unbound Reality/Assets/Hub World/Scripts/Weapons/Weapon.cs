@@ -24,6 +24,8 @@ public class Weapon : MonoBehaviour {
     [HideInInspector]
     public Rigidbody rb;
     [HideInInspector]
+    public Collider col;
+    [HideInInspector]
     public bool beingUsed; //Represents weather the weapon is being used or not
     [HideInInspector]
     public Transform playerTransform;
@@ -45,6 +47,7 @@ public class Weapon : MonoBehaviour {
     protected virtual void Awake () {
 
         rb = GetComponent<Rigidbody>(); // Get the rigidbody
+        col = GetComponent<Collider>();
         spawn = transform.position;
 
         // Get the int of the scene that this object is supposed to be in
