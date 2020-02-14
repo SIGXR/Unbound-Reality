@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using System.IO;
 
 public class Bow : Weapon
 {
@@ -14,22 +15,22 @@ public class Bow : Weapon
     [SerializeField]
     private float firedFrequency;
 
+    private GameObject firedProjectile;
     private float firedTimeLeft = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb.useGravity = false;
     }
 
     void FixedUpdate() {
         if(beingUsed && gameObject.GetPhotonView().IsMine)
         {
             firedTimeLeft -= Time.deltaTime;
-            if(Input.GetKey(KeyCode.Alpha1) && firedTimeLeft < 0)
+            if(Input.GetKeyUp(KeyCode.Alpha1) && firedTimeLeft < 0)
             {
-                //TODO: Network maybe?
-                Instantiate(projectile);
+                firedProjectile = PhotonNetwork.Instantiate(Path.Combine("Prefabs", projectile.name), transform.position+-transform.right*col.bounds.size.z*2, Quaternion.LookRotation(-transform.right, -transform.forward));
                 firedTimeLeft = firedFrequency;
             }
             transform.localPosition = new Vector3(0, 0, col.bounds.size.y/2);

@@ -14,6 +14,7 @@ public class Projectile : MonoBehaviourPun
     private float lifeTime;
 
     private Vector3 velocity;
+    private float timeAlive = 0;
 
     void Start()
     {
@@ -22,7 +23,16 @@ public class Projectile : MonoBehaviourPun
 
     void FixedUpdate()
     {
+        if(gameObject.GetPhotonView().IsMine == false && PhotonNetwork.IsConnected == true)
+        {
+            return;
+        }
         transform.position += velocity;
+        timeAlive += Time.fixedDeltaTime;
+        if(timeAlive > lifeTime)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnCollisionEnter(Collision other)
@@ -31,16 +41,14 @@ public class Projectile : MonoBehaviourPun
         {
             return;
         }
-        if(other.transform == transform.root)
-        {
-            return;
-        }
         if(other.gameObject.tag == "Player")
         {
             other.gameObject.GetComponent<Player>().DamagePlayer(damage);
         }
 
-        Destroy(gameObject);       
+        Debug.Log("Projectile collided with: " + other.gameObject.name);
+
+        //Destroy(gameObject);       
 
     }
 }
