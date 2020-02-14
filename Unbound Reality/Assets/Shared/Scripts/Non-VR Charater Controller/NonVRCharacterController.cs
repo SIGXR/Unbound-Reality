@@ -20,6 +20,7 @@ public class NonVRCharacterController : MonoBehaviourPun, IPunObservable
     [SerializeField]
     private GameObject healthUIObject;
 
+    public static string class_name;
     public Score score;
     public Vector3 pig_pos;
     public float health = 100f;
