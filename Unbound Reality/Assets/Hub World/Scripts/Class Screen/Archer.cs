@@ -59,14 +59,16 @@ public class Archer : MonoBehaviour {
 		//Check fire status before movement
 		fireButtonHeld = Input.GetKey(KeyCode.Alpha1);
 		anim.SetBool("FireButton", fireButtonHeld);
-		if(fireButtonHeld && (currentBaseState.fullPathHash != fireState || anim.GetBool("FireLoco")) )
+		if(!anim.IsInTransition(0))
 		{
-			Debug.Log("You have fired");
-			anim.SetTrigger("Fire");
-			return;
-		} else 
-		{
-			anim.ResetTrigger("Fire");
+			if(fireButtonHeld && !(currentBaseState.fullPathHash == fireState || anim.GetBool("FireLoco")) )
+			{
+				anim.SetTrigger("Fire");
+				return;
+			} else 
+			{
+				anim.ResetTrigger("Fire");
+			}
 		}
 
 		horizontalAxis = Input.GetAxis("Horizontal");
@@ -75,29 +77,35 @@ public class Archer : MonoBehaviour {
 		anim.SetFloat("Direction", horizontalAxis);
 		velocity = Vector3.zero;
 
-		if(Mathf.Abs(verticalAxis) > Mathf.Abs(horizontalAxis))
+		if(Mathf.Abs(verticalAxis) > 0.1 || Mathf.Abs(horizontalAxis) > 0.1)
 		{
-			velocity = player.gameObject.transform.forward;
-			if(verticalAxis > 0.1)
+			if(Mathf.Abs(verticalAxis) > Mathf.Abs(horizontalAxis))
 			{
-				velocity *= player.forwardSpeed;
-			} else if(verticalAxis < -0.1)
+				velocity = player.gameObject.transform.forward;
+				if(verticalAxis > 0.1)
+				{
+					velocity *= player.forwardSpeed;
+				} else if(verticalAxis < -0.1)
+				{
+					velocity *= -player.backwardSpeed;
+				}
+			} else 
 			{
-				velocity *= player.backwardSpeed;
-			}
-			player.gameObject.transform.Rotate(0, horizontalAxis*player.rotateSpeed, 0);
-		} else 
-		{
-			velocity = player.gameObject.transform.right;
-			if(horizontalAxis > 0.1)
-			{
-				velocity *= player.forwardSpeed;
-			} else if(horizontalAxis < -0.1)
-			{
-				velocity *= player.backwardSpeed;
+				velocity = player.gameObject.transform.right;
+				if(horizontalAxis > 0.1)
+				{
+					velocity *= player.forwardSpeed;
+				} else if(horizontalAxis < -0.1)
+				{
+					velocity *= -player.backwardSpeed;
+				}
 			}
 		}
-
+		
+		if(Input.GetMouseButton(2))
+		{
+			player.gameObject.transform.Rotate(0, Input.GetAxis("Mouse X"), 0);
+		}
 		player.gameObject.transform.position += velocity*Time.fixedDeltaTime;
 
 
