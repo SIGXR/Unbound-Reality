@@ -58,10 +58,7 @@ public class Party : Weapon, IPunObservable {
     }
 
     void FixedUpdate() {
-        if(beingUsed && gameObject.GetPhotonView().IsMine == true)
-        {
-            transform.position = playerTransform.position + playerTransform.right * .95f;
-        }
+        
     }
     
     private void OnCollisionEnter(Collision other) {
