@@ -27,9 +27,6 @@ public class Sword : Weapon {
         if (beingUsed && gameObject.GetPhotonView().IsMine == true)
         {
 
-            // Keep the sword to the players left with respect to where they are facing
-            transform.position = playerTransform.position + playerTransform.right * .95f;
-
             /* If this weapon is a shotgun, point it in a direction such that a bullet when fired will reach a point range units
             in front of the player*/
             if (swinging==0)
