@@ -42,7 +42,7 @@ public class WeaponSystem : MonoBehaviourPun {
         switch(weaponType)
         {
             case Weapon.WeaponType.BOW:
-                GetComponent<Archer>().enabled = true;
+                GetComponent<Archer>().enabled = false;
                 break;
             default:
                 break;

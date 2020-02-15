@@ -152,7 +152,11 @@ public class Player : MonoBehaviourPun, IPunObservable
                 OnPlayerHealthChange(this);
             }
             
+            anim.SetTrigger("Dead");
             transform.position = spawnPoint.transform.position;
+        } else 
+        {
+            anim.ResetTrigger("Dead");
         }
 
         if(doFixedUpdate == false)
