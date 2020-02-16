@@ -13,6 +13,7 @@ public class Class_Select : MonoBehaviour
     public Text Displayinfo;
     public GameObject Hud;
     public GameObject classSelect;
+    public GameObject gameSetup;
     public Text ClassName;
     public static bool pause;
 
@@ -101,6 +102,7 @@ public class Class_Select : MonoBehaviour
         {
             Hud.SetActive(true);
             classSelect.SetActive(false);
+            gameSetup.SetActive(true);
         }
 
     }
