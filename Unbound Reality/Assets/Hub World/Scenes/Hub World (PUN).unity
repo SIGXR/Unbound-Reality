@@ -943,6 +943,7 @@ MonoBehaviour:
   Displayinfo: {fileID: 1691812253}
   Hud: {fileID: 1618826011}
   classSelect: {fileID: 181284489}
+  gameSetup: {fileID: 8596726608328791517}
   ClassName: {fileID: 784541941}
 --- !u!1 &184059262
 GameObject:
@@ -8157,6 +8158,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameSetup
       objectReference: {fileID: 0}
+    - target: {fileID: 8596726609328530861, guid: 651795c076fc6d157afe3c32ed32e838,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8596726609328530862, guid: 651795c076fc6d157afe3c32ed32e838,
         type: 3}
       propertyPath: spawnPoint
@@ -8224,3 +8230,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 651795c076fc6d157afe3c32ed32e838, type: 3}
+--- !u!1 &8596726608328791517 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8596726609328530861, guid: 651795c076fc6d157afe3c32ed32e838,
+    type: 3}
+  m_PrefabInstance: {fileID: 8596726608328791516}
+  m_PrefabAsset: {fileID: 0}
