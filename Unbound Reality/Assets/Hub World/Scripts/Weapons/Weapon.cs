@@ -5,9 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class Weapon : MonoBehaviour {
 
+    public enum WeaponType
+    {
+        NONE,
+        BOW,
+        SWORD_1H,
+        SWORD_2H,
+        STAFF,
+        PARTY
+    };
+
+    [Tooltip("How the player should handle the weapon. Used during pickup of weapon.")]
+    public WeaponType weaponType;
+    [Tooltip("Which hand the weapon should be placed on (Right/Left).")]
+    public string hand = "Right";
+
     // Private data (private with respect to the inspector)
     [HideInInspector]
     public Rigidbody rb;
+    [HideInInspector]
+    public Collider col;
     [HideInInspector]
     public bool beingUsed; //Represents weather the weapon is being used or not
     [HideInInspector]
@@ -20,13 +37,17 @@ public class Weapon : MonoBehaviour {
     public Vector3 spawn;
     [HideInInspector]
     public Player player;
+
     [Tooltip("The amount of damage the weapon deals")]
     public float damage;
+    [Tooltip("The prefab name of this weapon")]
+    public string prefabName;
 
     // Use this for initialization
     protected virtual void Awake () {
 
         rb = GetComponent<Rigidbody>(); // Get the rigidbody
+        col = GetComponent<Collider>();
         spawn = transform.position;
 
         // Get the int of the scene that this object is supposed to be in
@@ -36,6 +57,11 @@ public class Weapon : MonoBehaviour {
         SceneManager.sceneLoaded += OnSceneLoaded;
 
         beingUsed = false;
+
+        if(prefabName == "")
+        {
+            prefabName = gameObject.name;
+        }
 	}
 
     // Called everytime a scene has loaded

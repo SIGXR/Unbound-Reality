@@ -22,15 +22,10 @@ public class Sword : Weapon {
         swinging = 0;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-
+    private void FixedUpdate() {
         // If the sword is being used...
         if (beingUsed && gameObject.GetPhotonView().IsMine == true)
         {
-
-            // Keep the sword to the players left with respect to where they are facing
-            transform.position = playerTransform.position + playerTransform.right * .95f;
 
             /* If this weapon is a shotgun, point it in a direction such that a bullet when fired will reach a point range units
             in front of the player*/
@@ -57,6 +52,11 @@ public class Sword : Weapon {
                 transform.RotateAround(transform.position, transform.forward, Time.deltaTime * -swingSpeed); // Swing backward
             }
         }
+    }
+
+	// Update is called once per frame
+	void Update () {
+        
     }
 
     void OnCollisionEnter(Collision other) {
