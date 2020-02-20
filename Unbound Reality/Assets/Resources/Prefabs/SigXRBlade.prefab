@@ -288,7 +288,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a926397ec45a924c9f74611803dbcfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponType: 2
+  hand: Right
   rb: {fileID: 0}
+  col: {fileID: 0}
   beingUsed: 0
   playerTransform: {fileID: 0}
   propersceneName: 
@@ -296,6 +299,7 @@ MonoBehaviour:
   spawn: {x: 0, y: 0, z: 0}
   player: {fileID: 0}
   damage: 5
+  prefabName: SigXRBlade
   swingSpeed: 720
   range: 45
 --- !u!1 &1925917717397316
