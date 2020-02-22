@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -603,7 +603,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1106510189}
+  - {fileID: 181284490}
   - {fileID: 1618826012}
   m_Father: {fileID: 0}
   m_RootOrder: 26
@@ -885,13 +885,13 @@ RectTransform:
   - {fileID: 466132072}
   - {fileID: 1981369522}
   - {fileID: 1691812252}
-  m_Father: {fileID: 1106510189}
+  m_Father: {fileID: 155592547}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1898.6506, y: 980}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &181284491
 MonoBehaviour:
@@ -941,8 +941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Displayinfo: {fileID: 1691812253}
-  Hud: {fileID: 1618826011}
-  classSelect: {fileID: 181284489}
+  hud: {fileID: 1618826011}
   gameSetup: {fileID: 8596726608328791517}
   ClassName: {fileID: 784541941}
 --- !u!1 &184059262
@@ -3931,42 +3930,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1079623531}
   m_CullTransparentMesh: 0
---- !u!1 &1106510188
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1106510189}
-  m_Layer: 5
-  m_Name: Class Select
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1106510189
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1106510188}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 181284490}
-  m_Father: {fileID: 155592547}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1114043041
 GameObject:
   m_ObjectHideFlags: 0
@@ -5819,20 +5782,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 554144979}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1759499413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1759499412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d8c268752b1e194b824d4acf3481ce2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Hud: {fileID: 1618826011}
-  classSelect: {fileID: 1106510188}
 --- !u!65 &1759499414
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7473,7 +7422,7 @@ PrefabInstance:
     - target: {fileID: 589987499680900583, guid: d98452a5b3882daedbd2660794ce0c64,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000061035156
+      value: 0.00018307872
       objectReference: {fileID: 0}
     - target: {fileID: 589987499680900583, guid: d98452a5b3882daedbd2660794ce0c64,
         type: 3}
@@ -7493,12 +7442,12 @@ PrefabInstance:
     - target: {fileID: 589987500162316368, guid: d98452a5b3882daedbd2660794ce0c64,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.9988632
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 589987500162316368, guid: d98452a5b3882daedbd2660794ce0c64,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.00006559015
+      value: 0.0012025927
       objectReference: {fileID: 0}
     - target: {fileID: 589987500282308684, guid: d98452a5b3882daedbd2660794ce0c64,
         type: 3}
