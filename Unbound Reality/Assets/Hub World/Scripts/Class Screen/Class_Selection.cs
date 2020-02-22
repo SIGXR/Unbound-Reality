@@ -23,9 +23,8 @@ public class Class_Selection : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Class_Select.pause = true;
-            Hud.SetActive(false);
-            classSelect.SetActive(true);
+            Hud.SetActive(true);
+            classSelect.SetActive(false);
             Debug.Log("Please select a class");
         }
     }
