@@ -11,8 +11,7 @@ public class Class_Select : MonoBehaviour
     public BaseClass Rouge = new BaseClass("Rouge", 15, 6, 3, 6);
     public BaseClass Archer = new BaseClass("Archer", 8, 6, 4, 15);
     public Text Displayinfo;
-    public GameObject Hud;
-    public GameObject classSelect;
+    public GameObject hud;
     public GameObject gameSetup;
     public Text ClassName;
     public static bool pause;
@@ -95,13 +94,13 @@ public class Class_Select : MonoBehaviour
         Debug.Log(btn.name);
         ClassNameDisplay();
         DisableMovement();
+        this.gameObject.SetActive(false);
     }
     public void DisableMovement()
     {
         if (pause == false)
         {
-            Hud.SetActive(true);
-            classSelect.SetActive(false);
+            hud.SetActive(true);
             gameSetup.SetActive(true);
         }
 
