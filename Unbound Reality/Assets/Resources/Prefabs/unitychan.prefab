@@ -7097,6 +7097,39 @@ MonoBehaviour:
   - Type: 3
     SynchronizeType: 1
     Name: DeathIndex
+  - Type: 4
+    SynchronizeType: 1
+    Name: Dead
+  - Type: 4
+    SynchronizeType: 1
+    Name: Moving
+  - Type: 3
+    SynchronizeType: 1
+    Name: IdleIndex
+  - Type: 9
+    SynchronizeType: 1
+    Name: Fire
+  - Type: 4
+    SynchronizeType: 1
+    Name: FireButton
+  - Type: 4
+    SynchronizeType: 1
+    Name: FireLoco
+  - Type: 3
+    SynchronizeType: 1
+    Name: AttackIndex
+  - Type: 4
+    SynchronizeType: 1
+    Name: Blocking
+  - Type: 9
+    SynchronizeType: 1
+    Name: Hurt
+  - Type: 3
+    SynchronizeType: 1
+    Name: HurtIndex
+  - Type: 3
+    SynchronizeType: 1
+    Name: HurtType
   m_SynchronizeLayers:
   - SynchronizeType: 1
     LayerIndex: 0
@@ -7127,7 +7160,8 @@ MonoBehaviour:
   backwardSpeed: 2
   rotateSpeed: 2
   jumpPower: 3
-  defaultAnimatorController: {fileID: 0}
+  defaultAnimatorController: {fileID: 9100000, guid: 90d8be7546834d441912231653d0a0d9,
+    type: 2}
   animSpeed: 1.5
   lookSmoother: 3
   useCurvesHeight: 0.5
@@ -7179,7 +7213,8 @@ MonoBehaviour:
   className: Mage
   hurt: 0
   usesWeapon: 0
-  skills: []
+  skills:
+  - {fileID: 11400000, guid: f6eb652acfde1bc4e964d412727baf2d, type: 2}
   animatorController: {fileID: 9100000, guid: cdae43634dd8a7f409e8b5bd1826acad, type: 2}
 --- !u!114 &114423117315266360
 MonoBehaviour:

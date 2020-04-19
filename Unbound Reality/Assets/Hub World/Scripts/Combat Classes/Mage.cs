@@ -13,11 +13,19 @@ public class Mage : BaseClass
 	static int idleState = Animator.StringToHash("Base Magic.Idle");
 	static int attackState = Animator.StringToHash("Base Magic.Attack");
 	static int locoState = Animator.StringToHash("Base Magic.Loco");
-    static int blockState = Animator.StringToHash("Base Magic.Block Idle");
+	static int blockStartState = Animator.StringToHash("Base Magic.Block Start");
+    static int blockIdleState = Animator.StringToHash("Base Magic.Block Idle");
+	static int hurtState = Animator.StringToHash("Base Magic.Hurt");
 	private AnimatorStateInfo currentBaseState;
+
 	[Tooltip("The animator controller specific to this class.")]
 	[SerializeField]
 	private RuntimeAnimatorController animatorController;
+
+	public override void Awake()
+	{
+		base.Awake();
+	}
 
     public override void OnEnable()
 	{
@@ -48,44 +56,46 @@ public class Mage : BaseClass
             anim.SetTrigger("Hurt");
             hurt = false;
             return;
-        } else
-        {
-            anim.ResetTrigger("Hurt");
         }
 
-		if(!anim.IsInTransition(0))
+		anim.ResetTrigger("Hurt");
+
+		// Let hurt and block start animations finish
+		if(currentBaseState.fullPathHash == hurtState || currentBaseState.fullPathHash == blockStartState)
 		{
-			if(skillPressed && !(currentBaseState.fullPathHash == attackState || currentBaseState.fullPathHash == blockState))
+			return;
+		}
+
+		attackButtonPressed = Input.GetKey(KeyCode.Mouse0);
+		blockButtonHeld = Input.GetKey(KeyCode.E);
+
+		if(!anim.IsInTransition(0) || !(currentBaseState.fullPathHash == attackState 
+			|| currentBaseState.fullPathHash == hurtState
+			|| currentBaseState.fullPathHash == locoState))
+		{
+			if(blockButtonHeld)
+            {
+                anim.SetBool("Blocking", true);
+                return;
+            }
+
+            anim.SetBool("Blocking", false);
+
+			if(skillPressed)
 			{
 				anim.SetInteger("AttackIndex", skillPressed.animationIndex);
 				skillPressed.activated = false;
 				return;
 			}
-		}
 
-        //Check fire status before movement
-		attackButtonPressed = Input.GetKey(KeyCode.Mouse0);
-        if(!anim.IsInTransition(0))
-		{
-			if(attackButtonPressed && !(currentBaseState.fullPathHash == attackState || currentBaseState.fullPathHash == blockState) )
+			if(attackButtonPressed)
 			{
 				anim.SetInteger("AttackIndex", 0);
 				return;
 			}
-		}
 
-        blockButtonHeld = Input.GetKey(KeyCode.E);
-        if(!anim.IsInTransition(0))
-        {
-            if(blockButtonHeld)
-            {
-                anim.SetBool("Blocking", true);
-                return;
-            } else
-            {
-                anim.SetBool("Blocking", false);
-            }
-        }
+			
+		}
 
         base.FixedUpdate();
 

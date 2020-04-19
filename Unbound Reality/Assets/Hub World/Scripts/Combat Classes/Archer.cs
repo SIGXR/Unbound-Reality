@@ -19,6 +19,11 @@ public class Archer : BaseClass {
 	[SerializeField]
 	private RuntimeAnimatorController animatorController;
 
+	public override void Awake()
+	{
+		base.Awake();
+	}
+
 	public override void OnEnable()
 	{
 		base.OnEnable();

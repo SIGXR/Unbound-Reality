@@ -26,7 +26,7 @@ public class BaseClass : MonoBehaviour {
 	private float horizontalAxis, verticalAxis;
 	private Vector3 velocity;
 
-    void Awake()
+    public virtual void Awake()
 	{
 		player = GetComponent<Player>();
 		anim = GetComponent<Animator>();

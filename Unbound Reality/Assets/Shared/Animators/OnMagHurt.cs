@@ -38,6 +38,7 @@ public class OnMagHurt : StateMachineBehaviour
     override public void OnStateMachineEnter(Animator animator, int stateMachinePathHash)
     {
         int hurtIndex, hurtType;
+        Random.InitState((int) Time.time);
 
         hurtIndex = animator.GetInteger("HurtIndex");
         hurtType = animator.GetInteger("HurtType");

@@ -37,7 +37,8 @@ public class OnMagIdle : StateMachineBehaviour
     // OnStateMachineEnter is called when entering a state machine via its Entry Node
     override public void OnStateMachineEnter(Animator animator, int stateMachinePathHash)
     {
-        animator.SetInteger("IdleIndex", Random.Range(0,4));
+        Random.InitState((int) Time.time);
+        animator.SetInteger("IdleIndex", Random.Range(0, 4));
     }
 
     // OnStateMachineExit is called when exiting a state machine via its Exit Node

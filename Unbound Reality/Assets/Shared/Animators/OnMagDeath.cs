@@ -37,6 +37,7 @@ public class OnMagDeath : StateMachineBehaviour
     // OnStateMachineEnter is called when entering a state machine via its Entry Node
     override public void OnStateMachineEnter(Animator animator, int stateMachinePathHash)
     {
+        Random.InitState((int) Time.time);
         animator.SetInteger("DeathIndex", Random.Range(0, 4));
     }
 
