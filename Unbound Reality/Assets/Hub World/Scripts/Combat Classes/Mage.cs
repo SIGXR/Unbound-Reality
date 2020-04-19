@@ -66,7 +66,7 @@ public class Mage : BaseClass
 			return;
 		}
 
-		attackButtonPressed = Input.GetKey(KeyCode.Mouse0);
+		attackButtonPressed = Input.GetKey(KeyCode.Q);
 		blockButtonHeld = Input.GetKey(KeyCode.E);
 
 		if(!anim.IsInTransition(0) || !(currentBaseState.fullPathHash == attackState 

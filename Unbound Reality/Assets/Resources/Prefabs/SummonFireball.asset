@@ -15,8 +15,9 @@ MonoBehaviour:
   skillName: Summon Fireball
   description: Summons a basic ball of fire
   coolDownTime: 1
-  animationIndex: 0
+  animationIndex: 2
   player: {fileID: 0}
   available: 1
+  activated: 0
   projectile: {fileID: 9019009579528289953, guid: 18391b0536631b93fb267ad23b8b2cc9,
     type: 3}

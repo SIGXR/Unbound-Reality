@@ -19,7 +19,7 @@ public class SkillUI : MonoBehaviour
 
     //Time variables
     private float cooldownRate;
-    private float nextActivationTime;
+    private float nextActivationTime = 0f;
     private bool available = true;
 
     // Start is called before the first frame update

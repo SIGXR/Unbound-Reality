@@ -17,9 +17,6 @@ public class SpeedModifier : Skills
 
     public override void ActivateSkill()
     {
-        if(available)
-        {
-            base.ActivateSkill();
-        }
+        base.ActivateSkill();
     }
 }

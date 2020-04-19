@@ -19,33 +19,14 @@ public abstract class Skills : ScriptableObject
     [HideInInspector]
     public Player player;
 
-    // The time before able to activate the skill
-    protected float nextActivationTime = 0f;
-
-    // If the skill is available to use
-    [HideInInspector]
-    public bool available = true;
+    // If the skill has been activated
     [HideInInspector]
     public bool activated = false;
 
-    public virtual void Update()
-    {
-        if(!available)
-        {
-            if(Time.time > nextActivationTime)
-            {
-                available = true;
-            }
-        }
-    }
-
+    //Skill time management done through the UI
     public virtual void ActivateSkill()
     {
-        if(available)
-        {
-            nextActivationTime = Time.time + coolDownTime;
-            available = false;
-            activated = true;
-        }
+        activated = true;
     }
+
 }

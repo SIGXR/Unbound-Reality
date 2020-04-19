@@ -31,6 +31,11 @@ public class BaseClass : MonoBehaviour {
 		player = GetComponent<Player>();
 		anim = GetComponent<Animator>();
 		pv = gameObject.GetPhotonView();
+
+		foreach(Skills skill in skills)
+		{
+			skill.player = player;
+		}
 	}
     
     public virtual void OnEnable()
