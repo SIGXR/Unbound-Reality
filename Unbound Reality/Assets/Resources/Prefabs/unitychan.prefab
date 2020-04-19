@@ -7133,6 +7133,7 @@ MonoBehaviour:
   useCurvesHeight: 0.5
   useCurves: 1
   doFixedUpdate: 1
+  ableToSkill: 1
   inventoryUI: {fileID: 0}
 --- !u!114 &3197875859903633831
 MonoBehaviour:
@@ -7161,6 +7162,7 @@ MonoBehaviour:
   className: Archer
   hurt: 0
   usesWeapon: 1
+  skills: []
   animatorController: {fileID: 9100000, guid: 3e854a028c0f2034a81c4c15f101f14b, type: 2}
 --- !u!114 &114329185739197422
 MonoBehaviour:
@@ -7177,6 +7179,7 @@ MonoBehaviour:
   className: Mage
   hurt: 0
   usesWeapon: 0
+  skills: []
   animatorController: {fileID: 9100000, guid: cdae43634dd8a7f409e8b5bd1826acad, type: 2}
 --- !u!114 &114423117315266360
 MonoBehaviour:
@@ -7193,6 +7196,7 @@ MonoBehaviour:
   className: 
   hurt: 0
   usesWeapon: 1
+  skills: []
 --- !u!114 &114769625404409630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7208,3 +7212,4 @@ MonoBehaviour:
   className: 
   hurt: 0
   usesWeapon: 1
+  skills: []

@@ -33,19 +33,13 @@ public class WeaponSystem : MonoBehaviourPun {
         {
             if(player.classType.usesWeapon == true)
             {
-                DropClass(player.classType);
+                player.SetCombatClass(false);
             }
             
             PhotonNetwork.Destroy(weapon.gameObject.GetPhotonView());
         }
 
 	}
-
-    void DropClass(BaseClass classType)
-    {
-        BaseClass currentClass = (BaseClass) GetComponent(classType.GetType());
-        currentClass.enabled = false;
-    }
 
     [PunRPC]
     public void DropWeapon(int playerViewID, int weaponViewID)
@@ -105,20 +99,13 @@ public class WeaponSystem : MonoBehaviourPun {
             {
                 weaponObj.transform.SetParent(transform);
             }
-            
 
-            SetClass(player.classType);
+            player.SetCombatClass(true);
 
             photonView.RPC("PickUpWeapon", RpcTarget.AllBuffered, this.photonView.ViewID, weaponObj.GetPhotonView().ViewID);
             Debug.Log("PickUpWeapon called on " + this.photonView.ViewID + " with " + weaponObj.GetPhotonView().ViewID);
         }
 
-    }
-
-    void SetClass(BaseClass classType)
-    {
-        BaseClass currentClass = (BaseClass) GetComponent(classType.GetType());
-        currentClass.enabled = true;
     }
 
     [PunRPC]

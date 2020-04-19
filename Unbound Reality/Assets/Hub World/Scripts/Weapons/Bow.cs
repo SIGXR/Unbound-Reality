@@ -29,7 +29,7 @@ public class Bow : Weapon
         if(beingUsed && gameObject.GetPhotonView().IsMine)
         {
             firedTimeLeft -= Time.deltaTime;
-            if(Input.GetKeyUp(KeyCode.Alpha1) && firedTimeLeft < 0)
+            if(Input.GetKeyUp(KeyCode.Mouse0) && firedTimeLeft < 0)
             {
                 firedProjectile = PhotonNetwork.Instantiate(Path.Combine("Prefabs", projectile.name), transform.position+-transform.right*col.bounds.size.z*2, Quaternion.LookRotation(-transform.right, -transform.forward));
                 firedTimeLeft = firedFrequency;

@@ -63,7 +63,7 @@ public class ClassSelectUI : MonoBehaviour
         type = GetClassType(btn.name);
 
         EnableGame();
-        //wait for game to start to get the new player.
+
         player = (Player) FindObjectOfType(typeof(Player));
         
         player.SetGodMode(false);
@@ -73,6 +73,11 @@ public class ClassSelectUI : MonoBehaviour
         player.attributeList[(int) Player.Attributes.CRITICAL] = baseCrits[type];
 
         player.classType = GetBaseClass(type);
+
+        if(!player.classType.usesWeapon)
+        {
+            player.SetCombatClass(true);
+        }
 
         this.gameObject.SetActive(false);
     }
@@ -85,7 +90,6 @@ public class ClassSelectUI : MonoBehaviour
     int GetClassType(string name)
     {
         int type;
-        Debug.Log("GetClassType: " + name);
 
         switch(name)
         {
@@ -115,8 +119,6 @@ public class ClassSelectUI : MonoBehaviour
                 break;
             }
         }
-
-        Debug.Log("Type: " + type);
 
         return type;
     }

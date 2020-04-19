@@ -86,6 +86,7 @@ public class Player : MonoBehaviourPun, IPunObservable
 
     //Extra
     public bool doFixedUpdate = true;
+    public bool ableToSkill = true;
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
@@ -295,6 +296,13 @@ public class Player : MonoBehaviourPun, IPunObservable
         {
             status &= ~(uint) StatusLayer.GOD;
         }
+    }
+
+    //Turns on the combat class script for the player
+    public void SetCombatClass(bool value)
+    {
+        BaseClass baseClass = (BaseClass) GetComponent(classType.GetType());
+        baseClass.enabled = value;
     }
 
     //Internal Damage Player has to be defined in the child classes because PUN doesn't do inheritance.

@@ -13,6 +13,9 @@ public class BaseClass : MonoBehaviour {
     [Tooltip("Whether this class uses a weapon for it's animations")]
     [SerializeField]
     public bool usesWeapon;
+	[Tooltip("The current skills assigned to this class")]
+	[SerializeField]
+	Skills[] skills;
 
     //Unity Components
 	protected Player player;
@@ -77,6 +80,7 @@ public class BaseClass : MonoBehaviour {
 		} else
         {
             anim.SetBool("Moving", false);
+			player.ableToSkill = true;
         }
 		
 		if(Input.GetMouseButton(2))
@@ -85,5 +89,20 @@ public class BaseClass : MonoBehaviour {
 		}
 		player.gameObject.transform.position += velocity*Time.fixedDeltaTime;
     }
+
+	public Skills skillPressed
+	{
+		get
+		{
+			foreach(Skills skill in skills)
+			{
+				if(skill.activated)
+				{
+					return skill;
+				}
+			}
+			return null;
+		}
+	}
 
 }

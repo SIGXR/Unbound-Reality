@@ -38,6 +38,9 @@ public class Mage : BaseClass
 			return;
 		}
 
+		// Set this to false unless proven otherwise
+		player.ableToSkill = false;
+
 		currentBaseState = anim.GetCurrentAnimatorStateInfo(0);
 
         if(hurt)
@@ -50,17 +53,24 @@ public class Mage : BaseClass
             anim.ResetTrigger("Hurt");
         }
 
+		if(!anim.IsInTransition(0))
+		{
+			if(skillPressed && !(currentBaseState.fullPathHash == attackState || currentBaseState.fullPathHash == blockState))
+			{
+				anim.SetInteger("AttackIndex", skillPressed.animationIndex);
+				skillPressed.activated = false;
+				return;
+			}
+		}
+
         //Check fire status before movement
 		attackButtonPressed = Input.GetKey(KeyCode.Mouse0);
         if(!anim.IsInTransition(0))
 		{
 			if(attackButtonPressed && !(currentBaseState.fullPathHash == attackState || currentBaseState.fullPathHash == blockState) )
 			{
-				anim.SetTrigger("Fire");
+				anim.SetInteger("AttackIndex", 0);
 				return;
-			} else 
-			{
-				anim.ResetTrigger("Fire");
 			}
 		}
 
