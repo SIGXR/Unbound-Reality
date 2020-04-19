@@ -31,24 +31,15 @@ public class WeaponSystem : MonoBehaviourPun {
         // If we have a weapon and the player right clicks, drop the weapon
         if (weapon!=null && Input.GetMouseButtonDown(1))
         {
-            DropClass(weapon.weaponType);
+            if(player.classType.usesWeapon == true)
+            {
+                player.SetCombatClass(false);
+            }
+            
             PhotonNetwork.Destroy(weapon.gameObject.GetPhotonView());
         }
 
 	}
-
-    void DropClass(Weapon.WeaponType weaponType)
-    {
-        switch(weaponType)
-        {
-            case Weapon.WeaponType.BOW:
-                GetComponent<Archer>().enabled = false;
-                break;
-            default:
-                break;
-        }
-
-    }
 
     [PunRPC]
     public void DropWeapon(int playerViewID, int weaponViewID)
@@ -81,6 +72,13 @@ public class WeaponSystem : MonoBehaviourPun {
         if(weapon == null && col.gameObject.layer == weaponLayer && col.gameObject.transform.parent == null)
         {
             weapon = col.gameObject.GetComponent<Weapon>();
+
+            if(!IsWeaponSupported(player.classType, weapon))
+            {
+                weapon = null;
+                return;
+            }
+
             GameObject weaponObj = PhotonNetwork.Instantiate(Path.Combine("Prefabs", weapon.prefabName), Vector3.zero, Quaternion.identity);
             Transform hand = null;
             if(weapon.hand == "Right")
@@ -101,26 +99,13 @@ public class WeaponSystem : MonoBehaviourPun {
             {
                 weaponObj.transform.SetParent(transform);
             }
-            
 
-            SetClass(weapon.weaponType);
+            player.SetCombatClass(true);
 
             photonView.RPC("PickUpWeapon", RpcTarget.AllBuffered, this.photonView.ViewID, weaponObj.GetPhotonView().ViewID);
             Debug.Log("PickUpWeapon called on " + this.photonView.ViewID + " with " + weaponObj.GetPhotonView().ViewID);
         }
 
-    }
-
-    void SetClass(Weapon.WeaponType weaponType)
-    {
-        switch(weaponType)
-        {
-            case Weapon.WeaponType.BOW:
-                GetComponent<Archer>().enabled = true;
-                break;
-            default:
-                break;
-        }
     }
 
     [PunRPC]
@@ -143,9 +128,15 @@ public class WeaponSystem : MonoBehaviourPun {
         }
     }
 
-    // Get the Weapon variable
-    public Weapon GetWeapon()
+    bool IsWeaponSupported(BaseClass currentClass, Weapon weapon)
     {
-        return weapon;
+        foreach(System.Type types in weapon.supportedClasses)
+        {
+            if(currentClass.GetType() == types)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

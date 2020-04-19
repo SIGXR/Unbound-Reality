@@ -6962,7 +6962,7 @@ Animator:
   m_GameObject: {fileID: 100338}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 8f0565f23a2b58541a475bd3c1393052, type: 3}
-  m_Controller: {fileID: 9100000, guid: 8d5a0e0d58f4e4176a844a1a03976c19, type: 2}
+  m_Controller: {fileID: 9100000, guid: 90d8be7546834d441912231653d0a0d9, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -7106,6 +7106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c0b86ea55bc0a86b1c2b1bf34c912e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attributeList: 00000000000000000000000000000000
   healthUI: {fileID: 0}
   deathUI: {fileID: 0}
   spawnPoint: {fileID: 0}
@@ -7113,11 +7114,14 @@ MonoBehaviour:
   healthMax: 100
   healthReset: 100
   playerName: 
+  classType: {fileID: 0}
   forwardSpeed: 7
   backwardSpeed: 2
   rotateSpeed: 2
   jumpPower: 3
+  defaultAnimatorController: {fileID: 0}
   animSpeed: 1.5
   lookSmoother: 3
   useCurvesHeight: 0.5
   useCurves: 1
+  doFixedUpdate: 1

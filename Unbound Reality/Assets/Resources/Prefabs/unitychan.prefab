@@ -6927,6 +6927,9 @@ GameObject:
   - component: {fileID: 114999258932876446}
   - component: {fileID: 3197875859903633831}
   - component: {fileID: 114184065573996314}
+  - component: {fileID: 114329185739197422}
+  - component: {fileID: 114423117315266360}
+  - component: {fileID: 114769625404409630}
   m_Layer: 0
   m_Name: unitychan
   m_TagString: Player
@@ -6964,7 +6967,7 @@ Animator:
   m_GameObject: {fileID: 100338}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 8f0565f23a2b58541a475bd3c1393052, type: 3}
-  m_Controller: {fileID: 9100000, guid: 8d5a0e0d58f4e4176a844a1a03976c19, type: 2}
+  m_Controller: {fileID: 9100000, guid: 90d8be7546834d441912231653d0a0d9, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -7091,6 +7094,42 @@ MonoBehaviour:
   - Type: 1
     SynchronizeType: 1
     Name: GravityControl
+  - Type: 3
+    SynchronizeType: 1
+    Name: DeathIndex
+  - Type: 4
+    SynchronizeType: 1
+    Name: Dead
+  - Type: 4
+    SynchronizeType: 1
+    Name: Moving
+  - Type: 3
+    SynchronizeType: 1
+    Name: IdleIndex
+  - Type: 9
+    SynchronizeType: 1
+    Name: Fire
+  - Type: 4
+    SynchronizeType: 1
+    Name: FireButton
+  - Type: 4
+    SynchronizeType: 1
+    Name: FireLoco
+  - Type: 3
+    SynchronizeType: 1
+    Name: AttackIndex
+  - Type: 4
+    SynchronizeType: 1
+    Name: Blocking
+  - Type: 9
+    SynchronizeType: 1
+    Name: Hurt
+  - Type: 3
+    SynchronizeType: 1
+    Name: HurtIndex
+  - Type: 3
+    SynchronizeType: 1
+    Name: HurtType
   m_SynchronizeLayers:
   - SynchronizeType: 1
     LayerIndex: 0
@@ -7108,6 +7147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40a594469affcb89482ecfdb600f128e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attributeList: 00000000000000000000000000000000
   healthUI: {fileID: 0}
   deathUI: {fileID: 0}
   spawnPoint: {fileID: 0}
@@ -7115,16 +7155,19 @@ MonoBehaviour:
   healthMax: 100
   healthReset: 100
   playerName: 
+  classType: {fileID: 0}
   forwardSpeed: 7
   backwardSpeed: 2
   rotateSpeed: 2
   jumpPower: 3
-  defaultAnimatorController: {fileID: 0}
+  defaultAnimatorController: {fileID: 9100000, guid: 90d8be7546834d441912231653d0a0d9,
+    type: 2}
   animSpeed: 1.5
   lookSmoother: 3
   useCurvesHeight: 0.5
   useCurves: 1
   doFixedUpdate: 1
+  ableToSkill: 1
   inventoryUI: {fileID: 0}
 --- !u!114 &3197875859903633831
 MonoBehaviour:
@@ -7150,4 +7193,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22eaf109633a12b4ea14ccf4722fdd4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  className: Archer
+  hurt: 0
+  usesWeapon: 1
+  skills: []
   animatorController: {fileID: 9100000, guid: 3e854a028c0f2034a81c4c15f101f14b, type: 2}
+--- !u!114 &114329185739197422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100338}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92a99ce0f1d18641a71966f4e7c7c29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  className: Mage
+  hurt: 0
+  usesWeapon: 0
+  skills:
+  - {fileID: 11400000, guid: f6eb652acfde1bc4e964d412727baf2d, type: 2}
+  animatorController: {fileID: 9100000, guid: cdae43634dd8a7f409e8b5bd1826acad, type: 2}
+--- !u!114 &114423117315266360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100338}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34d60adc901d6304eb88b7f8fa9a3756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  className: 
+  hurt: 0
+  usesWeapon: 1
+  skills: []
+--- !u!114 &114769625404409630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100338}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c13bec264a150d40872aa3e1a55192c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  className: 
+  hurt: 0
+  usesWeapon: 1
+  skills: []

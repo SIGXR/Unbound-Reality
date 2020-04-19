@@ -101,6 +101,7 @@ public class EnemyController : MonoBehaviourPun {
         {
             return;
         }
+        
         if(other.gameObject.tag == "Player")
         {
             hasStopped = false;

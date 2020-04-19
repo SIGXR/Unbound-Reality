@@ -7,35 +7,16 @@ using UnityEngine;
 public class SpeedModifier : Skills
 {
     public float speedModifier = 2;
-    private bool status = false;
-    private float time;
-    private float activeRate;
+    public float previousSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
             
-     }
+    }
 
-        // Update is called once per frame
-        void Update()
-        {
-            if (Time.time > time && status == true)
-            {
-                NonVRCharacterController.moveSpeed /= speedModifier;
-                status = false;
-            }
-        }
-        public override void Initialize(GameObject obj)
-        {
-
-        }
-
-        public override void ActivateSkill()
-        {
-            time = Time.time + activeRate;
-            Debug.Log(time);
-            NonVRCharacterController.moveSpeed *= speedModifier;
-            status = true;
-        }
+    public override void ActivateSkill()
+    {
+        base.ActivateSkill();
+    }
 }

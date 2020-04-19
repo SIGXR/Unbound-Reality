@@ -36,7 +36,6 @@ public class EnemySpawner : MonoBehaviour
             GameObject clone = (GameObject)Instantiate(enemy, transform.position, transform.rotation);
             enemies.Add(clone);
         }
-        Debug.Log(enemyCounter);
     }
 
 
