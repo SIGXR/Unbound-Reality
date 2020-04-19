@@ -190,6 +190,8 @@ MonoBehaviour:
   player: {fileID: 0}
   damage: 0
   prefabName: Bow
+  supportedClasses:
+  - {fileID: 0}
   projectile: {fileID: 9019009579528289953, guid: 18391b0536631b93fb267ad23b8b2cc9,
     type: 3}
   firedFrequency: 0.5

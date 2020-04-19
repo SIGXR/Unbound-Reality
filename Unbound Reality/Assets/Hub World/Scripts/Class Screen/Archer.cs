@@ -3,51 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-[RequireComponent(typeof(Player))]
-[RequireComponent(typeof(Animator))]
-public class Archer : MonoBehaviour {
-
-	//Unity Components
-	private Player player;
-	private Animator anim;
-	private PhotonView pv;
-
-	//Movement Values
-	private float horizontalAxis, verticalAxis;
-	private Vector3 velocity;
+public class Archer : BaseClass {
 	
-	//Animator Values
-	static int idleState = Animator.StringToHash("Base Layer.Idle");
-	static int fireState = Animator.StringToHash("Base Layer.Fire");
-	static int fireLocoState = Animator.StringToHash("Base Layer.Fire Loco");
-	static int locoState = Animator.StringToHash("Base Layer.Loco");
-	private AnimatorStateInfo currentBaseState;
+	//Inputs
 	private bool fireButtonHeld;
+
+	//Animator Values
+	static int idleState = Animator.StringToHash("Base Archer.Idle");
+	static int fireState = Animator.StringToHash("Base Archer.Fire");
+	static int fireLocoState = Animator.StringToHash("Base Archer.Fire Loco");
+	static int locoState = Animator.StringToHash("Base Archer.Loco");
+	private AnimatorStateInfo currentBaseState;
+	
 	[Tooltip("The animator controller specific to this class.")]
 	[SerializeField]
 	private RuntimeAnimatorController animatorController;
 
-	
-	void Awake()
+	public override void OnEnable()
 	{
-		player = GetComponent<Player>();
-		anim = GetComponent<Animator>();
-		pv = gameObject.GetPhotonView();
-	}
-
-	void OnEnable()
-	{
-		player.doFixedUpdate = false;
+		base.OnEnable();
 		anim.runtimeAnimatorController = animatorController;
 	}
 
-	void OnDisable() 
+	public override void OnDisable() 
 	{
-		player.doFixedUpdate = true;
+		base.OnDisable();
 		anim.runtimeAnimatorController = player.defaultAnimatorController;
 	}
 
-	void FixedUpdate() 
+	public override void FixedUpdate() 
 	{
 		if(pv.IsMine == false && PhotonNetwork.IsConnected == true)
 		{
@@ -57,7 +41,7 @@ public class Archer : MonoBehaviour {
 		currentBaseState = anim.GetCurrentAnimatorStateInfo(0);
 
 		//Check fire status before movement
-		fireButtonHeld = Input.GetKey(KeyCode.Alpha1);
+		fireButtonHeld = Input.GetKey(KeyCode.Mouse0);
 		anim.SetBool("FireButton", fireButtonHeld);
 		if(!anim.IsInTransition(0))
 		{
@@ -71,55 +55,8 @@ public class Archer : MonoBehaviour {
 			}
 		}
 
-		horizontalAxis = Input.GetAxis("Horizontal");
-		verticalAxis = Input.GetAxis("Vertical");
-		anim.SetFloat("Speed", verticalAxis);
-		anim.SetFloat("Direction", horizontalAxis);
-		velocity = Vector3.zero;
-
-		if(Mathf.Abs(verticalAxis) > 0.1 || Mathf.Abs(horizontalAxis) > 0.1)
-		{
-			if(Mathf.Abs(verticalAxis) > Mathf.Abs(horizontalAxis))
-			{
-				velocity = player.gameObject.transform.forward;
-				if(verticalAxis > 0.1)
-				{
-					velocity *= player.forwardSpeed;
-				} else if(verticalAxis < -0.1)
-				{
-					velocity *= -player.backwardSpeed;
-				}
-			} else 
-			{
-				velocity = player.gameObject.transform.right;
-				if(horizontalAxis > 0.1)
-				{
-					velocity *= player.forwardSpeed;
-				} else if(horizontalAxis < -0.1)
-				{
-					velocity *= -player.backwardSpeed;
-				}
-			}
-		}
-		
-		if(Input.GetMouseButton(2))
-		{
-			player.gameObject.transform.Rotate(0, Input.GetAxis("Mouse X"), 0);
-		}
-		player.gameObject.transform.position += velocity*Time.fixedDeltaTime;
-
-
-
-
+		base.FixedUpdate();
 	}
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }

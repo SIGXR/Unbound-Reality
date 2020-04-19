@@ -6,7 +6,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: UnityChanArcher
+  m_Name: ArcherClass
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Speed
@@ -75,9 +75,15 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+  - m_Name: Moving
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
-    m_Name: Base Layer
+    m_Name: Base Archer
     m_StateMachine: {fileID: 110700000}
     m_Mask: {fileID: 0}
     m_Motions: []
@@ -627,7 +633,7 @@ AnimatorStateMachine:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Base Layer
+  m_Name: Base Archer
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1102884383719003556}
@@ -641,7 +647,7 @@ AnimatorStateMachine:
   m_ChildStateMachines:
   - serializedVersion: 1
     m_StateMachine: {fileID: 1107956460871338540}
-    m_Position: {x: 756, y: -96, z: 0}
+    m_Position: {x: 768, y: -96, z: 0}
   - serializedVersion: 1
     m_StateMachine: {fileID: 1107732252988775438}
     m_Position: {x: 132, y: -228, z: 0}
@@ -655,11 +661,11 @@ AnimatorStateMachine:
   - first: {fileID: 1107956460871338540}
     second:
     - {fileID: 1109387644146600664}
+  - first: {fileID: 1107497876115242120}
+    second: []
   - first: {fileID: 1107732252988775438}
     second:
     - {fileID: 1109136026983578978}
-  - first: {fileID: 1107497876115242120}
-    second: []
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 780, y: -288, z: 0}
   m_EntryPosition: {x: -360, y: -48, z: 0}
@@ -2113,7 +2119,7 @@ AnimatorStateMachine:
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
-  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_ParentStateMachinePosition: {x: 804, y: 24, z: 0}
   m_DefaultState: {fileID: 1102379792398577452}
 --- !u!1107 &1107732252988775438
 AnimatorStateMachine:
@@ -2199,7 +2205,7 @@ AnimatorStateMachine:
   m_AnyStatePosition: {x: -108, y: 12, z: 0}
   m_EntryPosition: {x: 48, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
-  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_ParentStateMachinePosition: {x: 804, y: 24, z: 0}
   m_DefaultState: {fileID: 1102877019396313778}
 --- !u!1109 &1109136026983578978
 AnimatorTransition:

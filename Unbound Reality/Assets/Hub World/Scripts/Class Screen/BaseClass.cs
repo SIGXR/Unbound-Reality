@@ -1,42 +1,89 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class BaseClass {
-    private string className;
-    private float speed;
-    private float strength;
-    private float magicStrength;
-    private float critical;
+[RequireComponent(typeof(Player))]
+[RequireComponent(typeof(Animator))]
+public class BaseClass : MonoBehaviour {
+    
+    //Public Variables
+    public string className;
+    public bool hurt;
+    [Tooltip("Whether this class uses a weapon for it's animations")]
+    [SerializeField]
+    public bool usesWeapon;
 
-    public BaseClass(string Name, float sped, float physStrength, float magStrength, float Crit)
+    //Unity Components
+	protected Player player;
+	protected Animator anim;
+	protected PhotonView pv;
+    
+    //Movement Values
+	private float horizontalAxis, verticalAxis;
+	private Vector3 velocity;
+
+    void Awake()
+	{
+		player = GetComponent<Player>();
+		anim = GetComponent<Animator>();
+		pv = gameObject.GetPhotonView();
+	}
+    
+    public virtual void OnEnable()
     {
-        className = Name;
-        speed = sped;
-        strength = physStrength;
-        magicStrength = magStrength;
-        critical = Crit;
+        player.doFixedUpdate = false;
     }
 
-    public string ClassName()
+    public virtual void OnDisable()
     {
-        return className;
-    }
-    public float Speed()
-    {
-        return speed;
+        player.doFixedUpdate = true;
     }
 
-    public float Strength()
+    // This FixedUpdate() does the movement and camera rotation for all classes
+    // Every class shares this functionality
+    public virtual void FixedUpdate()
     {
-        return strength;
+        horizontalAxis = Input.GetAxis("Horizontal");
+		verticalAxis = Input.GetAxis("Vertical");
+		anim.SetFloat("Speed", verticalAxis);
+		anim.SetFloat("Direction", horizontalAxis);
+		velocity = Vector3.zero;
+
+		if(Mathf.Abs(verticalAxis) > 0.1 || Mathf.Abs(horizontalAxis) > 0.1)
+		{
+            anim.SetBool("Moving", true);
+			if(Mathf.Abs(verticalAxis) > Mathf.Abs(horizontalAxis))
+			{
+				velocity = player.gameObject.transform.forward;
+				if(verticalAxis > 0.1)
+				{
+					velocity *= player.forwardSpeed;
+				} else if(verticalAxis < -0.1)
+				{
+					velocity *= -player.backwardSpeed;
+				}
+			} else 
+			{
+				velocity = player.gameObject.transform.right;
+				if(horizontalAxis > 0.1)
+				{
+					velocity *= player.forwardSpeed;
+				} else if(horizontalAxis < -0.1)
+				{
+					velocity *= -player.backwardSpeed;
+				}
+			}
+		} else
+        {
+            anim.SetBool("Moving", false);
+        }
+		
+		if(Input.GetMouseButton(2))
+		{
+			player.gameObject.transform.Rotate(0, Input.GetAxis("Mouse X"), 0);
+		}
+		player.gameObject.transform.position += velocity*Time.fixedDeltaTime;
     }
-    public float MagicStrength()
-    {
-        return magicStrength;
-    }
-    public float Critical()
-    {
-        return critical;
-    }
+
 }

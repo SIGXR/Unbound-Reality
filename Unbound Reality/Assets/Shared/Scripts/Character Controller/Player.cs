@@ -22,13 +22,14 @@ public class Player : MonoBehaviourPun, IPunObservable
 
     public enum Attributes
     {
+        SPEED,
         STRENGTH,
         MAGIC,
         CRITICAL
     }
 
     //The values of attribute list. Access via attributeList[(int) Attributes.VALUE]
-    protected int[] attributeList  = new int[Enum.GetNames(typeof(Attributes)).Length];
+    public int[] attributeList  = new int[Enum.GetNames(typeof(Attributes)).Length];
 
     //Player Specific UI
     [Tooltip("The Health UI Script")]
@@ -54,6 +55,7 @@ public class Player : MonoBehaviourPun, IPunObservable
     public float healthMax = 100f;
     public float healthReset = 100f;
     public string playerName;
+    public BaseClass classType;
 
     //Unity Components
     protected Rigidbody rb;
@@ -138,6 +140,12 @@ public class Player : MonoBehaviourPun, IPunObservable
         {
             return;
         }
+        
+        //The player has not been initialized yet.
+        if(classType == null)
+        {
+            return;
+        }
 
         if(health <= 0)
         {
@@ -159,10 +167,18 @@ public class Player : MonoBehaviourPun, IPunObservable
             anim.ResetTrigger("Dead");
         }
 
+        //The player is currently in dieing animation
+        if(anim.GetInteger("DeathIndex") > -1)
+        {
+            return;
+        }
+
+        //Check if it is doing behaviour for a class. (i.e. Archer)
         if(doFixedUpdate == false)
         {
             return;
         }
+
         horizontalAxis = Input.GetAxis("Horizontal");
         verticalAxis = Input.GetAxis("Vertical");
 
@@ -268,6 +284,17 @@ public class Player : MonoBehaviourPun, IPunObservable
     public virtual void OnTriggerEnter(Collider other)
     {
 
+    }
+
+    public void SetGodMode(bool value)
+    {
+        if(value)
+        {
+            status |= (uint) StatusLayer.GOD;
+        } else
+        {
+            status &= ~(uint) StatusLayer.GOD;
+        }
     }
 
     //Internal Damage Player has to be defined in the child classes because PUN doesn't do inheritance.

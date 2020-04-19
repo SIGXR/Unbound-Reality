@@ -22,7 +22,7 @@ public class SpeedModifier : Skills
         {
             if (Time.time > time && status == true)
             {
-                NonVRCharacterController.moveSpeed /= speedModifier;
+                // NonVRCharacterController.moveSpeed /= speedModifier;
                 status = false;
             }
         }
@@ -35,7 +35,7 @@ public class SpeedModifier : Skills
         {
             time = Time.time + activeRate;
             Debug.Log(time);
-            NonVRCharacterController.moveSpeed *= speedModifier;
+            // NonVRCharacterController.moveSpeed *= speedModifier;
             status = true;
         }
 }

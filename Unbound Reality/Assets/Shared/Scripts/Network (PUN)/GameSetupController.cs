@@ -71,6 +71,9 @@ public class GameSetupController : MonoBehaviour {
         player.playerName = PlayerPrefs.GetString("Name", "Dummy");
         player.spawnPoint = spawnPoint;
 
+        //Set God Mode, until player gets initialized by Class Select
+        player.SetGodMode(true);
+
         //TODO: Implement scoreboard?
         localScore = PhotonNetwork.Instantiate(Path.Combine("Prefabs", textPrefab.name), Vector3.zero, Quaternion.identity);
         Score score = localScore.GetComponent<Score>();

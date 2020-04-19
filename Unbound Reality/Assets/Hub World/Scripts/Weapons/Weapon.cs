@@ -42,6 +42,10 @@ public class Weapon : MonoBehaviour {
     public float damage;
     [Tooltip("The prefab name of this weapon")]
     public string prefabName;
+    [Tooltip("The classes that can wield this weapon. i.e. bows => archer.\n" +
+        "Should be set during awake/start of class that inherits")]
+    [SerializeField]
+    public System.Type[] supportedClasses;
 
     // Use this for initialization
     protected virtual void Awake () {
@@ -103,6 +107,4 @@ public class Weapon : MonoBehaviour {
                 
         }
     }
-
-    
 }

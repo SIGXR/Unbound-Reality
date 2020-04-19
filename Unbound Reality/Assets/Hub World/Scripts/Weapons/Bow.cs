@@ -22,6 +22,7 @@ public class Bow : Weapon
     void Start()
     {
         rb.useGravity = false;
+        supportedClasses = new System.Type[]{ typeof(Archer) };
     }
 
     void FixedUpdate() {
