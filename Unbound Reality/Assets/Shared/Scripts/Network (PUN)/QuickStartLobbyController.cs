@@ -3,6 +3,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class QuickStartLobbyController : MonoBehaviourPunCallbacks
 {
@@ -10,13 +11,17 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
     [SerializeField]
     Color errorColor;
     [SerializeField]
-    private InputField nameInput;
+    private TMP_InputField nameInput;
     [SerializeField]
     private GameObject connectionText;
     [SerializeField]
     private GameObject quickStartButton;
     [SerializeField]
     private GameObject quickCancelButton;
+    [SerializeField]
+    private GameObject startOnlineButton;
+    [SerializeField]
+    private GameObject startOfflineButton;
     [SerializeField]
     private int roomSize;
 
@@ -27,6 +32,8 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
         connectionText.SetActive(false);
         quickStartButton.SetActive(true);
         quickCancelButton.SetActive(false);
+        startOfflineButton.SetActive(false);
+        startOfflineButton.SetActive(false);
     }
 
     //Paired with Quick Start Button

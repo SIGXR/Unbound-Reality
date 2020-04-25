@@ -5,10 +5,14 @@ public class NetworkController : MonoBehaviourPunCallbacks
 {
     public void StartOffline()
     {
-        
+        PhotonNetwork.OfflineMode = true;
+        if(!PhotonNetwork.IsConnected)
+        {
+            PhotonNetwork.ConnectUsingSettings();
+        }
     }
 
-    public void StartNetwork()
+    public void StartOnline()
     {
         //Connects to Photon Master Servers
         if(!PhotonNetwork.IsConnected)
