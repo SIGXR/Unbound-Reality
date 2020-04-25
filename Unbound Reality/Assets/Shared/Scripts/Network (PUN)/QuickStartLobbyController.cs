@@ -26,6 +26,7 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
         PhotonNetwork.AutomaticallySyncScene = true;
         connectionText.SetActive(false);
         quickStartButton.SetActive(true);
+        quickCancelButton.SetActive(false);
     }
 
     //Paired with Quick Start Button
