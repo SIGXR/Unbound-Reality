@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
+using TMPro;
 
 public class ChatManager : MonoBehaviourPun
 {
@@ -30,7 +31,7 @@ public class ChatManager : MonoBehaviourPun
         Application.runInBackground = true;
     }
 
-    public void Message(InputField input)
+    public void Message(TMP_InputField input)
     {
         if(input.text == "")
         {
@@ -51,7 +52,7 @@ public class ChatManager : MonoBehaviourPun
             Destroy(textQueue.Dequeue());
         }
         GameObject newTextObj = Instantiate(textPrefab, Vector3.zero, Quaternion.identity, content.transform);
-        newTextObj.GetComponent<Text>().text = message;
+        newTextObj.GetComponent<TMP_Text>().text = message;
         newTextObj.transform.localPosition = Vector3.zero;
         newTextObj.transform.localRotation = Quaternion.identity;
 

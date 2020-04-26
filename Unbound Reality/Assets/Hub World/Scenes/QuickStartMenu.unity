@@ -1747,7 +1747,7 @@ MonoBehaviour:
   quickStartButton: {fileID: 1507306132}
   quickCancelButton: {fileID: 1081902493}
   startOnlineButton: {fileID: 1919780067}
-  startOfflineButton: {fileID: 1919780067}
+  startOfflineButton: {fileID: 237568328}
   roomSize: 20
 --- !u!4 &1426479415
 Transform:

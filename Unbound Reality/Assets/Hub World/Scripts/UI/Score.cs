@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
+using TMPro;
 
-[RequireComponent(typeof(Text))]
+[RequireComponent(typeof(TMP_Text))]
 public class Score : MonoBehaviourPun, IPunObservable
 {
     private GameObject content;
-    private Text text;
+    private TMP_Text text;
     private string playerName;
     private int scoreValue;
 
@@ -31,7 +32,7 @@ public class Score : MonoBehaviourPun, IPunObservable
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.Euler(Vector3.zero);
         transform.localScale = Vector3.one;
-        text = GetComponent<Text>();
+        text = GetComponent<TMP_Text>();
         ScoreValue = 0;
 
     }

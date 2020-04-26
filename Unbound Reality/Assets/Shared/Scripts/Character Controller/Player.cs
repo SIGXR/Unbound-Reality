@@ -111,9 +111,6 @@ public class Player : MonoBehaviourPun, IPunObservable
         healthUI = FindObjectOfType<HealthUI>();
         OnPlayerHealthChange += healthUI.OnPlayerHealthChange;
 
-        deathUI = FindObjectOfType<DeathUI>();
-        OnPlayerDeath += deathUI.OnPlayerDeath;
-
         rb = GetComponent<Rigidbody>();
         col = GetComponent<CapsuleCollider>();
         anim = GetComponent<Animator>();

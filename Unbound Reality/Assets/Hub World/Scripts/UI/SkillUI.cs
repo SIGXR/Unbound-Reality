@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 public class SkillUI : MonoBehaviour
 {
     [Tooltip("The text that appears on the button. Usually is skill name or cooldown time.")]
     [SerializeField]
-    public Text buttonInfo;
+    public TMP_Text buttonInfo;
     [Tooltip("The skill associated with the button.")]
     [SerializeField]
     public Skills skill;
     [Tooltip("The text box that shows the description of the skill.")]
     [SerializeField]
-    public Text skillInfo;
+    public TMP_Text skillInfo;
     [Tooltip("The game object that contains skillInfo. Used to show/hide it.")]
     [SerializeField]
     public GameObject infoBox;
