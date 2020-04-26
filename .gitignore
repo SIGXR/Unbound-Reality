@@ -8,6 +8,10 @@ Unbound\ Reality/Assets/Oculus/**
 Unbound\ Reality/Assets/unity-chan\!/**
 !Unbound\ Reality/Assets/unity-chan\!/**/
 !Unbound\ Reality/Assets/unity-chan\!/**/*.meta
+Unbound\ Reality/Assets/TextMesh\ Pro/**
+!Unbound\ Reality/Assets/TextMesh\ Pro/**/
+!Unbound\ Reality/Assets/TextMesh\ Pro/**/*.meta
+
 
 
 [Ll]ibrary/

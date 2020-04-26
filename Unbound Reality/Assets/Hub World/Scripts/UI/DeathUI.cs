@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
-[RequireComponent(typeof(Text))]
+[RequireComponent(typeof(TMP_Text))]
 public class DeathUI : MonoBehaviour
 {
     [Tooltip("The text script connected to the death counter")]
     [SerializeField]
-    private Text text;
+    private TMP_Text text;
     private int deathCount = 0;
 
     void Awake() {
-        text = GetComponent<Text>();
+        text = GetComponent<TMP_Text>();
 
     }
 

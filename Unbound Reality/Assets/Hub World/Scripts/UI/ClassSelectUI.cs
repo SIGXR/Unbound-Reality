@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Threading.Tasks;
+using TMPro;
 
 public class ClassSelectUI : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class ClassSelectUI : MonoBehaviour
     private int[] baseMagics = new int[]{ 3, 15, 3, 4 };
     private int[] baseCrits = new int[]{ 6, 6, 6, 15 };
 
-    public Text Displayinfo;
+    public TMP_Text Displayinfo;
     public Canvas hudCanvas;
     public GameObject gameSetup;
     public Player player;

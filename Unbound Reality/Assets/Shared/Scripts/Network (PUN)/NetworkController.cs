@@ -3,7 +3,16 @@ using UnityEngine;
 
 public class NetworkController : MonoBehaviourPunCallbacks
 {
-    private void Start()
+    public void StartOffline()
+    {
+        PhotonNetwork.OfflineMode = true;
+        if(!PhotonNetwork.IsConnected)
+        {
+            PhotonNetwork.ConnectUsingSettings();
+        }
+    }
+
+    public void StartOnline()
     {
         //Connects to Photon Master Servers
         if(!PhotonNetwork.IsConnected)
